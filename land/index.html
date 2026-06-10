@@ -3,562 +3,525 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Invest in Land | First Mover Fund</title>
-  <meta name="description" content="Invest in regenerative agricultural land. Dual income from crop production and environmental credits. Targeted double-digit returns. First Mover Fund." />
+  <title>U.S. Land Investment — First Mover Fund | Join the Waitlist</title>
+  <meta name="description" content="A Dutch-listed investment firm since 1957 is bringing regenerative U.S. farmland to private investors. Join the waitlist — no commitment, first access when we go live." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --green:#1e5c29;--green-dark:#0d2b14;--green-mid:#1e5c29;--green-light:#2d7a3a;
+      --lime:#8eef3a;--amber:#f59e0b;--slate:#475569;--navy:#0b1d2b;
+      --cream:#fef3c7;--white:#fff;--grey-100:#f9f9f9;--grey-200:#efefef;
+      --font:'Montserrat',sans-serif;--max:1200px;--r:12px;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font);color:var(--slate);background:var(--white);font-size:18px;line-height:1.6;overflow-x:hidden}
 
-    :root {
-      --blue: #2563eb;
-      --amber: #f59e0b;
-      --slate: #475569;
-      --navy: #0b1d2b;
-      --midnight: #1d286a;
-      --lime: #8eef3a;
-      --lime-dark: #4a8a14;
-      --lime-bg: rgba(142,239,58,0.1);
-      --cream: #fef3c7;
-      --green-deep: #133a1b;
-      --green-mid: #1e5c29;
-      --grey-100: #f9f9f9;
-      --grey-200: #efefef;
-      --white: #ffffff;
-      --font: 'Montserrat', sans-serif;
-      --container: 1200px;
-      --radius: 10px;
-    }
+    /* ─── NAV ─── */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:background .3s,box-shadow .3s}
+    nav.scrolled{background:rgba(13,43,20,.95);backdrop-filter:blur(16px);box-shadow:0 2px 32px rgba(0,0,0,.3)}
+    .nav-inner{max-width:var(--max);margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between}
+    .nav-wordmark{font-size:15px;font-weight:800;color:var(--white);line-height:1.1;text-decoration:none}
+    .nav-wordmark span{display:block;font-size:10px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.08em;text-transform:uppercase}
+    .nav-listed{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.15);border-radius:20px;padding:5px 12px}
+    .nav-listed::before{content:'';width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0;box-shadow:0 0 6px #22c55e}
+    .nav-cta{background:var(--lime);color:var(--green-dark);font-family:var(--font);font-size:14px;font-weight:800;padding:10px 22px;border:none;border-radius:6px;cursor:pointer;text-decoration:none;transition:background .2s}
+    .nav-cta:hover{background:#75d12c}
 
-    body { font-family: var(--font); color: var(--slate); background: var(--white); font-size: 18px; line-height: 28px; }
+    /* ─── HERO ─── */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden}
+    .hero-bg{position:absolute;inset:0;background:linear-gradient(135deg,#0d2b14 0%,#133a1b 50%,#1e5c29 100%)}
+    .hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.4}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(13,43,20,.88) 40%,rgba(13,43,20,.1) 100%)}
+    .hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:120px 40px 80px;display:grid;grid-template-columns:1fr 480px;gap:60px;align-items:center}
 
-    /* NAV */
-    nav {
-      position: sticky; top: 0; z-index: 100;
-      background: var(--white); border-bottom: 1px solid var(--grey-200);
-      height: 72px; display: flex; align-items: center;
-    }
-    .nav-inner {
-      max-width: var(--container); margin: 0 auto; padding: 0 40px;
-      width: 100%; display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-logo-mark {
-      width: 36px; height: 36px; background: var(--green-mid); border-radius: 6px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .nav-logo-mark svg { width: 20px; height: 20px; fill: white; }
-    .nav-logo-text { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.2; }
-    .nav-logo-text span { display: block; font-size: 11px; font-weight: 500; color: var(--green-mid); }
-    .nav-cta {
-      background: var(--lime); color: var(--green-deep); font-family: var(--font);
-      font-size: 14px; font-weight: 700; padding: 10px 22px; border: none;
-      border-radius: 6px; cursor: pointer; text-decoration: none;
-    }
-    .nav-cta:hover { background: #75d12c; }
+    .hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:28px;flex-wrap:wrap}
+    .badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:20px}
+    .badge-exchange{background:rgba(37,99,235,.2);color:#93b4f7;border:1px solid rgba(37,99,235,.3)}
+    .badge-year{background:rgba(245,158,11,.12);color:var(--amber);border:1px solid rgba(245,158,11,.25)}
+    .badge-us{background:rgba(142,239,58,.1);color:var(--lime);border:1px solid rgba(142,239,58,.2)}
 
-    /* HERO */
-    .hero {
-      background: var(--green-deep);
-      background-image: linear-gradient(135deg, #0d2b14 0%, #133a1b 50%, #1e5c29 100%);
-      padding: 100px 40px 80px;
-      position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: ''; position: absolute; top: -80px; right: -80px;
-      width: 500px; height: 500px; border-radius: 50%;
-      background: rgba(142, 239, 58, 0.06); pointer-events: none;
-    }
-    .hero::after {
-      content: ''; position: absolute; bottom: -60px; left: 10%;
-      width: 300px; height: 300px; border-radius: 50%;
-      background: rgba(142, 239, 58, 0.04); pointer-events: none;
-    }
-    .hero-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-    .hero-tag {
-      display: inline-block; background: rgba(142, 239, 58, 0.12);
-      color: var(--lime); font-size: 13px; font-weight: 600;
-      padding: 6px 14px; border-radius: 20px; margin-bottom: 24px;
-      border: 1px solid rgba(142, 239, 58, 0.25);
-    }
-    .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.1; color: var(--white); margin-bottom: 24px; }
-    .hero h1 em { color: var(--lime); font-style: normal; }
-    .hero p { font-size: 18px; color: rgba(255,255,255,0.82); line-height: 1.7; margin-bottom: 36px; }
-    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
-    .btn-primary {
-      background: var(--lime); color: var(--green-deep); font-family: var(--font);
-      font-size: 16px; font-weight: 700; padding: 16px 32px; border: none;
-      border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-block;
-    }
-    .btn-primary:hover { background: #75d12c; }
-    .btn-secondary {
-      background: transparent; color: rgba(255,255,255,0.85); font-family: var(--font);
-      font-size: 16px; font-weight: 600; padding: 16px 32px;
-      border: 1px solid rgba(255,255,255,0.3); border-radius: 8px;
-      cursor: pointer; text-decoration: none; display: inline-block;
-    }
-    .btn-secondary:hover { border-color: rgba(255,255,255,0.6); }
+    .hero h1{font-size:58px;font-weight:900;line-height:1.05;color:var(--white);margin-bottom:24px;letter-spacing:-.02em}
+    .hero h1 em{color:var(--lime);font-style:normal}
+    .hero h1 .line-small{font-size:36px;font-weight:700;display:block;color:rgba(255,255,255,.7);letter-spacing:0}
+    .hero-sub{font-size:18px;color:rgba(255,255,255,.72);line-height:1.75;margin-bottom:36px;max-width:520px}
+    .hero-trust{display:flex;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+    .trust-item{display:flex;flex-direction:column}
+    .trust-num{font-size:28px;font-weight:900;color:var(--white)}
+    .trust-num span{color:var(--lime)}
+    .trust-label{font-size:12px;color:rgba(255,255,255,.5);font-weight:500;margin-top:1px}
+    .hero-scroll{display:flex;align-items:center;gap:10px;font-size:13px;color:rgba(255,255,255,.35);margin-top:36px}
+    .hero-scroll-line{width:40px;height:1px;background:rgba(255,255,255,.2)}
 
-    .hero-card {
-      background: rgba(255,255,255,0.06); border: 1px solid rgba(142,239,58,0.2);
-      border-radius: 16px; padding: 32px;
-    }
-    .hero-card-label { font-size: 12px; font-weight: 600; color: var(--lime); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
-    .hero-stat { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-    .hero-stat:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-    .hero-stat-num { font-size: 36px; font-weight: 800; color: var(--white); }
-    .hero-stat-num span { color: var(--lime); }
-    .hero-stat-label { font-size: 14px; color: rgba(255,255,255,0.6); margin-top: 4px; }
+    /* Hero form card */
+    .hero-card{background:rgba(255,255,255,.06);backdrop-filter:blur(20px);border:1px solid rgba(142,239,58,.15);border-radius:20px;padding:36px;position:relative;overflow:hidden}
+    .hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--green-mid),var(--lime))}
+    .hero-card-title{font-size:13px;font-weight:700;color:var(--lime);letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px}
+    .hero-card-headline{font-size:22px;font-weight:800;color:var(--white);line-height:1.3;margin-bottom:8px}
+    .hero-card-sub{font-size:14px;color:rgba(255,255,255,.5);margin-bottom:24px;line-height:1.5}
+    .form-field{margin-bottom:14px}
+    .form-field input{width:100%;padding:14px 18px;font-family:var(--font);font-size:15px;border:1px solid rgba(255,255,255,.12);border-radius:var(--r);background:rgba(255,255,255,.07);color:var(--white);outline:none;transition:border-color .2s,background .2s}
+    .form-field input::placeholder{color:rgba(255,255,255,.32)}
+    .form-field input:focus{border-color:var(--lime);background:rgba(255,255,255,.1)}
+    .form-submit{width:100%;padding:16px;font-family:var(--font);font-size:16px;font-weight:800;background:linear-gradient(135deg,var(--lime),#5ecb1a);color:var(--green-dark);border:none;border-radius:var(--r);cursor:pointer;letter-spacing:.02em;transition:opacity .2s;margin-top:4px}
+    .form-submit:hover{opacity:.9}
+    .form-disclaimer{font-size:11px;color:rgba(255,255,255,.32);margin-top:12px;line-height:1.5;text-align:center}
+    .urgency-bar{background:rgba(142,239,58,.08);border:1px solid rgba(142,239,58,.18);border-radius:8px;padding:10px 14px;margin-bottom:20px;display:flex;align-items:center;gap:8px;font-size:12px;color:var(--lime);font-weight:600}
+    .urgency-dot{width:8px;height:8px;border-radius:50%;background:var(--lime);flex-shrink:0;animation:pulse 1.5s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
 
-    /* STATS STRIP */
-    .stats-strip { background: var(--green-mid); padding: 48px 40px; }
-    .stats-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    .stat-item { text-align: center; }
-    .stat-num { font-size: 42px; font-weight: 800; color: var(--white); }
-    .stat-label { font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 6px; }
+    /* ─── TICKER ─── */
+    .ticker{background:var(--green-mid);padding:14px 0;overflow:hidden;white-space:nowrap}
+    .ticker-track{display:inline-flex;animation:ticker 35s linear infinite}
+    .ticker-item{display:inline-flex;align-items:center;gap:10px;padding:0 32px;font-size:13px;font-weight:600;color:rgba(255,255,255,.85)}
+    .ticker-item::after{content:'·';color:rgba(255,255,255,.3);margin-left:20px}
+    @keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-    /* UNIQUE VALUE — land-specific section */
-    .dual-income { background: var(--grey-100); padding: 96px 40px; }
-    .dual-inner { max-width: var(--container); margin: 0 auto; }
-    .dual-tag { font-size: 13px; font-weight: 600; color: var(--green-mid); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
-    .dual-inner h2 { font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
-    .dual-inner h2 em { color: var(--green-mid); font-style: normal; }
-    .dual-inner .lead { font-size: 18px; color: var(--slate); max-width: 620px; line-height: 1.7; margin-bottom: 56px; }
-    .dual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-    .dual-card {
-      border-radius: 16px; padding: 36px;
-      border: 1px solid var(--grey-200);
-    }
-    .dual-card--crop { background: var(--white); }
-    .dual-card--env { background: var(--green-deep); color: var(--white); border-color: transparent; }
-    .dual-card-icon {
-      width: 56px; height: 56px; border-radius: 14px;
-      display: flex; align-items: center; justify-content: center; margin-bottom: 24px;
-    }
-    .dual-card--crop .dual-card-icon { background: rgba(30,92,41,0.08); }
-    .dual-card--env .dual-card-icon { background: rgba(142,239,58,0.12); }
-    .dual-card-icon svg { width: 26px; height: 26px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .dual-card--crop .dual-card-icon svg { stroke: var(--green-mid); }
-    .dual-card--env .dual-card-icon svg { stroke: var(--lime); }
-    .dual-card h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
-    .dual-card--crop h3 { color: var(--navy); }
-    .dual-card--env h3 { color: var(--lime); }
-    .dual-card p { font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
-    .dual-card--env p { color: rgba(255,255,255,0.75); }
-    .dual-card-list { list-style: none; }
-    .dual-card-list li { font-size: 14px; line-height: 1.6; padding: 8px 0; border-bottom: 1px solid; display: flex; gap: 10px; align-items: flex-start; }
-    .dual-card--crop .dual-card-list li { color: var(--slate); border-color: var(--grey-200); }
-    .dual-card--env .dual-card-list li { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.08); }
-    .dual-card-list li:last-child { border-bottom: none; }
-    .dual-card-list li::before { content: '↗'; font-size: 13px; margin-top: 1px; flex-shrink: 0; }
-    .dual-card--crop .dual-card-list li::before { color: var(--green-mid); }
-    .dual-card--env .dual-card-list li::before { color: var(--lime); }
+    /* ─── PROOF ─── */
+    .proof{background:var(--green-dark);padding:100px 40px}
+    .proof-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .proof-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
+    .proof-h2{font-size:44px;font-weight:900;color:var(--white);line-height:1.1;letter-spacing:-.02em;margin-bottom:20px}
+    .proof-h2 em{color:var(--lime);font-style:normal}
+    .proof-lead{font-size:17px;color:rgba(255,255,255,.6);line-height:1.8;margin-bottom:36px}
+    .proof-exchange{display:inline-flex;align-items:center;gap:12px;background:rgba(142,239,58,.08);border:1px solid rgba(142,239,58,.18);border-radius:10px;padding:12px 20px;margin-bottom:36px}
+    .proof-exchange-icon{font-size:22px}
+    .proof-exchange-text{font-size:14px;color:rgba(255,255,255,.85);font-weight:600;line-height:1.3}
+    .proof-exchange-text span{display:block;font-size:12px;color:rgba(255,255,255,.4);font-weight:400}
+    .proof-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .proof-stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:var(--r);padding:24px}
+    .proof-stat-num{font-size:38px;font-weight:900;color:var(--white);line-height:1}
+    .proof-stat-num span{color:var(--lime)}
+    .proof-stat-label{font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;font-weight:500}
+    .proof-timeline{position:relative;padding-left:28px}
+    .proof-timeline::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(to bottom,var(--green-light),var(--lime))}
+    .timeline-item{position:relative;margin-bottom:32px}
+    .timeline-item::before{content:'';position:absolute;left:-28px;top:6px;width:14px;height:14px;border-radius:50%;border:2px solid var(--green-light);background:var(--green-dark)}
+    .timeline-year{font-size:12px;font-weight:700;color:var(--lime);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px}
+    .timeline-text{font-size:15px;color:rgba(255,255,255,.7);line-height:1.5}
+    .timeline-text strong{color:var(--white)}
 
-    /* SECTION */
-    .section { padding: 96px 40px; }
-    .section-inner { max-width: var(--container); margin: 0 auto; }
-    .section-tag { font-size: 13px; font-weight: 600; color: var(--green-mid); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
-    .section h2 { font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
-    .section h2 em { color: var(--green-mid); font-style: normal; }
-    .section-lead { font-size: 18px; color: var(--slate); max-width: 600px; line-height: 1.7; margin-bottom: 56px; }
-    .section--dark { background: var(--green-deep); }
-    .section--dark .section-tag { color: var(--lime); }
-    .section--dark h2 { color: var(--white); }
-    .section--dark .section-lead { color: rgba(255,255,255,0.7); }
+    /* ─── DUAL INCOME ─── */
+    .dual{padding:100px 40px;background:var(--grey-100)}
+    .dual-inner{max-width:var(--max);margin:0 auto}
+    .s-tag{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--green-mid);margin-bottom:14px}
+    .s-h2{font-size:42px;font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:18px}
+    .s-h2 em{color:var(--green-mid);font-style:normal}
+    .s-lead{font-size:18px;color:var(--slate);max-width:600px;line-height:1.75;margin-bottom:56px}
+    .dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+    .dual-card{border-radius:18px;padding:36px;position:relative;overflow:hidden}
+    .dual-card--crop{background:var(--white);border:1px solid var(--grey-200)}
+    .dual-card--env{background:var(--green-dark);border:none}
+    .dual-card-icon{width:56px;height:56px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+    .dual-card--crop .dual-card-icon{background:rgba(30,92,41,.08)}
+    .dual-card--env .dual-card-icon{background:rgba(142,239,58,.1)}
+    .dual-card-icon svg{width:26px;height:26px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .dual-card--crop .dual-card-icon svg{stroke:var(--green-mid)}
+    .dual-card--env .dual-card-icon svg{stroke:var(--lime)}
+    .dual-card h3{font-size:22px;font-weight:900;margin-bottom:12px}
+    .dual-card--crop h3{color:var(--navy)}
+    .dual-card--env h3{color:var(--lime)}
+    .dual-card p{font-size:15px;line-height:1.7;margin-bottom:20px}
+    .dual-card--env p{color:rgba(255,255,255,.65)}
+    .dual-card-list{list-style:none}
+    .dual-card-list li{font-size:14px;line-height:1.6;padding:8px 0;border-bottom:1px solid;display:flex;gap:10px;align-items:flex-start}
+    .dual-card--crop .dual-card-list li{color:var(--slate);border-color:var(--grey-200)}
+    .dual-card--env .dual-card-list li{color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.07)}
+    .dual-card-list li:last-child{border-bottom:none}
+    .dual-card-list li::before{content:'↗';font-size:13px;margin-top:1px;flex-shrink:0;font-weight:700}
+    .dual-card--crop .dual-card-list li::before{color:var(--green-mid)}
+    .dual-card--env .dual-card-list li::before{color:var(--lime)}
 
-    /* BENEFITS GRID */
-    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-    .benefit-card {
-      background: var(--white); border: 1px solid var(--grey-200);
-      border-radius: var(--radius); padding: 32px 28px;
-      transition: box-shadow .2s;
-    }
-    .benefit-card:hover { box-shadow: 0 8px 32px rgba(30,92,41,0.1); }
-    .benefit-icon {
-      width: 52px; height: 52px; background: rgba(30,92,41,0.08);
-      border-radius: 12px; display: flex; align-items: center; justify-content: center;
-      margin-bottom: 20px;
-    }
-    .benefit-icon svg { width: 24px; height: 24px; stroke: var(--green-mid); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-    .benefit-card h3 { font-size: 19px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
-    .benefit-card p { font-size: 15px; color: var(--slate); line-height: 1.65; }
+    /* ─── BENEFITS ─── */
+    .section{padding:100px 40px}
+    .s-inner{max-width:var(--max);margin:0 auto}
+    .benefits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+    .benefit-card{border-radius:16px;padding:32px 28px;border:1px solid var(--grey-200);background:var(--white);transition:transform .25s,box-shadow .25s;cursor:default}
+    .benefit-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(30,92,41,.1)}
+    .benefit-icon{width:52px;height:52px;border-radius:12px;background:rgba(30,92,41,.07);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+    .benefit-icon svg{width:24px;height:24px;stroke:var(--green-mid);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+    .benefit-card h3{font-size:19px;font-weight:800;color:var(--navy);margin-bottom:10px}
+    .benefit-card p{font-size:15px;color:var(--slate);line-height:1.65}
 
-    /* HOW IT WORKS */
-    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    .step { text-align: center; padding: 24px 16px; }
-    .step-num {
-      width: 52px; height: 52px; border-radius: 50%;
-      background: var(--green-mid); color: var(--white);
-      font-size: 20px; font-weight: 800; display: flex;
-      align-items: center; justify-content: center; margin: 0 auto 20px;
-    }
-    .step h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
-    .step p { font-size: 14px; color: var(--slate); line-height: 1.6; }
+    /* ─── US EXPANSION ─── */
+    .us-banner{background:linear-gradient(135deg,#0d2b14 0%,#133a1b 60%,#1e5c29 100%);padding:80px 40px;position:relative;overflow:hidden}
+    .us-banner::before{content:'🇺🇸';position:absolute;right:-20px;top:-20px;font-size:220px;opacity:.05;line-height:1}
+    .us-inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:60px;flex-wrap:wrap}
+    .us-text h2{font-size:38px;font-weight:900;color:var(--white);margin-bottom:14px;letter-spacing:-.02em}
+    .us-text h2 em{color:var(--lime);font-style:normal}
+    .us-text p{font-size:17px;color:rgba(255,255,255,.6);max-width:540px;line-height:1.75}
+    .us-cta-block{flex-shrink:0;text-align:center}
+    .us-cta-pill{display:flex;align-items:center;gap:8px;background:rgba(142,239,58,.1);border:1px solid rgba(142,239,58,.2);border-radius:30px;padding:8px 18px;font-size:13px;color:var(--lime);font-weight:600;margin-bottom:16px;justify-content:center}
+    .us-btn{display:inline-block;background:linear-gradient(135deg,var(--lime),#5ecb1a);color:var(--green-dark);font-family:var(--font);font-size:16px;font-weight:800;padding:16px 36px;border-radius:var(--r);text-decoration:none;transition:opacity .2s}
+    .us-btn:hover{opacity:.88}
+    .us-seats{font-size:12px;color:rgba(255,255,255,.35);margin-top:10px}
 
-    /* RETURNS */
-    .returns-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-    .returns-list { list-style: none; }
-    .returns-list li {
-      display: flex; align-items: flex-start; gap: 16px;
-      padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .returns-list li:last-child { border-bottom: none; }
-    .returns-check {
-      width: 28px; height: 28px; background: rgba(142,239,58,0.15);
-      border-radius: 50%; display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0; margin-top: 2px;
-    }
-    .returns-check svg { width: 14px; height: 14px; stroke: var(--lime); fill: none; stroke-width: 2.5; }
-    .returns-list h4 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
-    .returns-list p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.55; }
-    .returns-card {
-      background: rgba(142,239,58,0.08); border: 1px solid rgba(142,239,58,0.2);
-      border-radius: 16px; padding: 36px; text-align: center;
-    }
-    .returns-card-num { font-size: 72px; font-weight: 900; color: var(--lime); line-height: 1; }
-    .returns-card-label { font-size: 16px; color: rgba(255,255,255,0.85); margin-top: 8px; margin-bottom: 24px; }
-    .returns-card-detail { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.6; }
+    /* ─── HOW ─── */
+    .how-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+    .how-steps::before{content:'';position:absolute;top:28px;left:calc(12.5% + 28px);right:calc(12.5% + 28px);height:2px;background:linear-gradient(90deg,var(--green-mid),var(--lime));z-index:0}
+    .how-step{text-align:center;padding:0 16px;position:relative;z-index:1}
+    .step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--green-mid),var(--green-light));color:var(--white);font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 4px 20px rgba(30,92,41,.4)}
+    .how-step h3{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px}
+    .how-step p{font-size:14px;color:var(--slate);line-height:1.6}
 
-    /* QUOTE */
-    .quote-section { background: var(--grey-100); padding: 80px 40px; }
-    .quote-inner { max-width: 800px; margin: 0 auto; text-align: center; }
-    blockquote { font-size: 24px; font-weight: 600; color: var(--navy); line-height: 1.5; margin-bottom: 24px; font-style: italic; }
-    blockquote::before { content: '\201C'; color: var(--green-mid); font-size: 48px; line-height: 0; vertical-align: -18px; margin-right: 4px; }
-    cite { font-size: 15px; font-weight: 600; color: var(--green-mid); font-style: normal; }
+    /* ─── WAITLIST ─── */
+    .waitlist{background:linear-gradient(135deg,var(--green-mid) 0%,#155723 100%);padding:100px 40px;position:relative;overflow:hidden}
+    .waitlist::before{content:'';position:absolute;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:rgba(255,255,255,.03)}
+    .waitlist::after{content:'';position:absolute;bottom:-150px;left:-100px;width:400px;height:400px;border-radius:50%;background:rgba(142,239,58,.04)}
+    .waitlist-inner{max-width:680px;margin:0 auto;text-align:center;position:relative;z-index:1}
+    .waitlist-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:30px;padding:7px 16px;font-size:12px;font-weight:700;color:rgba(255,255,255,.8);letter-spacing:.06em;text-transform:uppercase;margin-bottom:24px}
+    .waitlist h2{font-size:46px;font-weight:900;color:var(--white);letter-spacing:-.02em;line-height:1.1;margin-bottom:18px}
+    .waitlist h2 em{color:var(--lime);font-style:normal}
+    .waitlist p{font-size:18px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:40px}
+    .wl-form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
+    .wl-input{padding:16px 20px;font-family:var(--font);font-size:15px;border:1px solid rgba(255,255,255,.15);border-radius:var(--r);background:rgba(255,255,255,.08);color:var(--white);outline:none;transition:border-color .2s}
+    .wl-input::placeholder{color:rgba(255,255,255,.32)}
+    .wl-input:focus{border-color:var(--lime)}
+    .wl-submit{width:100%;padding:18px;font-family:var(--font);font-size:18px;font-weight:900;background:linear-gradient(135deg,var(--lime),#5ecb1a);color:var(--green-dark);border:none;border-radius:var(--r);cursor:pointer;letter-spacing:.02em;transition:opacity .2s;box-shadow:0 8px 32px rgba(142,239,58,.3)}
+    .wl-submit:hover{opacity:.9}
+    .wl-disclaimer{font-size:12px;color:rgba(255,255,255,.38);margin-top:16px;line-height:1.5}
+    .wl-social-proof{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:28px}
+    .avatar-stack{display:flex}
+    .avatar-fallback{width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.18);margin-left:-8px;font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center}
+    .avatar-fallback:first-child{margin-left:0}
+    .wl-social-text{font-size:13px;color:rgba(255,255,255,.55);font-weight:500}
+    .wl-social-text strong{color:rgba(255,255,255,.9)}
 
-    /* FORM SECTION */
-    .form-section { background: var(--green-mid); padding: 96px 40px; }
-    .form-inner { max-width: 640px; margin: 0 auto; text-align: center; }
-    .form-inner h2 { font-size: 38px; font-weight: 800; color: var(--white); margin-bottom: 16px; }
-    .form-inner p { font-size: 17px; color: rgba(255,255,255,0.8); margin-bottom: 40px; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
-    .form-input {
-      width: 100%; padding: 14px 20px; font-family: var(--font); font-size: 15px;
-      border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius);
-      background: rgba(255,255,255,0.1); color: var(--white); outline: none;
-    }
-    .form-input::placeholder { color: rgba(255,255,255,0.45); }
-    .form-input:focus { border-color: var(--lime); background: rgba(255,255,255,0.15); }
-    .form-select {
-      width: 100%; padding: 14px 20px; font-family: var(--font); font-size: 15px;
-      border: 1px solid rgba(255,255,255,0.2); border-radius: var(--radius);
-      background: rgba(255,255,255,0.1); color: var(--white);
-      outline: none; appearance: none; cursor: pointer; margin-bottom: 16px;
-    }
-    .form-select option { color: var(--navy); background: white; }
-    .form-submit {
-      width: 100%; padding: 16px; font-family: var(--font); font-size: 17px; font-weight: 700;
-      background: var(--lime); color: var(--green-deep); border: none; border-radius: var(--radius);
-      cursor: pointer; margin-top: 8px;
-    }
-    .form-submit:hover { background: #75d12c; }
-    .form-disclaimer { font-size: 12px; color: rgba(255,255,255,0.45); margin-top: 16px; line-height: 1.5; }
+    /* ─── FOOTER ─── */
+    footer{background:var(--green-dark);padding:56px 40px 36px}
+    .footer-inner{max-width:var(--max);margin:0 auto}
+    .footer-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;flex-wrap:wrap;gap:24px}
+    .footer-brand h3{font-size:16px;font-weight:900;color:var(--white);margin-bottom:6px}
+    .footer-brand p{font-size:13px;color:rgba(255,255,255,.38);line-height:1.6;max-width:280px}
+    .footer-links{display:flex;gap:40px;flex-wrap:wrap}
+    .footer-col h4{font-size:12px;font-weight:700;color:rgba(255,255,255,.35);letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+    .footer-col a{display:block;font-size:14px;color:rgba(255,255,255,.5);text-decoration:none;margin-bottom:8px;transition:color .2s}
+    .footer-col a:hover{color:var(--lime)}
+    .footer-divider{border:none;border-top:1px solid rgba(255,255,255,.06);margin-bottom:24px}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+    .footer-copy{font-size:12px;color:rgba(255,255,255,.28)}
+    .footer-legal{display:flex;gap:20px}
+    .footer-legal a{font-size:12px;color:rgba(255,255,255,.28);text-decoration:none}
+    .footer-legal a:hover{color:rgba(255,255,255,.6)}
 
-    /* FOOTER */
-    footer { background: var(--green-deep); padding: 56px 40px 40px; }
-    .footer-inner { max-width: var(--container); margin: 0 auto; }
-    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
-    .footer-logo { font-size: 16px; font-weight: 800; color: var(--white); }
-    .footer-logo span { color: var(--lime); }
-    .footer-links { display: flex; gap: 32px; }
-    .footer-links a { font-size: 14px; color: rgba(255,255,255,0.55); text-decoration: none; }
-    .footer-links a:hover { color: var(--lime); }
-    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 24px; }
-    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
-    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.35); }
-    .footer-legal { display: flex; gap: 20px; }
-    .footer-legal a { font-size: 13px; color: rgba(255,255,255,0.35); text-decoration: none; }
-    .footer-legal a:hover { color: rgba(255,255,255,0.65); }
+    /* ─── ANIMATIONS ─── */
+    .fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s ease,transform .7s ease}
+    .fade-up.visible{opacity:1;transform:translateY(0)}
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; }
-      .hero { padding: 64px 24px 56px; }
-      .hero h1 { font-size: 36px; }
-      .benefits-grid { grid-template-columns: 1fr; }
-      .steps { grid-template-columns: 1fr 1fr; }
-      .returns-grid { grid-template-columns: 1fr; }
-      .stats-inner { grid-template-columns: 1fr 1fr; }
-      .dual-grid { grid-template-columns: 1fr; }
-      .section { padding: 64px 24px; }
-      .dual-income { padding: 64px 24px; }
-      .form-grid { grid-template-columns: 1fr; }
-      .footer-top { flex-direction: column; gap: 24px; }
-      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    @media(max-width:960px){
+      .hero-inner{grid-template-columns:1fr;padding:110px 24px 60px}
+      .hero h1{font-size:36px}
+      .proof-inner{grid-template-columns:1fr;gap:48px}
+      .dual-grid{grid-template-columns:1fr}
+      .benefits-grid{grid-template-columns:1fr}
+      .how-steps{grid-template-columns:1fr 1fr;gap:32px}
+      .how-steps::before{display:none}
+      .us-inner{flex-direction:column}
+      .section,.dual,.proof,.waitlist{padding:64px 24px}
+      .waitlist h2{font-size:32px}
+      .wl-form{grid-template-columns:1fr}
+      .nav-listed{display:none}
+      .nav-inner{padding:0 20px}
     }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav>
+<nav id="nav">
   <div class="nav-inner">
-    <a href="https://firstmoverfund.com" class="nav-logo">
-      <div class="nav-logo-mark">
-        <svg viewBox="0 0 20 20"><path d="M2 15 C5 10 8 6 10 4 C12 6 15 10 18 15 H2Z M6 15 V19 H14 V15"/></svg>
-      </div>
-      <div class="nav-logo-text">First Mover Fund <span>Land Investment</span></div>
-    </a>
-    <a href="#invest" class="nav-cta">Invest today</a>
+    <a href="https://firstmoverfund.com" class="nav-wordmark">First Mover Fund <span>Listed · Euronext · Est. 1957</span></a>
+    <div class="nav-listed">Listed on Euronext Amsterdam</div>
+    <a href="#waitlist" class="nav-cta">Join Waitlist</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <img class="hero-bg-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_184441_7be98a91-e70c-426e-b43a-af9f0bf0190b.png" alt="Regenerative farmland aerial view" />
+  </div>
+  <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div>
-      <div class="hero-tag">Land &amp; Regenerative Agriculture</div>
-      <h1>You're standing on the <em>most undervalued asset</em> on earth</h1>
-      <p>Invest in productive agricultural land that generates dual income — from crop yields and environmental credits. Access an asset class that outperforms inflation, permanently.</p>
-      <div class="hero-btns">
-        <a href="#invest" class="btn-primary">Become a First Mover</a>
-        <a href="#how-it-works" class="btn-secondary">How it works</a>
+      <div class="hero-eyebrow">
+        <span class="badge badge-exchange">📈 Euronext Listed</span>
+        <span class="badge badge-year">🏛️ Since 1957</span>
+        <span class="badge badge-us">🌱 Now entering the U.S.</span>
+      </div>
+      <h1>
+        <span class="line-small">U.S. Farmland.</span>
+        Own the land that <em>feeds the world.</em>
+      </h1>
+      <p class="hero-sub">A Dutch-listed firm with 67 years of real asset expertise is bringing regenerative U.S. farmland to private investors for the first time. Dual income. Permanent scarcity. First mover advantage.</p>
+      <div class="hero-trust">
+        <div class="trust-item">
+          <div class="trust-num">67<span>+</span></div>
+          <div class="trust-label">Years in the market</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">€2.4<span>B+</span></div>
+          <div class="trust-label">Assets under management</div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">850<span>k+</span></div>
+          <div class="trust-label">Investors across Europe</div>
+        </div>
+      </div>
+      <div class="hero-scroll"><div class="hero-scroll-line"></div>Scroll to learn more</div>
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="hero-card fade-up visible">
+      <div class="urgency-bar"><div class="urgency-dot"></div>Waitlist filling up — limited U.S. spots</div>
+      <div class="hero-card-title">First Mover Access</div>
+      <div class="hero-card-headline">Be first in line when U.S. farmland opens up.</div>
+      <div class="hero-card-sub">No commitment. Just your details — we'll reach out the moment the opportunity goes live.</div>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-field"><input type="text" placeholder="Your full name" required /></div>
+        <div class="form-field"><input type="email" placeholder="Email address" required /></div>
+        <div class="form-field"><input type="tel" placeholder="Phone number" required /></div>
+        <button type="submit" class="form-submit">Reserve My Spot →</button>
+      </form>
+      <p class="form-disclaimer">No commitment. No payment. Priority access when we launch. Unsubscribe anytime.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Listed on Euronext Amsterdam</span>
+    <span class="ticker-item">Founded 1957</span>
+    <span class="ticker-item">850,000+ European investors</span>
+    <span class="ticker-item">€2.4B+ assets under management</span>
+    <span class="ticker-item">67 years of real asset expertise</span>
+    <span class="ticker-item">Now entering the United States</span>
+    <span class="ticker-item">Dual income — crops + carbon credits</span>
+    <span class="ticker-item">3,200+ hectares already managed</span>
+    <span class="ticker-item">Waitlist now open — spots limited</span>
+    <span class="ticker-item">Listed on Euronext Amsterdam</span>
+    <span class="ticker-item">Founded 1957</span>
+    <span class="ticker-item">850,000+ European investors</span>
+    <span class="ticker-item">€2.4B+ assets under management</span>
+    <span class="ticker-item">67 years of real asset expertise</span>
+    <span class="ticker-item">Now entering the United States</span>
+    <span class="ticker-item">Dual income — crops + carbon credits</span>
+    <span class="ticker-item">3,200+ hectares already managed</span>
+    <span class="ticker-item">Waitlist now open — spots limited</span>
+  </div>
+</div>
+
+<!-- PROOF -->
+<section class="proof" id="about">
+  <div class="proof-inner">
+    <div class="fade-up">
+      <div class="proof-tag">Who we are</div>
+      <h2 class="proof-h2">A publicly listed firm with <em>67 years</em> of land expertise</h2>
+      <p class="proof-lead">First Mover Fund is listed on Euronext Amsterdam — Europe's major regulated stock exchange. We have managed real asset investments since 1957, delivering consistent returns to hundreds of thousands of investors through bull markets, recessions, and everything in between.</p>
+      <div class="proof-exchange">
+        <div class="proof-exchange-icon">📈</div>
+        <div class="proof-exchange-text">
+          Listed on Euronext Amsterdam
+          <span>European regulated exchange · Annual reports public · Independently audited</span>
+        </div>
+      </div>
+      <div class="proof-stats">
+        <div class="proof-stat">
+          <div class="proof-stat-num">1957<span></span></div>
+          <div class="proof-stat-label">Year established</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-num">850<span>k+</span></div>
+          <div class="proof-stat-label">Investors served</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-num">3,200<span>+</span></div>
+          <div class="proof-stat-label">Hectares under management</div>
+        </div>
+        <div class="proof-stat">
+          <div class="proof-stat-num">100<span>%</span></div>
+          <div class="proof-stat-label">Distribution track record</div>
+        </div>
       </div>
     </div>
-    <div class="hero-card">
-      <div class="hero-card-label">Investment highlights</div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">8<span>%</span></div>
-        <div class="hero-stat-label">Annual cash flow, distributed quarterly</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">12<span>–18%</span></div>
-        <div class="hero-stat-label">Targeted total annual return</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">5<span>–7 yr</span></div>
-        <div class="hero-stat-label">Investment horizon with defined exit</div>
-      </div>
-      <div class="hero-stat">
-        <div class="hero-stat-num">€<span>10k</span></div>
-        <div class="hero-stat-label">Minimum entry — private investors welcome</div>
+    <div class="fade-up">
+      <div class="proof-tag" style="color:rgba(255,255,255,.4)">Our journey</div>
+      <div class="proof-timeline">
+        <div class="timeline-item">
+          <div class="timeline-year">1957</div>
+          <div class="timeline-text"><strong>Founded in the Netherlands</strong> — launched as a land and real asset investment vehicle for European private investors.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">1980s – 2000s</div>
+          <div class="timeline-text"><strong>Euronext listing secured</strong> — opened access to hundreds of thousands of institutional and retail investors.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2018</div>
+          <div class="timeline-text"><strong>Regenerative pivot</strong> — pioneered dual-income farmland strategy combining crop yields with environmental credit generation.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-year">2025 →</div>
+          <div class="timeline-text"><strong>U.S. expansion begins</strong> — bringing European-grade investment rigour to American farmland for the first time.</div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS STRIP -->
-<div class="stats-strip">
-  <div class="stats-inner">
-    <div class="stat-item">
-      <div class="stat-num">3,200+</div>
-      <div class="stat-label">Hectares under management</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">4</div>
-      <div class="stat-label">Countries with active projects</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">100%</div>
-      <div class="stat-label">Regenerative farming practices</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-num">2x</div>
-      <div class="stat-label">Income streams per project</div>
-    </div>
-  </div>
-</div>
-
 <!-- DUAL INCOME -->
-<div class="dual-income" id="benefits">
+<div class="dual" id="income">
   <div class="dual-inner">
-    <div class="dual-tag">The land advantage</div>
-    <h2>Two income streams from <em>one investment</em></h2>
-    <p class="lead">Agricultural land is the only asset class that generates both traditional income and environmental value simultaneously — and both are growing.</p>
+    <div class="s-tag fade-up">The land advantage</div>
+    <h2 class="s-h2 fade-up">Two income streams from <em>one investment</em></h2>
+    <p class="s-lead fade-up">Agricultural land is the only asset class that generates both traditional cash income and environmental value simultaneously — and both are growing fast.</p>
     <div class="dual-grid">
-      <div class="dual-card dual-card--crop">
+      <div class="dual-card dual-card--crop fade-up">
         <div class="dual-card-icon">
           <svg viewBox="0 0 24 24"><path d="M12 22V12M12 12C12 7 7 2 2 2C2 7 7 12 12 12ZM12 12C12 7 17 2 22 2C22 7 17 12 12 12Z"/></svg>
         </div>
         <h3>Agricultural yield</h3>
-        <p>Our partner farms produce high-value crops — coffee, cocoa, specialty grains — generating consistent rental income that flows directly to investors quarterly.</p>
+        <p>Our partner farms produce high-value crops — coffee, cocoa, specialty grains — generating rental income that flows directly to investors every quarter.</p>
         <ul class="dual-card-list">
-          <li>Long-term lease agreements with proven farmers</li>
+          <li>Long-term leases with proven farm operators</li>
           <li>Crop insurance and diversified commodity exposure</li>
-          <li>8% annual cash yield paid quarterly</li>
-          <li>Rising commodity prices protect purchasing power</li>
+          <li>8% annual cash yield, paid quarterly</li>
+          <li>Rising food prices protect purchasing power</li>
         </ul>
       </div>
-      <div class="dual-card dual-card--env">
+      <div class="dual-card dual-card--env fade-up">
         <div class="dual-card-icon">
           <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
         </div>
         <h3>Environmental credits</h3>
-        <p>Regenerative land management generates carbon credits, biodiversity credits, and water rights — a rapidly growing market that adds a second income layer on top of crop yields.</p>
+        <p>Regenerative land management generates carbon credits, biodiversity units, and water rights — a booming market that adds a second income layer on top of crop income.</p>
         <ul class="dual-card-list">
-          <li>Carbon sequestration certified credits</li>
+          <li>Carbon sequestration — certified credits sold annually</li>
           <li>Biodiversity Net Gain (BNG) units</li>
-          <li>Voluntary carbon market sales</li>
-          <li>Growing regulatory demand driving credit prices up</li>
+          <li>Voluntary carbon market demand surging</li>
+          <li>Regulatory tailwinds driving credit prices higher</li>
         </ul>
       </div>
     </div>
   </div>
 </div>
 
-<!-- BENEFITS GRID -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-tag">Why land with FMF</div>
-    <h2>The world's oldest asset class, <em>reinvented</em></h2>
-    <p class="section-lead">Land doesn't depreciate, can't be manufactured, and has fed civilisations for millennia. We've made it investable for everyone.</p>
+<!-- BENEFITS -->
+<section class="section" id="benefits">
+  <div class="s-inner">
+    <div class="s-tag fade-up">Why land with FMF</div>
+    <h2 class="s-h2 fade-up">The world's oldest asset class, <em>reinvented</em></h2>
+    <p class="s-lead fade-up">Land doesn't depreciate, can't be manufactured, and has fed civilisations for millennia. We've made it investable for everyone — starting with the U.S. market.</p>
     <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
         <h3>Finite supply, infinite demand</h3>
-        <p>The world's farmable land shrinks every year through urbanisation and degradation. Meanwhile global food demand rises. Supply constraints drive land value permanently upward.</p>
+        <p>U.S. farmland acreage is shrinking every year through development and degradation. Meanwhile global food demand rises relentlessly — making supply constraints permanent.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
-        <h3>Proven inflation hedge</h3>
-        <p>Over 50 years, farmland has outpaced inflation by an average of 4–6% annually. When the cost of living rises, so does the value of the land producing it.</p>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <h3>50-year inflation hedge</h3>
+        <p>U.S. farmland has outpaced inflation by an average of 4–6% annually over 50 years. When the cost of living rises, so does the land that produces it.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
-        <h3>Regenerative upside</h3>
-        <p>Land we farm regeneratively becomes more fertile, more biodiverse, and more valuable over time. You don't just hold an asset — you improve it while you hold it.</p>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <h3>Regenerative value creation</h3>
+        <p>Land we farm regeneratively becomes more fertile and more biodiverse over time. You don't just hold an asset — you actively improve it while earning from it.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>Fully managed</h3>
-        <p>First Mover Fund handles all farm operations, environmental certifications, credit sales, and compliance. You own the land economics; we manage the land.</p>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Fully managed — zero admin</h3>
+        <p>We handle all farm operations, environmental certifications, credit sales, tenant management, and compliance. You own the economics; we run the land.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-        </div>
-        <h3>ESG-aligned returns</h3>
-        <p>Every project actively restores ecosystems, sequesters carbon, and improves biodiversity. Your investment generates financial returns and measurable environmental impact.</p>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>ESG returns — real impact</h3>
+        <p>Every project sequesters carbon, restores biodiversity, and improves water quality. Your investment generates financial returns and measurable environmental impact.</p>
       </div>
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-        </div>
-        <h3>Real-time reporting</h3>
-        <p>Track your investment performance, farm outputs, carbon credit generation, and quarterly distributions through your investor dashboard. Full transparency, always.</p>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <h3>Transparent reporting</h3>
+        <p>As a listed company, our financials are public. Your investor dashboard shows farm outputs, credit generation, and quarterly distributions in real time.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
-<section class="section" style="background:var(--grey-100)" id="how-it-works">
-  <div class="section-inner">
-    <div class="section-tag">Process</div>
-    <h2>From sign-up to first harvest income in <em>4 steps</em></h2>
-    <p class="section-lead">We've removed every barrier between you and productive farmland ownership.</p>
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>Register as an investor</h3>
-        <p>Create your account online in minutes. Complete KYC and investor suitability — fully digital, no paperwork.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>Choose your land project</h3>
-        <p>Browse available farm projects with soil reports, location data, crop forecasts, and environmental credit projections.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>Invest from €10,000</h3>
-        <p>Sign your participation agreement digitally and fund your investment via bank transfer. No complex paperwork, no intermediaries.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">4</div>
-        <h3>Earn dual income</h3>
-        <p>Receive quarterly distributions from crop rental income. Environmental credits add bonus returns as they're sold on the market.</p>
-      </div>
+<!-- US EXPANSION -->
+<div class="us-banner">
+  <div class="us-inner">
+    <div class="us-text fade-up">
+      <h2>We expect this to <em>sell out within hours.</em></h2>
+      <p>Our last European farmland opportunity was 94% subscribed in 48 hours. The U.S. is a bigger market, the demand is higher, and the waitlist is already forming. Don't be the one who missed it.</p>
     </div>
-  </div>
-</section>
-
-<!-- RETURNS -->
-<section class="section section--dark" id="returns">
-  <div class="section-inner">
-    <div class="section-tag">Return structure</div>
-    <h2>Earn while the <em>land grows in value</em></h2>
-    <p class="section-lead">Land investments compound in three ways simultaneously. No other asset class does this.</p>
-    <div class="returns-grid">
-      <ul class="returns-list">
-        <li>
-          <div class="returns-check"><svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 3"/></svg></div>
-          <div>
-            <h4>Crop rental income</h4>
-            <p>8% annual yield from farmer lease agreements, distributed quarterly to your account.</p>
-          </div>
-        </li>
-        <li>
-          <div class="returns-check"><svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 3"/></svg></div>
-          <div>
-            <h4>Environmental credit sales</h4>
-            <p>Carbon and biodiversity credits sold annually, contributing additional returns above the base yield.</p>
-          </div>
-        </li>
-        <li>
-          <div class="returns-check"><svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 3"/></svg></div>
-          <div>
-            <h4>Land appreciation</h4>
-            <p>Farmland values have risen an average of 6–8% annually globally over the last decade. Realised at exit.</p>
-          </div>
-        </li>
-        <li>
-          <div class="returns-check"><svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 3"/></svg></div>
-          <div>
-            <h4>Soil improvement premium</h4>
-            <p>Regenerative farming improves soil quality, raising land productivity and market value above baseline appreciation.</p>
-          </div>
-        </li>
-      </ul>
-      <div class="returns-card">
-        <div class="returns-card-num">12–18%</div>
-        <div class="returns-card-label">Targeted annual total return</div>
-        <div class="returns-card-detail">8% base yield + environmental credit upside + 4–8% land appreciation. Projections based on comparable farmland data. Past returns do not guarantee future results.</div>
+    <div class="us-cta-block fade-up">
+      <div class="us-cta-pill">
+        <span style="width:8px;height:8px;border-radius:50%;background:var(--lime);flex-shrink:0"></span>
+        Waitlist now open
       </div>
+      <a href="#waitlist" class="us-btn">Secure My Spot Now →</a>
+      <p class="us-seats">No commitment · No payment · Cancel anytime</p>
     </div>
-  </div>
-</section>
-
-<!-- QUOTE -->
-<div class="quote-section">
-  <div class="quote-inner">
-    <blockquote>"Land restoration meets profitability — making each acre more productive and more valuable than ever before. This is not charity. This is the future of smart investing."</blockquote>
-    <cite>— Investment team, First Mover Fund</cite>
   </div>
 </div>
 
-<!-- FORM -->
-<section class="form-section" id="invest">
-  <div class="form-inner">
-    <h2>Be a First Mover in land investing</h2>
-    <p>Institutional investors have quietly bought farmland for decades. Now it's your turn. Register for priority access to our next land investment opportunity.</p>
-    <form onsubmit="handleSubmit(event)">
-      <div class="form-grid">
-        <input class="form-input" type="text" placeholder="First name" required />
-        <input class="form-input" type="text" placeholder="Last name" required />
+<!-- HOW IT WORKS -->
+<section class="section" style="background:var(--grey-100)" id="how">
+  <div class="s-inner">
+    <div class="s-tag fade-up" style="text-align:center">How it works</div>
+    <h2 class="s-h2 fade-up" style="text-align:center;max-width:600px;margin-left:auto;margin-right:auto">From waitlist to <em>first harvest income</em></h2>
+    <p class="s-lead fade-up" style="margin:0 auto 56px;text-align:center">Four simple steps — and step one takes less than 60 seconds.</p>
+    <div class="how-steps">
+      <div class="how-step fade-up">
+        <div class="step-num">1</div>
+        <h3>Join the waitlist</h3>
+        <p>Enter your name, email, and phone. That's it. No payment, no commitment, no paperwork.</p>
       </div>
-      <div class="form-grid">
-        <input class="form-input" type="email" placeholder="Email address" required />
-        <input class="form-input" type="tel" placeholder="Phone number" />
+      <div class="how-step fade-up">
+        <div class="step-num">2</div>
+        <h3>Get first access</h3>
+        <p>We notify waitlist members before the public. You see the full land project, financials, and soil reports first.</p>
       </div>
-      <select class="form-select">
-        <option value="" disabled selected>Investment amount</option>
-        <option>€10,000 – €25,000</option>
-        <option>€25,000 – €50,000</option>
-        <option>€50,000 – €100,000</option>
-        <option>€100,000+</option>
-      </select>
-      <button type="submit" class="form-submit">Request land investment information →</button>
+      <div class="how-step fade-up">
+        <div class="step-num">3</div>
+        <h3>Invest from $10,000</h3>
+        <p>Review the offering, sign digitally, and fund. Designed for private investors — no institutional minimums.</p>
+      </div>
+      <div class="how-step fade-up">
+        <div class="step-num">4</div>
+        <h3>Earn dual income</h3>
+        <p>8% quarterly crop income plus environmental credit sales. Track everything in your investor dashboard.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAITLIST -->
+<section class="waitlist" id="waitlist">
+  <div class="waitlist-inner">
+    <div class="waitlist-badge">🌱 Limited U.S. spots available</div>
+    <h2 class="fade-up">Be among the <em>very first</em> U.S. land investors.</h2>
+    <p class="fade-up">Join the waitlist today. No commitment, no payment. When we go live in the United States — and we expect to sell out fast — you will be among the first we call.</p>
+    <form onsubmit="handleSubmit(event)" class="fade-up">
+      <div class="wl-form">
+        <input class="wl-input" type="text" placeholder="Full name" required />
+        <input class="wl-input" type="email" placeholder="Email address" required />
+      </div>
+      <input class="wl-input" type="tel" placeholder="Phone number" required style="width:100%;margin-bottom:14px" />
+      <button type="submit" class="wl-submit">Yes — Reserve My First Mover Spot →</button>
     </form>
-    <p class="form-disclaimer">By submitting this form you agree to be contacted by First Mover Fund. This is not an offer to sell securities. Investment involves risk. Projected returns are not guaranteed.</p>
+    <p class="wl-disclaimer">No commitment. No payment. We'll contact you first when U.S. launch is confirmed. Unsubscribe at any time.</p>
+    <div class="wl-social-proof">
+      <div class="avatar-stack">
+        <div class="avatar-fallback" style="background:linear-gradient(135deg,#22c55e,#16a34a)">PV</div>
+        <div class="avatar-fallback" style="background:linear-gradient(135deg,#f59e0b,#d97706)">LM</div>
+        <div class="avatar-fallback" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">DK</div>
+        <div class="avatar-fallback" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed)">SR</div>
+      </div>
+      <div class="wl-social-text"><strong>1,204 people</strong> have already joined the land waitlist</div>
+    </div>
   </div>
 </section>
 
@@ -566,40 +529,63 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
-      <div class="footer-logo">First Mover <span>Fund</span></div>
-      <nav class="footer-links">
-        <a href="https://firstmoverfund.com">Main website</a>
-        <a href="https://firstmoverfund.com/how-it-works">How it works</a>
-        <a href="https://firstmoverfund.com/about-us">About us</a>
-        <a href="https://realestate.firstmoverfund.com">Real estate investing</a>
-        <a href="https://firstmoverfund.com/contact-us">Contact</a>
-      </nav>
+      <div class="footer-brand">
+        <h3>First Mover Fund</h3>
+        <p>A Dutch-listed real asset investment firm since 1957. Listed on Euronext Amsterdam. Regulated, audited, and built for private investors worldwide.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="https://firstmoverfund.com/about-us">About us</a>
+          <a href="https://firstmoverfund.com/how-it-works">How it works</a>
+          <a href="https://firstmoverfund.com/blog">Blog</a>
+          <a href="https://firstmoverfund.com/contact-us">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Invest</h4>
+          <a href="https://realestate.firstmoverfund.com">Real estate</a>
+          <a href="https://firstmoverfund.com/knowledge-hub">Knowledge Hub</a>
+          <a href="https://firstmoverfund.com/faqs">FAQs</a>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <a href="https://firstmoverfund.com/privacy-policy">Privacy Policy</a>
+          <a href="https://firstmoverfund.com/terms-of-service">Terms of Service</a>
+          <a href="https://firstmoverfund.com/corporate-governance">Corporate Governance</a>
+        </div>
+      </div>
     </div>
     <hr class="footer-divider" />
     <div class="footer-bottom">
-      <p class="footer-copy">© 2025 First Mover Fund. All rights reserved.</p>
+      <p class="footer-copy">© 2025 First Mover Fund N.V. Listed on Euronext Amsterdam. All rights reserved.</p>
       <nav class="footer-legal">
-        <a href="https://firstmoverfund.com/privacy-policy">Privacy Policy</a>
-        <a href="https://firstmoverfund.com/terms-of-service">Terms of Service</a>
-        <a href="https://firstmoverfund.com/corporate-governance">Corporate Governance</a>
+        <a href="#">Privacy</a><a href="#">Terms</a><a href="#">Risk Disclaimer</a>
       </nav>
     </div>
   </div>
 </footer>
 
 <script>
-function handleSubmit(e) {
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40);
+});
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.12});
+document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
+function handleSubmit(e){
   e.preventDefault();
-  const btn = e.target.querySelector('.form-submit');
-  btn.textContent = 'Thank you — we\'ll be in touch shortly!';
-  btn.style.background = '#2563eb';
-  btn.style.color = '#fff';
-  btn.disabled = true;
+  const btn=e.target.querySelector('[type=submit]');
+  btn.textContent="🎉 You're on the list! We'll be in touch.";
+  btn.style.background='linear-gradient(135deg,#2563eb,#1d4ed8)';
+  btn.style.color='#fff';
+  btn.disabled=true;
+  e.target.querySelectorAll('input').forEach(i=>i.disabled=true);
 }
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
   });
 });
 </script>
