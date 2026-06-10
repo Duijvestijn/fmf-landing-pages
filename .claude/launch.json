@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "realestate",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "3100", "realestate"],
+      "port": 3100
+    },
+    {
+      "name": "land",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-p", "3101", "land"],
+      "port": 3101
+    }
+  ]
+}

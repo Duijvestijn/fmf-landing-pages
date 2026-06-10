@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invest in Real Estate | First Mover Fund</title>
+  <meta name="description" content="Access institutional-grade real estate investments as a private investor. Targeted double-digit returns. Quarterly cash flow. Join First Mover Fund." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --blue: #2563eb;
+      --amber: #f59e0b;
+      --slate: #475569;
+      --navy: #0b1d2b;
+      --midnight: #1d286a;
+      --lime: #8eef3a;
+      --cream: #fef3c7;
+      --grey-100: #f9f9f9;
+      --grey-200: #efefef;
+      --white: #ffffff;
+      --font: 'Montserrat', sans-serif;
+      --container: 1200px;
+      --radius: 10px;
+    }
+
+    body { font-family: var(--font); color: var(--slate); background: var(--white); font-size: 18px; line-height: 28px; }
+
+    /* NAV */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--white); border-bottom: 1px solid var(--grey-200);
+      height: 72px; display: flex; align-items: center;
+    }
+    .nav-inner {
+      max-width: var(--container); margin: 0 auto; padding: 0 40px;
+      width: 100%; display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark {
+      width: 36px; height: 36px; background: var(--blue); border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-mark svg { width: 20px; height: 20px; fill: white; }
+    .nav-logo-text { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.2; }
+    .nav-logo-text span { display: block; font-size: 11px; font-weight: 500; color: var(--blue); }
+    .nav-cta {
+      background: var(--amber); color: var(--white); font-family: var(--font);
+      font-size: 14px; font-weight: 600; padding: 10px 22px; border: none;
+      border-radius: 6px; cursor: pointer; text-decoration: none;
+    }
+    .nav-cta:hover { background: #d97706; }
+
+    /* HERO */
+    .hero {
+      background: var(--navy);
+      background-image: linear-gradient(135deg, #0b1d2b 0%, #1d286a 60%, #102d7b 100%);
+      padding: 100px 40px 80px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 600px; height: 600px; border-radius: 50%;
+      background: rgba(37, 99, 235, 0.08); pointer-events: none;
+    }
+    .hero-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .hero-tag {
+      display: inline-block; background: rgba(245, 158, 11, 0.15);
+      color: var(--amber); font-size: 13px; font-weight: 600;
+      padding: 6px 14px; border-radius: 20px; margin-bottom: 24px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+    .hero h1 { font-size: 52px; font-weight: 800; line-height: 1.1; color: var(--white); margin-bottom: 24px; }
+    .hero h1 em { color: var(--amber); font-style: normal; }
+    .hero p { font-size: 18px; color: var(--cream); line-height: 1.7; margin-bottom: 36px; opacity: 0.9; }
+    .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn-primary {
+      background: var(--amber); color: var(--white); font-family: var(--font);
+      font-size: 16px; font-weight: 700; padding: 16px 32px; border: none;
+      border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-block;
+    }
+    .btn-primary:hover { background: #d97706; }
+    .btn-secondary {
+      background: transparent; color: var(--cream); font-family: var(--font);
+      font-size: 16px; font-weight: 600; padding: 16px 32px;
+      border: 1px solid rgba(254, 243, 199, 0.4); border-radius: 8px;
+      cursor: pointer; text-decoration: none; display: inline-block;
+    }
+    .btn-secondary:hover { border-color: var(--cream); }
+
+    .hero-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px; padding: 32px;
+    }
+    .hero-card-label { font-size: 12px; font-weight: 600; color: var(--amber); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 20px; }
+    .hero-stat { margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .hero-stat:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+    .hero-stat-num { font-size: 36px; font-weight: 800; color: var(--white); }
+    .hero-stat-num span { color: var(--amber); }
+    .hero-stat-label { font-size: 14px; color: rgba(254,243,199,0.7); margin-top: 4px; }
+
+    /* STATS STRIP */
+    .stats-strip { background: var(--blue); padding: 48px 40px; }
+    .stats-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .stat-item { text-align: center; }
+    .stat-num { font-size: 42px; font-weight: 800; color: var(--white); }
+    .stat-num sup { font-size: 22px; vertical-align: super; }
+    .stat-label { font-size: 14px; color: rgba(255,255,255,0.75); margin-top: 6px; }
+
+    /* SECTION */
+    .section { padding: 96px 40px; }
+    .section-inner { max-width: var(--container); margin: 0 auto; }
+    .section-tag { font-size: 13px; font-weight: 600; color: var(--blue); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px; }
+    .section h2 { font-size: 40px; font-weight: 800; color: var(--navy); line-height: 1.15; margin-bottom: 20px; }
+    .section h2 em { color: var(--blue); font-style: normal; }
+    .section-lead { font-size: 18px; color: var(--slate); max-width: 600px; line-height: 1.7; margin-bottom: 56px; }
+    .section--grey { background: var(--grey-100); }
+    .section--dark { background: var(--navy); }
+    .section--dark .section-tag { color: var(--amber); }
+    .section--dark h2 { color: var(--white); }
+    .section--dark .section-lead { color: rgba(254,243,199,0.8); }
+
+    /* BENEFITS GRID */
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .benefit-card {
+      background: var(--white); border: 1px solid var(--grey-200);
+      border-radius: var(--radius); padding: 32px 28px;
+      transition: box-shadow .2s;
+    }
+    .benefit-card:hover { box-shadow: 0 8px 32px rgba(37,99,235,0.1); }
+    .benefit-icon {
+      width: 52px; height: 52px; background: rgba(37,99,235,0.08);
+      border-radius: 12px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .benefit-icon svg { width: 24px; height: 24px; stroke: var(--blue); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .benefit-card h3 { font-size: 19px; font-weight: 700; color: var(--navy); margin-bottom: 12px; }
+    .benefit-card p { font-size: 15px; color: var(--slate); line-height: 1.65; }
+
+    /* HOW IT WORKS */
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .step { text-align: center; padding: 24px 16px; }
+    .step-num {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--blue); color: var(--white);
+      font-size: 20px; font-weight: 800; display: flex;
+      align-items: center; justify-content: center; margin: 0 auto 20px;
+    }
+    .step h3 { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .step p { font-size: 14px; color: var(--slate); line-height: 1.6; }
+
+    /* RETURNS */
+    .returns-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+    .returns-list { list-style: none; }
+    .returns-list li {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .returns-list li:last-child { border-bottom: none; }
+    .returns-check {
+      width: 28px; height: 28px; background: rgba(142,239,58,0.15);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .returns-check svg { width: 14px; height: 14px; stroke: var(--lime); fill: none; stroke-width: 2.5; }
+    .returns-list h4 { font-size: 16px; font-weight: 700; color: var(--white); margin-bottom: 4px; }
+    .returns-list p { font-size: 14px; color: rgba(254,243,199,0.7); line-height: 1.55; }
+    .returns-card {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px; padding: 36px; text-align: center;
+    }
+    .returns-card-num { font-size: 72px; font-weight: 900; color: var(--amber); line-height: 1; }
+    .returns-card-label { font-size: 16px; color: var(--cream); margin-top: 8px; margin-bottom: 24px; }
+    .returns-card-detail { font-size: 14px; color: rgba(254,243,199,0.6); line-height: 1.6; }
+
+    /* QUOTE */
+    .quote-section { background: var(--grey-100); padding: 80px 40px; }
+    .quote-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+    blockquote { font-size: 24px; font-weight: 600; color: var(--navy); line-height: 1.5; margin-bottom: 24px; font-style: italic; }
+    blockquote::before { content: '\201C'; color: var(--amber); font-size: 48px; line-height: 0; vertical-align: -18px; margin-right: 4px; }
+    cite { font-size: 15px; font-weight: 600; color: var(--blue); font-style: normal; }
+
+    /* FORM SECTION */
+    .form-section { background: var(--blue); padding: 96px 40px; }
+    .form-inner { max-width: 640px; margin: 0 auto; text-align: center; }
+    .form-inner h2 { font-size: 38px; font-weight: 800; color: var(--white); margin-bottom: 16px; }
+    .form-inner p { font-size: 17px; color: rgba(255,255,255,0.8); margin-bottom: 40px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-input {
+      width: 100%; padding: 14px 20px; font-family: var(--font); font-size: 15px;
+      border: 1px solid rgba(255,255,255,0.25); border-radius: var(--radius);
+      background: rgba(255,255,255,0.1); color: var(--white);
+      outline: none;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,0.5); }
+    .form-input:focus { border-color: var(--amber); background: rgba(255,255,255,0.15); }
+    .form-select {
+      width: 100%; padding: 14px 20px; font-family: var(--font); font-size: 15px;
+      border: 1px solid rgba(255,255,255,0.25); border-radius: var(--radius);
+      background: rgba(255,255,255,0.1); color: var(--white);
+      outline: none; appearance: none; cursor: pointer;
+    }
+    .form-select option { color: var(--navy); background: white; }
+    .form-submit {
+      width: 100%; padding: 16px; font-family: var(--font); font-size: 17px; font-weight: 700;
+      background: var(--amber); color: var(--white); border: none; border-radius: var(--radius);
+      cursor: pointer; margin-top: 8px;
+    }
+    .form-submit:hover { background: #d97706; }
+    .form-disclaimer { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 16px; line-height: 1.5; }
+
+    /* FOOTER */
+    footer { background: var(--navy); padding: 56px 40px 40px; }
+    .footer-inner { max-width: var(--container); margin: 0 auto; }
+    .footer-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+    .footer-logo { font-size: 16px; font-weight: 800; color: var(--white); }
+    .footer-logo span { color: var(--amber); }
+    .footer-links { display: flex; gap: 32px; }
+    .footer-links a { font-size: 14px; color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-links a:hover { color: var(--amber); }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.08); margin-bottom: 24px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; }
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.4); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 13px; color: rgba(255,255,255,0.4); text-decoration: none; }
+    .footer-legal a:hover { color: rgba(255,255,255,0.7); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero { padding: 64px 24px 56px; }
+      .hero h1 { font-size: 36px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .returns-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .section { padding: 64px 24px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .footer-top { flex-direction: column; gap: 24px; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="https://firstmoverfund.com" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 20 20"><path d="M10 2L2 8v10h6v-6h4v6h6V8L10 2z"/></svg>
+      </div>
+      <div class="nav-logo-text">First Mover Fund <span>Real Estate</span></div>
+    </a>
+    <a href="#invest" class="nav-cta">Invest today</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">Real Estate Investment</div>
+      <h1>Own a piece of <em>premium property</em> before the crowd does</h1>
+      <p>Access institutional-grade real estate investments previously reserved for large funds. Earn passive income from day one — with quarterly distributions and a clear exit strategy.</p>
+      <div class="hero-btns">
+        <a href="#invest" class="btn-primary">Start investing now</a>
+        <a href="#how-it-works" class="btn-secondary">How it works</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-label">Investment highlights</div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">8<span>%</span></div>
+        <div class="hero-stat-label">Annual cash flow, distributed quarterly</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">12<span>–18%</span></div>
+        <div class="hero-stat-label">Targeted total annual return</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">5<span>–7 yr</span></div>
+        <div class="hero-stat-label">Investment horizon with defined exit</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">€<span>10k</span></div>
+        <div class="hero-stat-label">Minimum entry — accessible to private investors</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">€<sup></sup>42M<sup>+</sup></div>
+      <div class="stat-label">Assets under management</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">320<sup>+</sup></div>
+      <div class="stat-label">Active investors</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100<sup>%</sup></div>
+      <div class="stat-label">Distributions paid on time</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">4</div>
+      <div class="stat-label">Countries with active projects</div>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS -->
+<section class="section" id="benefits">
+  <div class="section-inner">
+    <div class="section-tag">Why real estate with FMF</div>
+    <h2>Built for private investors who want <em>real returns</em></h2>
+    <p class="section-lead">We give you access to the same asset class institutional investors have relied on for decades — curated, managed, and optimised for performance.</p>
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Tangible asset-backed</h3>
+        <p>Every euro you invest is backed by physical real estate. No derivatives, no speculation — just bricks, land, and leases generating real cash flow.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Quarterly distributions</h3>
+        <p>Receive 8% annual yield paid quarterly directly to your account. No waiting years for a return — passive income starts from your first investment.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>Defined exit strategy</h3>
+        <p>Clear 5–7 year investment horizon with a predetermined exit plan. You know exactly when and how your capital is returned — no open-ended lock-ups.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Fully managed</h3>
+        <p>Our dedicated asset management team handles everything — tenant relations, maintenance, optimisation, and compliance. You invest; we operate.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Institutional sourcing</h3>
+        <p>We source deals off-market through our network of developers, banks, and asset owners — giving you access to opportunities never listed publicly.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Co-investment structure</h3>
+        <p>First Mover Fund invests alongside you. Our interests are aligned — we only succeed when you do. No hidden management fees eating your returns.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section section--grey" id="how-it-works">
+  <div class="section-inner">
+    <div class="section-tag">Process</div>
+    <h2>From sign-up to first distribution in <em>4 steps</em></h2>
+    <p class="section-lead">We've made investing in institutional real estate as straightforward as possible.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Create your account</h3>
+        <p>Register in minutes. Complete your investor profile and KYC verification. Fully digital, no paperwork needed.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Choose your investment</h3>
+        <p>Browse available real estate projects with detailed financial models, location analysis, and projected returns.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Sign and fund</h3>
+        <p>Sign your investment agreement digitally. Transfer your capital via bank transfer. Minimum entry from €10,000.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Receive quarterly income</h3>
+        <p>Track performance in your dashboard and receive your 8% annual yield distributed every quarter, automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RETURNS -->
+<section class="section section--dark" id="returns">
+  <div class="section-inner">
+    <div class="section-tag">Return structure</div>
+    <h2>Two income streams, <em>one investment</em></h2>
+    <p class="section-lead" style="color:rgba(254,243,199,0.75)">Real estate investments generate returns in multiple ways. We optimise for both.</p>
+    <div class="returns-grid">
+      <ul class="returns-list">
+        <li>
+          <div class="returns-check">
+            <svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 3"/></svg>
+          </div>
+          <div>
+            <h4>Rental yield</h4>
+            <p>Net rental income distributed as 8% annual cash yield, paid quarterly to your account.</p>
+          </div>
+        </li>
+        <li>
+          <div class="returns-check">
+            <svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 3"/></svg>
+          </div>
+          <div>
+            <h4>Capital appreciation</h4>
+            <p>Property value growth over the investment horizon, realised at exit and returned to investors.</p>
+          </div>
+        </li>
+        <li>
+          <div class="returns-check">
+            <svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 3"/></svg>
+          </div>
+          <div>
+            <h4>Value-add upside</h4>
+            <p>Active asset management — refurbishments, rezoning, lease optimisation — creates additional above-market returns.</p>
+          </div>
+        </li>
+        <li>
+          <div class="returns-check">
+            <svg viewBox="0 0 14 14"><polyline points="2 7 5.5 10.5 12 3"/></svg>
+          </div>
+          <div>
+            <h4>Inflation protection</h4>
+            <p>Real estate is a proven inflation hedge. As prices rise, both rental income and property values typically rise with them.</p>
+          </div>
+        </li>
+      </ul>
+      <div class="returns-card">
+        <div class="returns-card-num">12–18%</div>
+        <div class="returns-card-label">Targeted annual total return</div>
+        <div class="returns-card-detail">Combining 8% cash yield + 4–10% capital appreciation. Projections based on historical portfolio performance. Past returns do not guarantee future results.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<div class="quote-section">
+  <div class="quote-inner">
+    <blockquote>"Real estate has always been the world's most reliable wealth builder. First Mover Fund gives private investors the same access that was previously only available to institutions."</blockquote>
+    <cite>— Investment team, First Mover Fund</cite>
+  </div>
+</div>
+
+<!-- FORM -->
+<section class="form-section" id="invest">
+  <div class="form-inner">
+    <h2>Reserve your spot as a First Mover</h2>
+    <p>Limited allocations available per project. Register now to receive priority access to upcoming real estate opportunities.</p>
+    <form onsubmit="handleSubmit(event)">
+      <div class="form-grid">
+        <input class="form-input" type="text" placeholder="First name" required />
+        <input class="form-input" type="text" placeholder="Last name" required />
+      </div>
+      <div class="form-grid">
+        <input class="form-input" type="email" placeholder="Email address" required />
+        <input class="form-input" type="tel" placeholder="Phone number" />
+      </div>
+      <select class="form-select" style="margin-bottom:16px;">
+        <option value="" disabled selected>Investment amount</option>
+        <option>€10,000 – €25,000</option>
+        <option>€25,000 – €50,000</option>
+        <option>€50,000 – €100,000</option>
+        <option>€100,000+</option>
+      </select>
+      <button type="submit" class="form-submit">Request investment information →</button>
+    </form>
+    <p class="form-disclaimer">By submitting this form you agree to be contacted by First Mover Fund. This is not an offer to sell securities. Investment involves risk. Projected returns are not guaranteed.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-logo">First Mover <span>Fund</span></div>
+      <nav class="footer-links">
+        <a href="https://firstmoverfund.com">Main website</a>
+        <a href="https://firstmoverfund.com/how-it-works">How it works</a>
+        <a href="https://firstmoverfund.com/about-us">About us</a>
+        <a href="https://land.firstmoverfund.com">Land investing</a>
+        <a href="https://firstmoverfund.com/contact-us">Contact</a>
+      </nav>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 First Mover Fund. All rights reserved.</p>
+      <nav class="footer-legal">
+        <a href="https://firstmoverfund.com/privacy-policy">Privacy Policy</a>
+        <a href="https://firstmoverfund.com/terms-of-service">Terms of Service</a>
+        <a href="https://firstmoverfund.com/corporate-governance">Corporate Governance</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = 'Thank you — we\'ll be in touch shortly!';
+  btn.style.background = '#059669';
+  btn.disabled = true;
+}
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
+  });
+});
+</script>
+</body>
+</html>
