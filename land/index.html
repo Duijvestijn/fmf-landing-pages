@@ -3,533 +3,610 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>U.S. Land Investment — First Mover Fund | Dutch-Listed Since 1957</title>
-  <meta name="description" content="From Holland to America. A Dutch-listed investment firm since 1957 is bringing regenerative U.S. farmland to private investors. Join the waitlist — no commitment." />
+  <title>First Mover Farmland America Fund — Reserve Your Position</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{
-      --green:#1e5c29;--gd:#0d2b14;--gm:#1e5c29;--gl:#2d7a3a;
-      --lime:#8eef3a;--amber:#f59e0b;--slate:#475569;--navy:#0b1d2b;
-      --white:#fff;--g100:#f8f8f6;--g200:#efefef;
-      --font:'Montserrat',sans-serif;--max:1200px;--r:12px;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:     #0b1d2b;
+      --green:    #1a5c3a;
+      --lime:     #8eef3a;
+      --amber:    #f59e0b;
+      --blue:     #2563eb;
+      --white:    #ffffff;
+      --offwhite: #f7f9f4;
+      --text:     #1a2e1a;
+      --muted:    #4a6741;
     }
-    html{scroll-behavior:smooth}
-    body{font-family:var(--font);color:var(--slate);background:var(--white);overflow-x:hidden}
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--offwhite); color: var(--text); line-height: 1.6; }
 
-    /* ── NAV ── */
-    nav{position:fixed;top:0;left:0;right:0;z-index:300;transition:all .3s}
-    nav.scrolled{background:rgba(13,43,20,.96);backdrop-filter:blur(20px);box-shadow:0 1px 40px rgba(0,0,0,.35)}
-    .nav-inner{max-width:var(--max);margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .nav-brand{text-decoration:none}
-    .nav-brand-name{font-size:16px;font-weight:900;color:var(--white);letter-spacing:-.01em;line-height:1.1}
-    .nav-brand-sub{font-size:10px;font-weight:600;color:rgba(255,255,255,.45);letter-spacing:.1em;text-transform:uppercase}
-    .nav-pill{display:flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:5px 13px;font-size:11px;font-weight:700;color:rgba(255,255,255,.72);letter-spacing:.04em;white-space:nowrap}
-    .nav-pill-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 8px #22c55e;animation:glow 2s infinite}
-    @keyframes glow{0%,100%{box-shadow:0 0 6px #22c55e}50%{box-shadow:0 0 14px #22c55e}}
-    .nav-cta{background:linear-gradient(135deg,var(--lime),#5ecb1a);color:var(--gd);font-family:var(--font);font-size:14px;font-weight:800;padding:10px 22px;border:none;border-radius:7px;cursor:pointer;text-decoration:none;white-space:nowrap;transition:opacity .2s}
-    .nav-cta:hover{opacity:.88}
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(11,29,43,0.95); backdrop-filter: blur(12px);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 64px;
+      border-bottom: 1px solid rgba(142,239,58,0.15);
+    }
+    .nav-brand .name { color: #fff; font-weight: 800; font-size: 15px; letter-spacing: 0.5px; }
+    .nav-brand .sub  { color: var(--lime); font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-listed { display: flex; align-items: center; gap: 6px; border: 1px solid rgba(142,239,58,0.3); border-radius: 20px; padding: 4px 12px; font-size: 11px; color: #ccc; font-weight: 500; }
+    .nav-dot { width: 7px; height: 7px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 6px #22c55e; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.4;} }
+    .nav-cta { background: var(--lime); color: var(--navy); font-weight: 800; font-size: 12px; letter-spacing: 0.5px; padding: 8px 20px; border-radius: 6px; text-decoration: none; text-transform: uppercase; }
+    .nav-cta:hover { background: #a8ff4a; }
 
-    /* ── HERO ── */
-    .hero{position:relative;min-height:100vh;display:flex;align-items:center;overflow:hidden;background:var(--gd)}
-    .hero-bg-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(13,43,20,.92) 38%,rgba(13,43,20,.2) 100%)}
-    .hero-inner{position:relative;z-index:2;max-width:var(--max);margin:0 auto;padding:130px 40px 90px;display:grid;grid-template-columns:1fr 460px;gap:56px;align-items:center}
+    /* TICKER */
+    .ticker { background: var(--green); overflow: hidden; height: 36px; border-bottom: 2px solid var(--lime); margin-top: 64px; }
+    .ticker-track { display: flex; width: max-content; animation: scroll 45s linear infinite; height: 100%; align-items: center; }
+    .ticker-track span { white-space: nowrap; padding: 0 32px; font-size: 11px; font-weight: 700; color: #fff; letter-spacing: 1px; text-transform: uppercase; }
+    .ticker-track span.hl { color: var(--lime); }
+    @keyframes scroll { 0%{transform:translateX(0);} 100%{transform:translateX(-50%);} }
 
-    .eyebrow{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-    .badge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:5px 13px;border-radius:30px;line-height:1}
-    .badge-nl{background:rgba(255,255,255,.08);color:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.14)}
-    .badge-listed{background:rgba(37,99,235,.18);color:#93b4f7;border:1px solid rgba(37,99,235,.3)}
-    .badge-1957{background:rgba(245,158,11,.13);color:var(--amber);border:1px solid rgba(245,158,11,.28)}
-    .badge-us{background:rgba(142,239,58,.1);color:var(--lime);border:1px solid rgba(142,239,58,.22)}
+    /* HERO */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      background: url('https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png') center/cover no-repeat;
+    }
+    .hero::before { content:''; position:absolute; inset:0; background: linear-gradient(135deg,rgba(11,29,43,0.90) 0%,rgba(26,92,58,0.72) 50%,rgba(11,29,43,0.55) 100%); }
+    .hero-inner { position:relative; z-index:2; max-width:1200px; margin:0 auto; padding:80px 40px; display:grid; grid-template-columns:1fr 430px; gap:60px; align-items:center; }
+    .badges { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:24px; }
+    .badge { display:inline-flex; align-items:center; gap:6px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.25); color:#fff; font-size:11px; font-weight:700; letter-spacing:0.8px; padding:5px 12px; border-radius:20px; text-transform:uppercase; backdrop-filter:blur(8px); }
+    .badge.lime { background:rgba(142,239,58,0.15); border-color:var(--lime); color:var(--lime); }
+    .hero h1 { font-size:clamp(2.2rem,4.5vw,3.8rem); font-weight:900; color:#fff; line-height:1.1; margin-bottom:20px; }
+    .hero h1 em { font-style:normal; color:var(--lime); }
+    .tagline { font-size:1.1rem; color:rgba(255,255,255,0.85); font-style:italic; border-left:3px solid var(--lime); padding-left:16px; margin-bottom:28px; line-height:1.6; font-weight:400; }
+    .hero-stats { display:flex; gap:32px; margin-bottom:32px; }
+    .hstat .num { font-size:1.8rem; font-weight:900; color:var(--lime); }
+    .hstat .lbl { font-size:10px; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:1px; font-weight:600; }
 
-    .hero h1{font-size:60px;font-weight:900;line-height:1.04;color:var(--white);margin-bottom:22px;letter-spacing:-.025em}
-    .hero h1 em{color:var(--lime);font-style:normal}
-    .hero-kicker{display:block;font-size:20px;font-weight:600;color:rgba(255,255,255,.6);margin-bottom:6px;letter-spacing:0}
-    .hero-sub{font-size:17px;color:rgba(255,255,255,.7);line-height:1.8;margin-bottom:36px;max-width:500px}
-    .hero-sub strong{color:rgba(255,255,255,.95);font-weight:700}
+    /* FORM CARD */
+    .form-card { background:#fff; border-radius:16px; padding:36px 32px; box-shadow:0 24px 80px rgba(0,0,0,0.35); border-top:4px solid var(--lime); }
+    .urgency { display:flex; align-items:center; gap:8px; background:#fef3c7; border:1px solid #fbbf24; border-radius:8px; padding:10px 14px; margin-bottom:20px; }
+    .urgency-dot { width:8px; height:8px; border-radius:50%; background:#f59e0b; animation:blink 1.2s infinite; flex-shrink:0; }
+    .urgency p { font-size:12px; font-weight:700; color:#92400e; }
+    .form-title { font-size:1.2rem; font-weight:800; color:var(--navy); margin-bottom:4px; }
+    .form-sub { font-size:12px; color:#666; margin-bottom:20px; }
+    .min-badge { background:var(--offwhite); border-radius:8px; padding:10px 14px; margin-bottom:16px; text-align:center; }
+    .min-badge span { font-size:11px; color:var(--muted); font-weight:600; }
+    .min-badge strong { color:var(--green); font-size:18px; font-weight:900; }
+    .form-card input, .form-card select { width:100%; padding:12px 16px; border:1.5px solid #e2e8f0; border-radius:8px; font-family:'Montserrat',sans-serif; font-size:13px; color:var(--navy); margin-bottom:12px; outline:none; transition:border-color 0.2s; }
+    .form-card input:focus, .form-card select:focus { border-color:var(--green); }
+    .form-card input::placeholder { color:#aaa; }
+    .check-row { display:flex; align-items:flex-start; gap:10px; margin-bottom:16px; }
+    .check-row input[type=checkbox] { width:16px; height:16px; margin-top:2px; flex-shrink:0; accent-color:var(--green); }
+    .check-row label { font-size:11px; color:#555; line-height:1.4; }
+    .form-btn { width:100%; background:var(--green); color:#fff; font-family:'Montserrat',sans-serif; font-weight:800; font-size:14px; letter-spacing:0.5px; text-transform:uppercase; border:none; border-radius:10px; padding:16px; cursor:pointer; transition:background 0.2s,transform 0.1s; }
+    .form-btn:hover { background:#1e6b44; transform:translateY(-1px); }
+    .form-fine { font-size:10px; color:#999; text-align:center; margin-top:10px; }
 
-    .hero-trust{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.1);border-radius:var(--r);overflow:hidden;margin-bottom:36px}
-    .trust-item{padding:18px 20px;border-right:1px solid rgba(255,255,255,.1)}
-    .trust-item:last-child{border-right:none}
-    .trust-num{font-size:26px;font-weight:900;color:var(--white);line-height:1}
-    .trust-num em{color:var(--lime);font-style:normal}
-    .trust-label{font-size:11px;color:rgba(255,255,255,.45);font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-top:4px}
+    /* SECTIONS */
+    section { padding:80px 40px; }
+    .container { max-width:1200px; margin:0 auto; }
+    .s-label { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--lime); margin-bottom:12px; display:block; }
+    .s-label.dk { color:var(--green); }
+    h2 { font-size:clamp(1.8rem,3vw,2.6rem); font-weight:900; color:var(--navy); line-height:1.2; margin-bottom:16px; }
+    h2 em { font-style:normal; color:var(--green); }
+    .lead { font-size:1.05rem; color:#444; max-width:680px; margin-bottom:40px; }
 
-    /* Hero card */
-    .hero-card{background:rgba(255,255,255,.055);backdrop-filter:blur(24px);border:1px solid rgba(142,239,58,.14);border-radius:20px;padding:34px;position:relative;overflow:hidden}
-    .hc-accent{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gm),var(--lime))}
-    .urgency{display:flex;align-items:center;gap:8px;background:rgba(142,239,58,.08);border:1px solid rgba(142,239,58,.18);border-radius:8px;padding:9px 13px;margin-bottom:20px}
-    .urgency-dot{width:8px;height:8px;border-radius:50%;background:var(--lime);flex-shrink:0;animation:pulse 1.4s infinite}
-    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.75)}}
-    .urgency-text{font-size:12px;font-weight:700;color:var(--lime)}
-    .card-title{font-size:11px;font-weight:700;color:var(--lime);letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
-    .card-headline{font-size:21px;font-weight:900;color:var(--white);line-height:1.25;margin-bottom:7px}
-    .card-sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:22px;line-height:1.5}
-    .fi{margin-bottom:12px}
-    .fi input{width:100%;padding:13px 17px;font-family:var(--font);font-size:14px;border:1px solid rgba(255,255,255,.12);border-radius:9px;background:rgba(255,255,255,.07);color:var(--white);outline:none;transition:border-color .2s}
-    .fi input::placeholder{color:rgba(255,255,255,.3)}
-    .fi input:focus{border-color:var(--lime)}
-    .btn-submit{width:100%;padding:15px;font-family:var(--font);font-size:16px;font-weight:900;background:linear-gradient(135deg,var(--lime),#5ecb1a);color:var(--gd);border:none;border-radius:9px;cursor:pointer;transition:opacity .2s;box-shadow:0 6px 28px rgba(142,239,58,.28);margin-top:4px}
-    .btn-submit:hover{opacity:.9}
-    .form-note{font-size:11px;color:rgba(255,255,255,.3);margin-top:11px;line-height:1.5;text-align:center}
-    .sp-mini{display:flex;align-items:center;gap:9px;margin-top:14px;justify-content:center}
-    .avs{display:flex}
-    .av{width:26px;height:26px;border-radius:50%;border:2px solid rgba(255,255,255,.15);margin-left:-6px;font-size:10px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center}
-    .av:first-child{margin-left:0}
-    .sp-mini-text{font-size:12px;color:rgba(255,255,255,.45);font-weight:500}
-    .sp-mini-text strong{color:rgba(255,255,255,.8)}
+    /* WHY FARMLAND */
+    .why { background:var(--navy); }
+    .why h2 { color:#fff; }
+    .why .lead { color:rgba(255,255,255,0.7); }
+    .why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .w-card { background:rgba(255,255,255,0.06); border:1px solid rgba(142,239,58,0.15); border-radius:12px; padding:28px 24px; transition:border-color 0.2s,transform 0.2s; }
+    .w-card:hover { border-color:var(--lime); transform:translateY(-4px); }
+    .w-card .ico { font-size:2rem; margin-bottom:14px; }
+    .w-card h3 { font-size:1rem; font-weight:800; color:#fff; margin-bottom:8px; }
+    .w-card p { font-size:13px; color:rgba(255,255,255,0.65); line-height:1.6; }
+    .w-card .big { font-size:1.6rem; font-weight:900; color:var(--lime); margin-top:12px; }
+    .w-card .sm { font-size:10px; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:1px; }
 
-    /* ── TICKER ── */
-    .ticker{background:var(--gm);padding:13px 0;overflow:hidden;white-space:nowrap}
-    .ticker-inner{display:inline-flex;animation:tick 40s linear infinite}
-    .ti{display:inline-flex;align-items:center;gap:8px;padding:0 28px;font-size:12px;font-weight:700;color:rgba(255,255,255,.9);letter-spacing:.02em}
-    .ti::after{content:'◆';font-size:7px;color:rgba(255,255,255,.3);margin-left:20px}
-    @keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    /* THESIS */
+    .thesis { background:#fff; }
+    .thesis-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .thesis-img { border-radius:16px; overflow:hidden; position:relative; }
+    .thesis-img img { width:100%; display:block; border-radius:16px; }
+    .img-badge { position:absolute; bottom:20px; left:20px; background:rgba(11,29,43,0.9); border:1px solid var(--lime); color:#fff; font-size:11px; font-weight:700; padding:6px 14px; border-radius:20px; }
+    .t-points { display:flex; flex-direction:column; gap:20px; margin-top:28px; }
+    .t-pt { display:flex; gap:16px; align-items:flex-start; }
+    .t-num { width:36px; height:36px; border-radius:50%; background:var(--green); color:#fff; font-size:13px; font-weight:900; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .t-pt h4 { font-size:14px; font-weight:800; color:var(--navy); margin-bottom:4px; }
+    .t-pt p { font-size:13px; color:#555; line-height:1.5; }
 
-    /* ── DUTCH HERITAGE ── */
-    .dutch{background:var(--gd);padding:100px 40px}
-    .dutch-inner{max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
-    .dutch-imgs{display:grid;grid-template-rows:1fr 1fr;gap:16px;height:520px}
-    .dutch-img-main{border-radius:16px;overflow:hidden;position:relative;flex:1}
-    .dutch-img-main img,.dutch-img-small img{width:100%;height:100%;object-fit:cover;display:block}
-    .dutch-img-small{border-radius:12px;overflow:hidden;position:relative}
-    .dutch-img-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,43,20,.92),transparent);padding:20px 20px 16px;font-size:13px;font-weight:700;color:rgba(255,255,255,.8)}
-    .dutch-img-caption span{display:block;font-size:11px;color:rgba(255,255,255,.45);font-weight:500;margin-top:2px}
-    .dtag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
-    .dh2{font-size:40px;font-weight:900;color:var(--white);line-height:1.1;letter-spacing:-.02em;margin-bottom:18px}
-    .dh2 em{color:var(--lime);font-style:normal}
-    .dlead{font-size:16px;color:rgba(255,255,255,.6);line-height:1.85;margin-bottom:28px}
-    .dutch-flag-row{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px 18px;margin-bottom:28px}
-    .flag-emoji{font-size:28px}
-    .flag-text{font-size:14px;font-weight:700;color:rgba(255,255,255,.85);line-height:1.3}
-    .flag-text span{display:block;font-size:12px;font-weight:400;color:rgba(255,255,255,.4);margin-top:2px}
-    .dutch-stats{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-    .dstat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:20px}
-    .dstat-num{font-size:32px;font-weight:900;color:var(--white);line-height:1}
-    .dstat-num em{color:var(--lime);font-style:normal}
-    .dstat-label{font-size:12px;color:rgba(255,255,255,.38);font-weight:600;margin-top:5px;letter-spacing:.03em}
+    /* REVENUE */
+    .revenue { background:var(--offwhite); }
+    .rev-grid { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+    .rev-card { background:#fff; border-radius:14px; padding:32px 28px; border-left:5px solid var(--green); box-shadow:0 4px 20px rgba(0,0,0,0.06); }
+    .rev-card.a { border-left-color:var(--amber); }
+    .rev-card.b { border-left-color:var(--blue); }
+    .rev-card.l { border-left-color:var(--lime); }
+    .rev-ico { font-size:2.2rem; margin-bottom:14px; }
+    .rev-card h3 { font-size:1rem; font-weight:800; color:var(--navy); margin-bottom:8px; }
+    .rev-card p { font-size:13px; color:#555; line-height:1.6; }
+    .rev-val { margin-top:14px; font-size:1.3rem; font-weight:900; color:var(--green); }
+    .rev-val.a { color:var(--amber); }
+    .rev-val.b { color:var(--blue); }
+    .rev-note { font-size:11px; color:#888; margin-top:4px; }
 
-    /* ── TIMELINE ── */
-    .tl-section{padding:100px 40px;background:var(--g100)}
-    .tl-inner{max-width:var(--max);margin:0 auto}
-    .s-tag{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gm);margin-bottom:14px}
-    .s-h2{font-size:42px;font-weight:900;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
-    .s-h2 em{color:var(--gm);font-style:normal}
-    .s-lead{font-size:17px;color:var(--slate);max-width:580px;line-height:1.8;margin-bottom:56px}
-    .tl-grid{display:grid;grid-template-columns:repeat(4,1fr);position:relative}
-    .tl-grid::before{content:'';position:absolute;top:22px;left:calc(12.5% + 22px);right:calc(12.5% + 22px);height:2px;background:linear-gradient(90deg,var(--gm),var(--lime));z-index:0}
-    .tl-item{text-align:center;padding:0 16px;position:relative;z-index:1}
-    .tl-dot{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gm),var(--gl));color:var(--white);font-size:16px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 4px 20px rgba(30,92,41,.4)}
-    .tl-year{font-size:22px;font-weight:900;color:var(--navy);margin-bottom:6px}
-    .tl-text{font-size:14px;color:var(--slate);line-height:1.6}
+    /* TECH BAND */
+    .tech-band {
+      position:relative; min-height:520px; display:flex; align-items:center;
+      background: url('https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084747_dea480cf-91f3-4ae2-8f72-bbf722064012.png') center/cover no-repeat;
+    }
+    .tech-band::before { content:''; position:absolute; inset:0; background:linear-gradient(90deg,rgba(11,29,43,0.92) 0%,rgba(11,29,43,0.6) 60%,rgba(11,29,43,0.25) 100%); }
+    .tech-inner { position:relative; z-index:2; max-width:640px; padding:60px 40px; }
+    .tech-inner h2 { color:#fff; font-size:clamp(1.8rem,3vw,2.8rem); margin-bottom:16px; }
+    .tech-inner .lead { color:rgba(255,255,255,0.8); margin-bottom:32px; }
+    .pillars { display:flex; flex-direction:column; gap:14px; }
+    .pillar { display:flex; align-items:center; gap:12px; }
+    .pillar-dot { width:10px; height:10px; border-radius:50%; background:var(--lime); flex-shrink:0; }
+    .pillar span { font-size:14px; font-weight:600; color:rgba(255,255,255,0.9); }
 
-    /* ── DUAL INCOME ── */
-    .dual{padding:100px 40px}
-    .dual-inner{max-width:var(--max);margin:0 auto}
-    .dual-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:56px}
-    .dc{border-radius:18px;padding:36px;position:relative;overflow:hidden}
-    .dc--crop{background:var(--white);border:1px solid var(--g200)}
-    .dc--env{background:var(--gd);border:1px solid rgba(142,239,58,.12)}
-    .dc-icon{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
-    .dc--crop .dc-icon{background:rgba(30,92,41,.08)}
-    .dc--env .dc-icon{background:rgba(142,239,58,.1)}
-    .dc-icon svg{width:26px;height:26px;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-    .dc--crop .dc-icon svg{stroke:var(--gm)}
-    .dc--env .dc-icon svg{stroke:var(--lime)}
-    .dc h3{font-size:22px;font-weight:900;margin-bottom:12px}
-    .dc--crop h3{color:var(--navy)}
-    .dc--env h3{color:var(--lime)}
-    .dc p{font-size:15px;line-height:1.7;margin-bottom:20px}
-    .dc--env p{color:rgba(255,255,255,.62)}
-    .dc-list{list-style:none}
-    .dc-list li{font-size:14px;line-height:1.6;padding:8px 0;border-bottom:1px solid;display:flex;gap:10px;align-items:flex-start}
-    .dc--crop .dc-list li{color:var(--slate);border-color:var(--g200)}
-    .dc--env .dc-list li{color:rgba(255,255,255,.6);border-color:rgba(255,255,255,.07)}
-    .dc-list li:last-child{border-bottom:none}
-    .dc-list li::before{content:'↗';font-size:13px;margin-top:1px;flex-shrink:0;font-weight:700}
-    .dc--crop .dc-list li::before{color:var(--gm)}
-    .dc--env .dc-list li::before{color:var(--lime)}
+    /* HERITAGE */
+    .heritage { background:var(--navy); overflow:hidden; }
+    .her-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .heritage h2 { color:#fff; }
+    .heritage .lead { color:rgba(255,255,255,0.7); }
+    .flag { display:flex; gap:8px; margin:24px 0; }
+    .flag div { height:8px; border-radius:4px; flex:1; }
+    .flag .r{background:#AE1C28;} .flag .w{background:#fff;} .flag .b{background:#21468B;}
+    .h-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:28px; }
+    .h-stat { text-align:center; background:rgba(255,255,255,0.06); border:1px solid rgba(142,239,58,0.15); border-radius:10px; padding:16px 10px; }
+    .h-stat .n { font-size:1.5rem; font-weight:900; color:var(--lime); }
+    .h-stat .l { font-size:10px; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+    .timeline { display:flex; flex-direction:column; gap:0; margin-top:28px; }
+    .tl { display:flex; gap:16px; align-items:flex-start; padding-bottom:20px; position:relative; }
+    .tl::before { content:''; position:absolute; left:15px; top:30px; bottom:-4px; width:2px; background:rgba(142,239,58,0.2); }
+    .tl:last-child::before { display:none; }
+    .tl-dot { width:32px; height:32px; border-radius:50%; background:var(--green); border:2px solid var(--lime); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .tl-dot span { font-size:9px; font-weight:800; color:var(--lime); }
+    .tl h4 { font-size:13px; font-weight:800; color:#fff; }
+    .tl p  { font-size:12px; color:rgba(255,255,255,0.55); line-height:1.4; margin-top:2px; }
 
-    /* ── SOIL IMAGE BAND ── */
-    .soil-band{position:relative;height:420px;overflow:hidden}
-    .soil-band img{width:100%;height:100%;object-fit:cover;object-position:center 60%}
-    .soil-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(13,43,20,.88) 40%,rgba(13,43,20,.1) 100%);display:flex;align-items:center}
-    .soil-content{max-width:var(--max);margin:0 auto;padding:0 40px;width:100%}
-    .soil-content h2{font-size:44px;font-weight:900;color:var(--white);line-height:1.1;letter-spacing:-.025em;margin-bottom:16px;max-width:560px}
-    .soil-content h2 em{color:var(--lime);font-style:normal}
-    .soil-content p{font-size:17px;color:rgba(255,255,255,.65);max-width:460px;line-height:1.8;margin-bottom:28px}
-    .soil-btn{display:inline-block;background:linear-gradient(135deg,var(--lime),#5ecb1a);color:var(--gd);font-family:var(--font);font-size:15px;font-weight:900;padding:14px 30px;border-radius:9px;text-decoration:none;transition:opacity .2s}
-    .soil-btn:hover{opacity:.88}
+    /* STRUCTURE */
+    .structure { background:#fff; }
+    .str-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+    .str-card { background:var(--offwhite); border-radius:12px; padding:24px 20px; border-top:3px solid var(--green); text-align:center; }
+    .str-card .ico { font-size:1.8rem; margin-bottom:12px; }
+    .str-card h4 { font-size:13px; font-weight:800; color:var(--navy); margin-bottom:6px; }
+    .str-card p { font-size:12px; color:#666; }
+    .str-card .val { font-size:1.2rem; font-weight:900; color:var(--green); margin-top:8px; }
 
-    /* ── BENEFITS ── */
-    .benefits{padding:100px 40px;background:var(--g100)}
-    .ben-inner{max-width:var(--max);margin:0 auto}
-    .ben-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
-    .bc{border-radius:16px;padding:30px 26px;border:1px solid var(--g200);background:var(--white);transition:transform .25s,box-shadow .25s;cursor:default;position:relative;overflow:hidden}
-    .bc::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gm),var(--lime));opacity:0;transition:opacity .25s}
-    .bc:hover{transform:translateY(-5px);box-shadow:0 18px 50px rgba(30,92,41,.1)}
-    .bc:hover::before{opacity:1}
-    .bc-icon{width:52px;height:52px;border-radius:12px;background:rgba(30,92,41,.07);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
-    .bc-icon svg{width:24px;height:24px;stroke:var(--gm);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-    .bc h3{font-size:18px;font-weight:800;color:var(--navy);margin-bottom:10px}
-    .bc p{font-size:14px;color:var(--slate);line-height:1.7}
+    /* COMPARE */
+    .compare { background:var(--offwhite); }
+    table { width:100%; border-collapse:collapse; border-radius:12px; overflow:hidden; }
+    th { background:var(--navy); color:#fff; font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; padding:14px 20px; text-align:left; }
+    th.hl { background:var(--green); color:var(--lime); }
+    td { padding:14px 20px; font-size:13px; border-bottom:1px solid #e5e7eb; }
+    tr:last-child td { border-bottom:none; }
+    tr:nth-child(even) td { background:#f9fafb; }
+    td.hl { background:rgba(26,92,58,0.06); font-weight:700; color:var(--green); }
+    .ck { color:#22c55e; font-size:16px; }
+    .xk { color:#ef4444; font-size:16px; }
 
-    /* ── FOMO ── */
-    .fomo{background:linear-gradient(135deg,var(--gd) 0%,#133a1b 100%);padding:80px 40px;position:relative;overflow:hidden}
-    .fomo::after{content:'🇺🇸';position:absolute;right:-10px;top:-10px;font-size:200px;opacity:.05;pointer-events:none}
-    .fomo-inner{max-width:var(--max);margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:48px;flex-wrap:wrap;position:relative;z-index:1}
-    .fomo-left h2{font-size:36px;font-weight:900;color:var(--white);letter-spacing:-.02em;margin-bottom:14px;line-height:1.2}
-    .fomo-left h2 em{color:var(--lime);font-style:normal}
-    .fomo-left p{font-size:16px;color:rgba(255,255,255,.58);max-width:520px;line-height:1.8}
-    .fomo-right{flex-shrink:0;text-align:center}
-    .fomo-live{display:inline-flex;align-items:center;gap:8px;background:rgba(142,239,58,.1);border:1px solid rgba(142,239,58,.22);border-radius:30px;padding:7px 15px;font-size:12px;font-weight:700;color:var(--lime);margin-bottom:16px}
-    .fomo-live::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--lime)}
-    .fomo-btn{display:inline-block;background:linear-gradient(135deg,var(--lime),#5ecb1a);color:var(--gd);font-family:var(--font);font-size:16px;font-weight:900;padding:16px 34px;border-radius:10px;text-decoration:none;transition:opacity .2s;box-shadow:0 8px 28px rgba(142,239,58,.25)}
-    .fomo-btn:hover{opacity:.88}
-    .fomo-note{font-size:12px;color:rgba(255,255,255,.28);margin-top:10px}
+    /* FOMO */
+    .fomo { background:var(--green); padding:28px 40px; display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; }
+    .fomo p { font-size:15px; font-weight:800; color:#fff; }
+    .fomo p span { color:var(--lime); }
+    .fomo-pill { background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); color:#fff; font-size:12px; font-weight:700; padding:6px 16px; border-radius:20px; }
 
-    /* ── HOW ── */
-    .how{padding:100px 40px}
-    .how-inner{max-width:var(--max);margin:0 auto}
-    .how-steps{display:grid;grid-template-columns:repeat(4,1fr);position:relative;margin-top:56px}
-    .how-steps::before{content:'';position:absolute;top:27px;left:calc(12.5% + 27px);right:calc(12.5% + 27px);height:2px;background:linear-gradient(90deg,var(--gm),var(--lime));z-index:0}
-    .hs{text-align:center;padding:0 14px;position:relative;z-index:1}
-    .hs-num{width:54px;height:54px;border-radius:50%;background:linear-gradient(135deg,var(--gm),var(--gl));color:var(--white);font-size:20px;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 4px 20px rgba(30,92,41,.38)}
-    .hs h3{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:7px}
-    .hs p{font-size:13px;color:var(--slate);line-height:1.65}
+    /* HOW */
+    .how { background:#fff; }
+    .how-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; position:relative; }
+    .how-steps::before { content:''; position:absolute; top:36px; left:calc(12.5% + 24px); right:calc(12.5% + 24px); height:2px; background:linear-gradient(90deg,var(--green),var(--lime)); }
+    .step { text-align:center; padding:24px 16px; }
+    .step-n { width:48px; height:48px; border-radius:50%; background:var(--green); color:#fff; font-size:16px; font-weight:900; display:flex; align-items:center; justify-content:center; margin:0 auto 16px; position:relative; z-index:1; border:3px solid #fff; box-shadow:0 0 0 3px var(--green); }
+    .step h4 { font-size:13px; font-weight:800; color:var(--navy); margin-bottom:6px; }
+    .step p  { font-size:12px; color:#666; line-height:1.5; }
 
-    /* ── WAITLIST ── */
-    .waitlist{background:linear-gradient(135deg,var(--gm) 0%,#155723 100%);padding:100px 40px;position:relative;overflow:hidden}
-    .waitlist::before{content:'';position:absolute;top:-220px;right:-180px;width:560px;height:560px;border-radius:50%;background:rgba(255,255,255,.03)}
-    .waitlist::after{content:'';position:absolute;bottom:-160px;left:-100px;width:440px;height:440px;border-radius:50%;background:rgba(142,239,58,.04)}
-    .wl-inner{max-width:660px;margin:0 auto;text-align:center;position:relative;z-index:1}
-    .wl-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.14);border-radius:30px;padding:7px 16px;font-size:11px;font-weight:700;color:rgba(255,255,255,.82);letter-spacing:.07em;text-transform:uppercase;margin-bottom:22px}
-    .wl-h2{font-size:46px;font-weight:900;color:var(--white);letter-spacing:-.025em;line-height:1.08;margin-bottom:16px}
-    .wl-h2 em{color:var(--lime);font-style:normal}
-    .wl-sub{font-size:17px;color:rgba(255,255,255,.65);line-height:1.8;margin-bottom:38px}
-    .wl-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
-    .wl-input{padding:15px 19px;font-family:var(--font);font-size:14px;border:1px solid rgba(255,255,255,.17);border-radius:10px;background:rgba(255,255,255,.09);color:var(--white);outline:none;transition:border-color .2s}
-    .wl-input::placeholder{color:rgba(255,255,255,.3)}
-    .wl-input:focus{border-color:var(--lime)}
-    .wl-btn{width:100%;padding:17px;font-family:var(--font);font-size:17px;font-weight:900;background:linear-gradient(135deg,var(--lime),#5ecb1a);color:var(--gd);border:none;border-radius:10px;cursor:pointer;transition:opacity .2s;box-shadow:0 8px 30px rgba(142,239,58,.28);letter-spacing:.01em}
-    .wl-btn:hover{opacity:.9}
-    .wl-note{font-size:12px;color:rgba(255,255,255,.37);margin-top:14px;line-height:1.5}
-    .wl-sp{display:flex;align-items:center;justify-content:center;gap:11px;margin-top:28px}
-    .av-stack{display:flex}
-    .av2{width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.17);margin-left:-8px;font-size:11px;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center}
-    .av2:first-child{margin-left:0}
-    .wl-sp-text{font-size:13px;color:rgba(255,255,255,.5);font-weight:500}
-    .wl-sp-text strong{color:rgba(255,255,255,.88)}
+    /* RESERVATION */
+    .reserve { background:linear-gradient(135deg,var(--navy) 0%,var(--green) 100%); padding:100px 40px; }
+    .res-inner { max-width:800px; margin:0 auto; text-align:center; }
+    .reserve h2 { color:#fff; font-size:clamp(2rem,3.5vw,3rem); margin-bottom:16px; }
+    .reserve .lead { color:rgba(255,255,255,0.75); text-align:center; margin:0 auto 48px; }
+    .big-form { background:#fff; border-radius:20px; padding:48px 40px; box-shadow:0 32px 80px rgba(0,0,0,0.3); text-align:left; }
+    .big-form h3 { font-size:1.3rem; font-weight:800; color:var(--navy); margin-bottom:6px; }
+    .big-form .fsub { font-size:13px; color:#666; margin-bottom:28px; padding-bottom:20px; border-bottom:1px solid #eee; }
+    .f-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:14px; }
+    .big-form input, .big-form select, .big-form textarea {
+      width:100%; padding:14px 18px; border:1.5px solid #e2e8f0; border-radius:10px;
+      font-family:'Montserrat',sans-serif; font-size:13px; color:var(--navy);
+      outline:none; transition:border-color 0.2s;
+    }
+    .big-form input:focus, .big-form select:focus { border-color:var(--green); }
+    .big-form input::placeholder { color:#aaa; }
+    .big-form textarea { resize:vertical; height:90px; margin-bottom:14px; width:100%; }
+    .big-btn { width:100%; background:var(--green); color:#fff; font-family:'Montserrat',sans-serif; font-weight:900; font-size:15px; letter-spacing:0.5px; text-transform:uppercase; border:none; border-radius:12px; padding:18px; cursor:pointer; transition:background 0.2s; margin-top:8px; }
+    .big-btn:hover { background:#1e6b44; }
+    .acc-note { margin-top:16px; padding:14px 18px; background:#f0fdf4; border:1px solid #86efac; border-radius:8px; font-size:11px; color:#166534; line-height:1.5; text-align:center; }
+    .f-check { display:flex; align-items:flex-start; gap:10px; margin-bottom:14px; }
+    .f-check input[type=checkbox] { width:16px; height:16px; margin-top:2px; flex-shrink:0; accent-color:var(--green); }
+    .f-check label { font-size:12px; color:#555; line-height:1.5; }
+    .mb14 { margin-bottom:14px; }
 
-    /* ── FOOTER ── */
-    footer{background:var(--gd);padding:60px 40px 36px}
-    .ft-inner{max-width:var(--max);margin:0 auto}
-    .ft-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:32px;margin-bottom:40px}
-    .ft-brand h3{font-size:16px;font-weight:900;color:var(--white);margin-bottom:5px}
-    .ft-brand p{font-size:13px;color:rgba(255,255,255,.36);line-height:1.65;max-width:270px}
-    .ft-cols{display:flex;gap:44px;flex-wrap:wrap}
-    .ft-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.3);letter-spacing:.09em;text-transform:uppercase;margin-bottom:14px}
-    .ft-col a{display:block;font-size:13px;color:rgba(255,255,255,.48);text-decoration:none;margin-bottom:8px;transition:color .2s}
-    .ft-col a:hover{color:var(--lime)}
-    .ft-hr{border:none;border-top:1px solid rgba(255,255,255,.07);margin-bottom:22px}
-    .ft-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-    .ft-copy{font-size:12px;color:rgba(255,255,255,.26)}
-    .ft-legal{display:flex;gap:18px}
-    .ft-legal a{font-size:12px;color:rgba(255,255,255,.26);text-decoration:none}
-    .ft-legal a:hover{color:rgba(255,255,255,.6)}
+    /* FOOTER */
+    footer { background:var(--navy); padding:48px 40px 32px; border-top:2px solid rgba(142,239,58,0.15); }
+    .ft-inner { max-width:1200px; margin:0 auto; }
+    .ft-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:32px; flex-wrap:wrap; gap:24px; }
+    .ft-brand .name { color:#fff; font-weight:900; font-size:16px; }
+    .ft-brand .tag  { color:var(--lime); font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; margin-top:4px; }
+    .ft-links { display:flex; flex-direction:column; gap:8px; }
+    .ft-links a { color:rgba(255,255,255,0.5); font-size:12px; text-decoration:none; }
+    .ft-links a:hover { color:var(--lime); }
+    .ft-disc { border-top:1px solid rgba(255,255,255,0.1); padding-top:24px; font-size:11px; color:rgba(255,255,255,0.4); line-height:1.8; }
+    .ft-disc strong { color:rgba(255,255,255,0.6); }
 
-    /* ── ANIMATIONS ── */
-    .fade-up{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
-    .fade-up.in{opacity:1;transform:none}
-
-    @media(max-width:960px){
-      .hero-inner,.dutch-inner{grid-template-columns:1fr}
-      .hero-inner{padding:110px 22px 56px;gap:36px}
-      .hero h1{font-size:36px}
-      .dual-grid,.ben-grid,.wl-form{grid-template-columns:1fr}
-      .tl-grid,.how-steps{grid-template-columns:1fr 1fr;gap:32px}
-      .tl-grid::before,.how-steps::before{display:none}
-      .fomo-inner{flex-direction:column}
-      .dutch,.tl-section,.dual,.benefits,.fomo,.how,.waitlist{padding:64px 22px}
-      .wl-h2{font-size:32px}
-      .soil-content h2{font-size:30px}
-      .nav-pill{display:none}
-      .nav-inner{padding:0 20px}
-      .dutch-imgs{height:320px}
+    @media (max-width: 900px) {
+      nav { padding:0 20px; }
+      .hero-inner { grid-template-columns:1fr; gap:40px; }
+      .why-grid { grid-template-columns:1fr 1fr; }
+      .thesis-grid, .her-grid { grid-template-columns:1fr; gap:32px; }
+      .rev-grid { grid-template-columns:1fr; }
+      .str-grid { grid-template-columns:1fr 1fr; }
+      .how-steps { grid-template-columns:1fr 1fr; }
+      .how-steps::before { display:none; }
+      .f-row { grid-template-columns:1fr; }
+      .big-form { padding:28px 20px; }
+      section { padding:60px 20px; }
+      .tech-inner { padding:40px 20px; }
+    }
+    @media (max-width: 600px) {
+      .why-grid, .str-grid, .how-steps { grid-template-columns:1fr; }
+      .h-stats { grid-template-columns:1fr 1fr; }
+      .nav-listed { display:none; }
     }
   </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="https://firstmoverfund.com" class="nav-brand">
-      <div class="nav-brand-name">First Mover Fund</div>
-      <div class="nav-brand-sub">🇳🇱 Dutch-Listed · Est. 1957</div>
-    </a>
-    <div class="nav-pill"><span class="nav-pill-dot"></span>Live on Euronext Amsterdam</div>
-    <a href="#waitlist" class="nav-cta">Join the Waitlist</a>
+<nav>
+  <div class="nav-brand">
+    <span class="name">First Mover Fund N.V.</span>
+    <span class="sub">🇳🇱 Dutch-Listed · Est. 1957 · Euronext Amsterdam</span>
+  </div>
+  <div class="nav-right">
+    <div class="nav-listed"><div class="nav-dot"></div><span>Euronext AMS: FMF</span></div>
+    <a href="#reserve" class="nav-cta">Reserve Now</a>
   </div>
 </nav>
 
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>🌾 First Mover Farmland America Fund</span><span class="hl">▸ Now Open for Reservations</span>
+    <span>🇳🇱 From Holland · Since 1957</span><span class="hl">▸ Min. Investment $10,000</span>
+    <span>📈 Euronext Amsterdam Listed</span><span class="hl">▸ 850,000+ Investors</span>
+    <span>🌱 Regenerative U.S. Farmland</span><span class="hl">▸ Reg D · Accredited Investors</span>
+    <span>💧 Dual Income: Crop Yield + Carbon Credits</span><span class="hl">▸ Positions Filling Fast</span>
+    <span>🌾 First Mover Farmland America Fund</span><span class="hl">▸ Now Open for Reservations</span>
+    <span>🇳🇱 From Holland · Since 1957</span><span class="hl">▸ Min. Investment $10,000</span>
+    <span>📈 Euronext Amsterdam Listed</span><span class="hl">▸ 850,000+ Investors</span>
+    <span>🌱 Regenerative U.S. Farmland</span><span class="hl">▸ Reg D · Accredited Investors</span>
+    <span>💧 Dual Income: Crop Yield + Carbon Credits</span><span class="hl">▸ Positions Filling Fast</span>
+  </div>
+</div>
+
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-bg-img" src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185548_c7b43ce0-98f9-47c2-a312-e81722447c6e.png" alt="Dutch polder farmland aerial view at sunrise" />
-  <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div>
-      <div class="eyebrow">
-        <span class="badge badge-nl">🇳🇱 From Holland</span>
-        <span class="badge badge-listed">📈 Euronext Listed</span>
-        <span class="badge badge-1957">Since 1957</span>
-        <span class="badge badge-us">🇺🇸 Now in the U.S.</span>
+      <div class="badges">
+        <span class="badge">🇳🇱 From Holland</span>
+        <span class="badge">📈 Euronext Listed</span>
+        <span class="badge">Since 1957</span>
+        <span class="badge lime">🇺🇸 Now in the U.S.</span>
+        <span class="badge">Reg D Offering</span>
       </div>
-      <h1><span class="hero-kicker">U.S. Farmland —</span>Own the land that<br><em>feeds the world.</em></h1>
-      <p class="hero-sub">A <strong>Dutch-listed investment firm from Holland</strong>, operating since 1957, is bringing regenerative U.S. farmland to private investors. Dual income. Permanent scarcity. First mover advantage.</p>
-      <div class="hero-trust">
-        <div class="trust-item">
-          <div class="trust-num">67<em>+</em></div>
-          <div class="trust-label">Years in market</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-num">850<em>k+</em></div>
-          <div class="trust-label">European investors</div>
-        </div>
-        <div class="trust-item">
-          <div class="trust-num">€2.4<em>B</em></div>
-          <div class="trust-label">Assets managed</div>
-        </div>
+      <h1>First Mover<br /><em>Farmland America</em><br />Fund</h1>
+      <p class="tagline">"Everyone is looking up — but the best<br/>investment is right under your feet."</p>
+      <div class="hero-stats">
+        <div class="hstat"><div class="num">67</div><div class="lbl">Years in Markets</div></div>
+        <div class="hstat"><div class="num">850K+</div><div class="lbl">Investors</div></div>
+        <div class="hstat"><div class="num">$10K</div><div class="lbl">Minimum Entry</div></div>
       </div>
-      <div style="font-size:13px;color:rgba(255,255,255,.3);display:flex;align-items:center;gap:10px"><span style="width:36px;height:1px;background:rgba(255,255,255,.2);display:block"></span>Scroll to discover more</div>
+      <p style="font-size:13px;color:rgba(255,255,255,0.65);max-width:480px;line-height:1.6;">A Dutch-listed institution with 67 years of market experience is acquiring productive U.S. farmland — partnering with American farmers and leveraging environmental intelligence to generate dual-stream returns.</p>
     </div>
+    <div class="form-card">
+      <div class="urgency"><div class="urgency-dot"></div><p>Limited to 2,000 accredited investors — positions filling now</p></div>
+      <div class="form-title">Reserve Your Position</div>
+      <div class="form-sub">Reservation of Interest — no commitment required</div>
+      <div class="min-badge"><span>Starting from </span><strong>$10,000</strong></div>
+      <input type="text"  placeholder="Full Name" />
+      <input type="email" placeholder="Email Address" />
+      <input type="tel"   placeholder="Phone Number" />
+      <select>
+        <option value="" disabled selected>Investment Range</option>
+        <option>$10,000 – $25,000</option>
+        <option>$25,000 – $50,000</option>
+        <option>$50,000 – $100,000</option>
+        <option>$100,000 – $250,000</option>
+        <option>$250,000+</option>
+      </select>
+      <div class="check-row">
+        <input type="checkbox" id="acc" />
+        <label for="acc">I confirm I am an accredited investor as defined by SEC Rule 501 of Regulation D.</label>
+      </div>
+      <button class="form-btn">Secure My Reservation &rarr;</button>
+      <div class="form-fine">No fees. No commitment. Priority access when we launch.</div>
+    </div>
+  </div>
+</section>
 
-    <div class="hero-card fade-up in">
-      <div class="hc-accent"></div>
-      <div class="urgency"><div class="urgency-dot"></div><span class="urgency-text">Waitlist filling fast — limited U.S. spots</span></div>
-      <div class="card-title">First Mover Access</div>
-      <div class="card-headline">Be first when U.S. farmland opens up.</div>
-      <div class="card-sub">No commitment. Just your details. You'll be contacted first — before the public launch.</div>
-      <form onsubmit="handleSubmit(event)">
-        <div class="fi"><input type="text" placeholder="Your full name" required /></div>
-        <div class="fi"><input type="email" placeholder="Email address" required /></div>
-        <div class="fi"><input type="tel" placeholder="Phone number" required /></div>
-        <button type="submit" class="btn-submit">Reserve My First Mover Spot →</button>
-      </form>
-      <p class="form-note">No commitment. No payment. Cancel anytime.</p>
-      <div class="sp-mini">
-        <div class="avs">
-          <div class="av" style="background:linear-gradient(135deg,#22c55e,#16a34a)">PV</div>
-          <div class="av" style="background:linear-gradient(135deg,#f59e0b,#d97706)">LM</div>
-          <div class="av" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">DK</div>
-          <div class="av" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed)">SR</div>
-        </div>
-        <div class="sp-mini-text"><strong>1,204 people</strong> already on the list</div>
+<!-- WHY FARMLAND NOW -->
+<section class="why">
+  <div class="container">
+    <span class="s-label">The Opportunity</span>
+    <h2 style="color:#fff;">Why U.S. Farmland.<br />Why Now.</h2>
+    <p class="lead">Farmland is the world's oldest asset class — and today, one of the most compelling. While markets swing, farmland quietly compounds.</p>
+    <div class="why-grid">
+      <div class="w-card">
+        <div class="ico">📈</div>
+        <h3>Never Lost Value in 50 Years</h3>
+        <p>U.S. farmland has not experienced a single down decade since records began. It appreciates through recessions, corrections, and crises.</p>
+        <div class="big">+2,000%</div>
+        <div class="sm">Appreciation since 1970</div>
+      </div>
+      <div class="w-card">
+        <div class="ico">💵</div>
+        <h3>Dual Income Streams</h3>
+        <p>Farmland generates returns from two independent sources simultaneously: agricultural lease income and growing environmental credit markets.</p>
+        <div class="big">5–9%</div>
+        <div class="sm">Target annual cash yield</div>
+      </div>
+      <div class="w-card">
+        <div class="ico">🛡️</div>
+        <h3>Built-In Inflation Hedge</h3>
+        <p>Food prices and land values track inflation closely. When everything else shrinks in real terms, productive land historically holds and grows.</p>
+        <div class="big">0.03</div>
+        <div class="sm">Correlation to S&amp;P 500</div>
+      </div>
+      <div class="w-card">
+        <div class="ico">🌱</div>
+        <h3>Global Demand Growing</h3>
+        <p>9.7 billion people by 2050. Arable land per person is shrinking. Food production must increase 70% — the land beneath it becomes more valuable by default.</p>
+        <div class="big">⅓</div>
+        <div class="sm">Of arable land already degraded</div>
+      </div>
+      <div class="w-card">
+        <div class="ico">🤝</div>
+        <h3>Farmer Partnership Model</h3>
+        <p>We acquire land and partner with local American farmers. They operate. We invest and optimize. Aligned incentives, community-anchored, resilient.</p>
+        <div class="big">12M+</div>
+        <div class="sm">Acres in acquisition pipeline</div>
+      </div>
+      <div class="w-card">
+        <div class="ico">🔬</div>
+        <h3>Technology-Driven Value</h3>
+        <p>Environmental intelligence, soil analytics, precision agriculture and carbon market access transform ordinary farmland into a high-performing, data-optimized asset.</p>
+        <div class="big">+40%</div>
+        <div class="sm">Avg yield lift with precision ag</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TICKER -->
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-inner">
-    <span class="ti">🇳🇱 Dutch Heritage Since 1957</span><span class="ti">📈 Listed on Euronext Amsterdam</span><span class="ti">850,000+ European Investors</span><span class="ti">€2.4B+ Assets Under Management</span><span class="ti">67 Years of Real Asset Expertise</span><span class="ti">🇺🇸 First U.S. Farmland Offering</span><span class="ti">Dual Income — Crops + Carbon Credits</span><span class="ti">3,200+ Hectares Managed</span><span class="ti">Waitlist Now Open</span>
-    <span class="ti">🇳🇱 Dutch Heritage Since 1957</span><span class="ti">📈 Listed on Euronext Amsterdam</span><span class="ti">850,000+ European Investors</span><span class="ti">€2.4B+ Assets Under Management</span><span class="ti">67 Years of Real Asset Expertise</span><span class="ti">🇺🇸 First U.S. Farmland Offering</span><span class="ti">Dual Income — Crops + Carbon Credits</span><span class="ti">3,200+ Hectares Managed</span><span class="ti">Waitlist Now Open</span>
+<!-- INVESTMENT THESIS -->
+<section class="thesis">
+  <div class="container">
+    <div class="thesis-grid">
+      <div>
+        <span class="s-label dk">Investment Thesis</span>
+        <h2>Acquire. Partner.<br /><em>Optimize. Distribute.</em></h2>
+        <p class="lead" style="margin-bottom:0;">Buy productive American farmland, partner with the farmers who know it best, and use Dutch-engineered precision to unlock every dollar of value.</p>
+        <div class="t-points">
+          <div class="t-pt"><div class="t-num">1</div><div><h4>Acquire Productive U.S. Farmland</h4><p>Institutional-grade acquisition of cash-flowing agricultural land across core U.S. growing regions — corn belt, Pacific Northwest, Southeast row crops.</p></div></div>
+          <div class="t-pt"><div class="t-num">2</div><div><h4>Partner With Local Farmers</h4><p>Long-term lease structures with experienced operators who have a stake in the land's productivity. Community-rooted, not extractive.</p></div></div>
+          <div class="t-pt"><div class="t-num">3</div><div><h4>Environmental Intelligence Layer</h4><p>Soil carbon analytics, water optimization, biodiversity monitoring and regenerative practices unlock carbon credit and environmental markets.</p></div></div>
+          <div class="t-pt"><div class="t-num">4</div><div><h4>Distribute Dual-Stream Returns</h4><p>Investors receive income from agricultural leases and environmental credit sales, plus land appreciation, on a quarterly distribution schedule.</p></div></div>
+        </div>
+      </div>
+      <div class="thesis-img">
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185548_c7b43ce0-98f9-47c2-a312-e81722447c6e.png" alt="Dutch polder farmland aerial" />
+        <div class="img-badge">🇳🇱 Dutch Agriculture Excellence Since 1957</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVENUE STREAMS -->
+<section class="revenue">
+  <div class="container">
+    <span class="s-label dk">Returns</span>
+    <h2>Four Ways Your<br />Investment <em>Earns</em></h2>
+    <p class="lead">Unlike single-strategy funds, Farmland America generates returns across four independent channels simultaneously.</p>
+    <div class="rev-grid">
+      <div class="rev-card">
+        <div class="rev-ico">🌾</div>
+        <h3>Agricultural Lease Income</h3>
+        <p>Farmers pay rent on the land they operate. Leases are long-term, contractually fixed, secured against the land itself — the bedrock of the fund's income.</p>
+        <div class="rev-val">3–5% / year</div>
+        <div class="rev-note">Cash lease yield on acquisition price</div>
+      </div>
+      <div class="rev-card a">
+        <div class="rev-ico">🌿</div>
+        <h3>Carbon &amp; Environmental Credits</h3>
+        <p>Regenerative practices — cover cropping, reduced tillage, biodiversity zones — generate verified carbon credits sold into compliance and voluntary markets.</p>
+        <div class="rev-val a">2–4% / year</div>
+        <div class="rev-note">Growing market, contractual offtake agreements</div>
+      </div>
+      <div class="rev-card b">
+        <div class="rev-ico">📊</div>
+        <h3>Land Appreciation</h3>
+        <p>U.S. farmland has averaged 6–8% annual appreciation over the past three decades. As land becomes scarcer, capital value compounds.</p>
+        <div class="rev-val b">6–8% / year</div>
+        <div class="rev-note">USDA 30-year historical average</div>
+      </div>
+      <div class="rev-card l">
+        <div class="rev-ico">💧</div>
+        <h3>Water Rights &amp; Resource Value</h3>
+        <p>Strategic parcels include water rights and mineral access — independent value streams becoming increasingly critical in water-scarce markets.</p>
+        <div class="rev-val">Variable upside</div>
+        <div class="rev-note">State-dependent; additive to base returns</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH BAND -->
+<div class="tech-band">
+  <div class="tech-inner">
+    <span class="s-label">Technology Edge</span>
+    <h2 style="color:#fff;">Dutch Precision.<br />American Scale.</h2>
+    <p class="lead">The Netherlands produces more food per square meter than almost any nation on earth. We bring that precision intelligence to American farmland.</p>
+    <div class="pillars">
+      <div class="pillar"><div class="pillar-dot"></div><span>Soil carbon analytics and deep mapping</span></div>
+      <div class="pillar"><div class="pillar-dot"></div><span>Precision irrigation and water optimization</span></div>
+      <div class="pillar"><div class="pillar-dot"></div><span>Satellite yield monitoring and forecasting</span></div>
+      <div class="pillar"><div class="pillar-dot"></div><span>Automated carbon credit verification and sale</span></div>
+      <div class="pillar"><div class="pillar-dot"></div><span>Real-time biodiversity and ESG reporting</span></div>
+    </div>
   </div>
 </div>
 
 <!-- DUTCH HERITAGE -->
-<section class="dutch fade-up" id="about">
-  <div class="dutch-inner">
-    <div class="dutch-imgs">
-      <div class="dutch-img-main">
-        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185557_5bda41f6-663a-4e17-a264-c81cf1eec9c2.png" alt="Dutch tulip fields and windmill, Holland" />
-        <div class="dutch-img-caption">Holland, the Netherlands <span>Where First Mover Fund was founded in 1957</span></div>
-      </div>
-      <div class="dutch-img-small">
-        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185554_a7fd44c6-bd26-4859-8239-607315a5bb65.png" alt="Dutch farmer holding rich fertile soil" />
-        <div class="dutch-img-caption">Dutch farming precision <span>Regenerative methods since 1957</span></div>
-      </div>
-    </div>
-    <div>
-      <div class="dtag">Dutch Heritage · Since 1957</div>
-      <h2 class="dh2">From <em>Holland</em> — with 67 years of land expertise.</h2>
-      <p class="dlead">First Mover Fund was founded in the Netherlands in 1957. For nearly seven decades, Dutch investors have trusted us with their land investments. The Dutch know land — it's in our national DNA. We drained the sea to create our country. Now we bring that same precision and determination to American soil.</p>
-      <div class="dutch-flag-row">
-        <div class="flag-emoji">🇳🇱</div>
-        <div class="flag-text">
-          Listed on Euronext Amsterdam — since 1957
-          <span>European regulated exchange · Public annual reports · Independently audited every year</span>
+<section class="heritage">
+  <div class="container">
+    <div class="her-grid">
+      <div>
+        <span class="s-label">Dutch Heritage</span>
+        <h2>67 Years of<br />Agricultural Investing.<br /><em style="color:var(--lime);">From Holland.</em></h2>
+        <div class="flag"><div class="r"></div><div class="w"></div><div class="b"></div></div>
+        <p class="lead" style="color:rgba(255,255,255,0.7);">First Mover Fund N.V. was founded in Amsterdam in 1957. For over six decades we have managed real asset portfolios for European investors — from the Netherlands, the global leader in precision agriculture and food technology.</p>
+        <div class="h-stats">
+          <div class="h-stat"><div class="n">1957</div><div class="l">Founded</div></div>
+          <div class="h-stat"><div class="n">850K+</div><div class="l">Investors</div></div>
+          <div class="h-stat"><div class="n">AMS</div><div class="l">Euronext</div></div>
+        </div>
+        <div class="timeline">
+          <div class="tl"><div class="tl-dot"><span>1957</span></div><div><h4>Founded in Amsterdam</h4><p>First Mover Fund N.V. established on Euronext Amsterdam.</p></div></div>
+          <div class="tl"><div class="tl-dot"><span>1980</span></div><div><h4>European Real Assets</h4><p>Expanded to agricultural land and real asset portfolios across the Netherlands and Europe.</p></div></div>
+          <div class="tl"><div class="tl-dot"><span>2018</span></div><div><h4>Environmental Intelligence</h4><p>Launched precision agriculture and environmental credit programs across portfolio.</p></div></div>
+          <div class="tl"><div class="tl-dot"><span>2025</span></div><div><h4>U.S. Farmland Expansion</h4><p>First Mover Farmland America Fund — Dutch expertise meets American land.</p></div></div>
         </div>
       </div>
-      <div class="dutch-stats">
-        <div class="dstat"><div class="dstat-num">1957<em></em></div><div class="dstat-label">Founded in Holland</div></div>
-        <div class="dstat"><div class="dstat-num">850<em>k+</em></div><div class="dstat-label">Investors served</div></div>
-        <div class="dstat"><div class="dstat-num">3,200<em>+</em></div><div class="dstat-label">Hectares managed</div></div>
-        <div class="dstat"><div class="dstat-num">67<em>+</em></div><div class="dstat-label">Years in the market</div></div>
+      <div>
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185557_5bda41f6-663a-4e17-a264-c81cf1eec9c2.png" alt="Dutch agricultural heritage" style="width:100%;border-radius:14px;display:block;" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- TIMELINE -->
-<section class="tl-section" id="history">
-  <div class="tl-inner">
-    <div class="s-tag fade-up">Our journey</div>
-    <h2 class="s-h2 fade-up">From <em>Amsterdam</em> to the United States</h2>
-    <p class="s-lead fade-up">67 years of building trust with land investors. Now bringing that expertise to the world's largest agriculture market.</p>
-    <div class="tl-grid">
-      <div class="tl-item fade-up"><div class="tl-dot">🇳🇱</div><div class="tl-year">1957</div><div class="tl-text">Founded in the Netherlands. Dutch investors trust us with their land capital from day one.</div></div>
-      <div class="tl-item fade-up"><div class="tl-dot">📈</div><div class="tl-year">1980s</div><div class="tl-text">Listed on Euronext Amsterdam. Opened to hundreds of thousands of European private investors.</div></div>
-      <div class="tl-item fade-up"><div class="tl-dot">🌱</div><div class="tl-year">2018</div><div class="tl-text">Regenerative agriculture pivot. First dual-income model combining crop yields with carbon credits.</div></div>
-      <div class="tl-item fade-up"><div class="tl-dot">🇺🇸</div><div class="tl-year">2025</div><div class="tl-text">U.S. expansion. First American farmland offering — and you can be among the very first investors.</div></div>
+<!-- FUND STRUCTURE -->
+<section class="structure">
+  <div class="container">
+    <span class="s-label dk">Fund Structure</span>
+    <h2>Built for<br /><em>Accredited Investors</em></h2>
+    <p class="lead">The First Mover Farmland America Fund is structured as a Regulation D private offering — designed to maximize accessibility without compromising institutional quality.</p>
+    <div class="str-grid">
+      <div class="str-card"><div class="ico">📋</div><h4>Offering Type</h4><p>Regulation D, Rule 506(b)</p><div class="val">Reg D</div></div>
+      <div class="str-card"><div class="ico">💵</div><h4>Minimum Investment</h4><p>Broad accessibility to accredited investors</p><div class="val">$10,000</div></div>
+      <div class="str-card"><div class="ico">👥</div><h4>Investor Limit</h4><p>Real estate acquisition fund structure</p><div class="val">2,000 max</div></div>
+      <div class="str-card"><div class="ico">📅</div><h4>Distributions</h4><p>Quarterly income payments to all investors</p><div class="val">Quarterly</div></div>
     </div>
   </div>
 </section>
 
-<!-- DUAL INCOME -->
-<section class="dual" id="income">
-  <div class="dual-inner">
-    <div class="s-tag fade-up">The land advantage</div>
-    <h2 class="s-h2 fade-up">Two income streams from <em>one investment</em></h2>
-    <p class="s-lead fade-up">Agricultural land is the only asset class generating both traditional cash income and environmental value simultaneously — and both are growing.</p>
-    <div class="dual-grid">
-      <div class="dc dc--crop fade-up">
-        <div class="dc-icon"><svg viewBox="0 0 24 24"><path d="M12 22V12M12 12C12 7 7 2 2 2C2 7 7 12 12 12ZM12 12C12 7 17 2 22 2C22 7 17 12 12 12Z"/></svg></div>
-        <h3>Agricultural yield</h3>
-        <p>Our partner farms produce high-value crops generating rental income that flows directly to investors every quarter — the same model Dutch land funds have used for 67 years.</p>
-        <ul class="dc-list">
-          <li>Long-term leases with proven American farm operators</li>
-          <li>Crop insurance and diversified commodity exposure</li>
-          <li>8% annual cash yield, paid quarterly to your account</li>
-          <li>Rising food prices protect your purchasing power</li>
-        </ul>
-      </div>
-      <div class="dc dc--env fade-up">
-        <div class="dc-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-        <h3>Environmental credits</h3>
-        <p>Regenerative land management generates carbon credits, biodiversity units, and water rights — a booming market adding a second income layer on top of crop income.</p>
-        <ul class="dc-list">
-          <li>Carbon sequestration — certified credits sold annually</li>
-          <li>Biodiversity Net Gain (BNG) units — growing fast</li>
-          <li>Voluntary carbon market demand surging globally</li>
-          <li>Regulatory tailwinds driving credit prices higher</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SOIL IMAGE BAND -->
-<div class="soil-band">
-  <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185554_a7fd44c6-bd26-4859-8239-607315a5bb65.png" alt="Farmer holding rich fertile soil" />
-  <div class="soil-overlay">
-    <div class="soil-content">
-      <h2>The Dutch know <em>good soil.</em></h2>
-      <p>We built our country from the sea. For 67 years we've turned difficult land into productive, valuable assets. Now we're applying that same expertise to American farmland — and the opportunity is extraordinary.</p>
-      <a href="#waitlist" class="soil-btn">Join the Land Waitlist →</a>
-    </div>
-  </div>
-</div>
-
-<!-- BENEFITS -->
-<section class="benefits" id="benefits">
-  <div class="ben-inner">
-    <div class="s-tag fade-up">Why land with FMF</div>
-    <h2 class="s-h2 fade-up">The world's oldest asset class, <em>reinvented</em></h2>
-    <p class="s-lead fade-up">Land doesn't depreciate, can't be manufactured, and has fed civilisations for millennia. Dutch investors have known this for centuries. Now it's your turn.</p>
-    <div class="ben-grid">
-      <div class="bc fade-up">
-        <div class="bc-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <h3>Finite supply, infinite demand</h3>
-        <p>U.S. farmland acreage shrinks every year through development and degradation. Meanwhile global food demand rises relentlessly. Supply constraints are permanent.</p>
-      </div>
-      <div class="bc fade-up">
-        <div class="bc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-        <h3>67-year proven model</h3>
-        <p>Dutch land funds have outperformed inflation for decades. Our 67-year track record of delivering consistent returns to European investors speaks louder than any projection.</p>
-      </div>
-      <div class="bc fade-up">
-        <div class="bc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-        <h3>Regenerative value creation</h3>
-        <p>The land we farm regeneratively becomes more fertile and more biodiverse over time. You don't just hold an asset — you improve it while you hold it. That's the Dutch way.</p>
-      </div>
-      <div class="bc fade-up">
-        <div class="bc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>Fully managed — zero admin</h3>
-        <p>We handle all farm operations, environmental certifications, credit sales, and compliance. You own the land economics; we run the land. Dutch efficiency.</p>
-      </div>
-      <div class="bc fade-up">
-        <div class="bc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3>ESG returns — real impact</h3>
-        <p>Every project sequesters carbon, restores biodiversity, and improves water quality. Real environmental impact — measured, certified, and financially rewarded.</p>
-      </div>
-      <div class="bc fade-up">
-        <div class="bc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <h3>Listed — full transparency</h3>
-        <p>As a Euronext-listed firm, our financials are public record. Your investor dashboard shows farm outputs, credit generation, and distributions in real time.</p>
-      </div>
-    </div>
+<!-- COMPARISON -->
+<section class="compare">
+  <div class="container">
+    <span class="s-label dk">Why First Mover</span>
+    <h2>How We Compare</h2>
+    <p class="lead">First Mover brings 67 years of institutional credibility to a space typically reserved for ultra-high-net-worth investors.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th class="hl">First Mover Farmland America</th>
+          <th>Typical Farmland REIT</th>
+          <th>Standard Private Fund</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Minimum Investment</td><td class="hl">$10,000</td><td>$500–$10,000 (shares)</td><td>$100K–$500K</td></tr>
+        <tr><td>Publicly Listed Sponsor</td><td class="hl"><span class="ck">✓</span> Euronext Amsterdam</td><td><span class="ck">✓</span></td><td><span class="xk">✗</span></td></tr>
+        <tr><td>Dutch Agricultural Expertise</td><td class="hl"><span class="ck">✓</span> Since 1957</td><td><span class="xk">✗</span></td><td><span class="xk">✗</span></td></tr>
+        <tr><td>Environmental Credit Revenue</td><td class="hl"><span class="ck">✓</span> Carbon + Biodiversity</td><td>Partial</td><td>Rare</td></tr>
+        <tr><td>Farmer Partnership Model</td><td class="hl"><span class="ck">✓</span> Long-term leases</td><td>Variable</td><td><span class="xk">✗</span></td></tr>
+        <tr><td>Quarterly Distributions</td><td class="hl"><span class="ck">✓</span></td><td><span class="ck">✓</span></td><td>Annual or irregular</td></tr>
+        <tr><td>Accredited Investors Only</td><td class="hl"><span class="ck">✓</span> Reg D</td><td><span class="xk">✗</span> Public</td><td><span class="ck">✓</span></td></tr>
+      </tbody>
+    </table>
   </div>
 </section>
 
 <!-- FOMO -->
 <div class="fomo">
-  <div class="fomo-inner">
-    <div class="fomo-left fade-up">
-      <h2>Our last launch sold out in <em>48 hours.</em></h2>
-      <p>Our European farmland opportunity was 94% subscribed within 48 hours of going live. The U.S. has a larger market, higher demand, and 1,200+ people already on this waitlist. Don't be the one who waited too long.</p>
-    </div>
-    <div class="fomo-right fade-up">
-      <div class="fomo-live">Waitlist now open</div><br/>
-      <a href="#waitlist" class="fomo-btn">Secure My Spot Now →</a>
-      <p class="fomo-note">No commitment · No payment · Cancel anytime</p>
-    </div>
-  </div>
+  <p>🌾 <span>Prior offerings sold out within 72 hours of launch.</span> Reservation positions are filling now.</p>
+  <div class="fomo-pill">🔒 2,000 Investor Cap · Reg D</div>
+  <div class="fomo-pill">📩 Priority Access for Reservations</div>
 </div>
 
 <!-- HOW IT WORKS -->
-<section class="how" id="how">
-  <div class="how-inner">
-    <div class="s-tag fade-up" style="text-align:center">How it works</div>
-    <h2 class="s-h2 fade-up" style="text-align:center;max-width:560px;margin-left:auto;margin-right:auto">From waitlist to <em>first harvest income</em></h2>
-    <p class="s-lead fade-up" style="text-align:center;margin-left:auto;margin-right:auto">Step one takes 60 seconds. No commitment, no paperwork required.</p>
+<section class="how">
+  <div class="container">
+    <span class="s-label dk" style="text-align:center;display:block;">Process</span>
+    <h2 style="text-align:center;">How It Works</h2>
+    <p class="lead" style="text-align:center;margin:0 auto 48px;">From reservation to first distribution — a simple, transparent four-step process.</p>
     <div class="how-steps">
-      <div class="hs fade-up"><div class="hs-num">1</div><h3>Join the waitlist</h3><p>Name, email, phone. That's it. No payment, no commitment. Takes under 60 seconds.</p></div>
-      <div class="hs fade-up"><div class="hs-num">2</div><h3>Get first access</h3><p>We notify waitlist members before public launch. Full project details, soil reports, and financials — first.</p></div>
-      <div class="hs fade-up"><div class="hs-num">3</div><h3>Invest from $10,000</h3><p>Review the offering, sign digitally, fund via bank transfer. Designed for private investors.</p></div>
-      <div class="hs fade-up"><div class="hs-num">4</div><h3>Earn dual income</h3><p>8% quarterly crop income plus environmental credit sales. Track everything in your investor dashboard.</p></div>
+      <div class="step"><div class="step-n">1</div><h4>Submit Reservation</h4><p>Complete the Reservation of Interest form. No commitment, no fees — just your place in the queue.</p></div>
+      <div class="step"><div class="step-n">2</div><h4>Receive Info Pack</h4><p>Full offering document, fund strategy deck, and accreditation verification process sent directly to you.</p></div>
+      <div class="step"><div class="step-n">3</div><h4>Confirm &amp; Invest</h4><p>Accredited investors confirm their position and transfer funds when the offering officially opens.</p></div>
+      <div class="step"><div class="step-n">4</div><h4>Earn Quarterly</h4><p>Receive your first distribution within 90 days of fund close — then quarterly, every quarter.</p></div>
     </div>
   </div>
 </section>
 
-<!-- WAITLIST -->
-<section class="waitlist" id="waitlist">
-  <div class="wl-inner">
-    <div class="wl-badge">🌱 Limited U.S. spots available</div>
-    <h2 class="wl-h2 fade-up">Be among the <em>very first</em> U.S. land investors.</h2>
-    <p class="wl-sub fade-up">No commitment. No payment. When we go live in the United States — and we <strong style="color:rgba(255,255,255,.9)">expect to sell out fast</strong> — you will be among the very first we contact.</p>
-    <form onsubmit="handleSubmitWL(event)" class="fade-up">
-      <div class="wl-form">
-        <input class="wl-input" type="text" placeholder="Full name" required />
-        <input class="wl-input" type="email" placeholder="Email address" required />
+<!-- RESERVATION -->
+<section class="reserve" id="reserve">
+  <div class="res-inner">
+    <span class="s-label" style="text-align:center;display:block;">Reserve Your Position</span>
+    <h2>Secure Your Place<br />in Farmland America</h2>
+    <p class="lead">This offering is limited to 2,000 accredited investors. Reserve now — no commitment required until you have reviewed the full offering documents.</p>
+    <div class="big-form">
+      <h3>Reservation of Interest Form</h3>
+      <div class="fsub">First Mover Farmland America Fund &mdash; Reg D Offering &middot; Min. $10,000 &middot; Accredited Investors Only</div>
+      <div class="f-row">
+        <input type="text"  placeholder="First Name" />
+        <input type="text"  placeholder="Last Name" />
       </div>
-      <input class="wl-input" type="tel" placeholder="Phone number" required style="width:100%;margin-bottom:12px" />
-      <button type="submit" class="wl-btn">Yes — Reserve My First Mover Spot →</button>
-    </form>
-    <p class="wl-note">No commitment. No payment. Priority contact when U.S. land launch is confirmed.</p>
-    <div class="wl-sp">
-      <div class="av-stack">
-        <div class="av2" style="background:linear-gradient(135deg,#22c55e,#16a34a)">PV</div>
-        <div class="av2" style="background:linear-gradient(135deg,#f59e0b,#d97706)">LM</div>
-        <div class="av2" style="background:linear-gradient(135deg,#3b82f6,#1d4ed8)">DK</div>
-        <div class="av2" style="background:linear-gradient(135deg,#8b5cf6,#7c3aed)">SR</div>
-        <div class="av2" style="background:linear-gradient(135deg,#f97316,#ef4444)">WB</div>
+      <div class="f-row">
+        <input type="email" placeholder="Email Address" />
+        <input type="tel"   placeholder="Phone Number" />
       </div>
-      <div class="wl-sp-text"><strong>1,204 people</strong> already on the land waitlist</div>
+      <select class="mb14">
+        <option value="" disabled selected>Intended Investment Amount</option>
+        <option>$10,000 – $25,000</option>
+        <option>$25,000 – $50,000</option>
+        <option>$50,000 – $100,000</option>
+        <option>$100,000 – $250,000</option>
+        <option>$250,000 – $500,000</option>
+        <option>$500,000+</option>
+      </select>
+      <select class="mb14">
+        <option value="" disabled selected>How did you hear about us?</option>
+        <option>LinkedIn / Social Media</option>
+        <option>Referred by an advisor</option>
+        <option>News / Press</option>
+        <option>Existing First Mover investor</option>
+        <option>Other</option>
+      </select>
+      <textarea placeholder="Any questions or comments? (optional)"></textarea>
+      <div class="f-check">
+        <input type="checkbox" id="acc2" />
+        <label for="acc2">I confirm that I am an accredited investor as defined under SEC Rule 501 of Regulation D — having net worth exceeding $1 million (excluding primary residence) or annual income exceeding $200,000 ($300,000 joint) in each of the two most recent years.</label>
+      </div>
+      <div class="f-check">
+        <input type="checkbox" id="terms" />
+        <label for="terms">I understand this reservation is non-binding. I will receive the full Private Placement Memorandum before making any investment decision. First Mover Fund N.V. is listed on Euronext Amsterdam.</label>
+      </div>
+      <button class="big-btn">Submit Reservation of Interest &rarr;</button>
+      <div class="acc-note">&#128274; Your information is secure and confidential. This is a Regulation D private offering available to accredited investors only. Submission of this form does not constitute an offer or commitment to invest. You will receive the full PPM and disclosure documents before any investment is required.</div>
     </div>
   </div>
 </section>
@@ -539,65 +616,25 @@
   <div class="ft-inner">
     <div class="ft-top">
       <div class="ft-brand">
-        <h3>First Mover Fund N.V.</h3>
-        <p>🇳🇱 Dutch-listed real asset investment firm. Founded in Holland in 1957. Listed on Euronext Amsterdam. Independently audited. Built for private investors worldwide.</p>
+        <div class="name">First Mover Fund N.V.</div>
+        <div class="tag">&#127475;&#127473; Founded in Holland &middot; Est. 1957 &middot; Euronext Amsterdam</div>
       </div>
-      <div class="ft-cols">
-        <div class="ft-col">
-          <h4>Company</h4>
-          <a href="https://firstmoverfund.com/about-us">About us</a>
-          <a href="https://firstmoverfund.com/how-it-works">How it works</a>
-          <a href="https://firstmoverfund.com/blog">Blog</a>
-          <a href="https://firstmoverfund.com/contact-us">Contact</a>
-        </div>
-        <div class="ft-col">
-          <h4>Invest</h4>
-          <a href="https://realestate.firstmoverfund.com">Real estate</a>
-          <a href="https://firstmoverfund.com/knowledge-hub">Knowledge Hub</a>
-          <a href="https://firstmoverfund.com/faqs">FAQs</a>
-        </div>
-        <div class="ft-col">
-          <h4>Legal</h4>
-          <a href="https://firstmoverfund.com/privacy-policy">Privacy Policy</a>
-          <a href="https://firstmoverfund.com/terms-of-service">Terms of Service</a>
-          <a href="https://firstmoverfund.com/corporate-governance">Corporate Governance</a>
-        </div>
+      <div class="ft-links">
+        <a href="#">Farmland America Fund</a>
+        <a href="/realestate">Real Estate Fund</a>
+        <a href="#">About First Mover</a>
+        <a href="#">Privacy Policy</a>
       </div>
     </div>
-    <hr class="ft-hr" />
-    <div class="ft-bottom">
-      <p class="ft-copy">© 2025 First Mover Fund N.V. · Listed on Euronext Amsterdam · Founded in Holland 1957 · All rights reserved.</p>
-      <nav class="ft-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Risk Disclaimer</a></nav>
+    <div class="ft-disc">
+      <strong>Important Disclosures:</strong> First Mover Farmland America Fund is offered as a private placement pursuant to Regulation D, Rule 506(b) of the Securities Act of 1933, as amended. This offering is available exclusively to accredited investors as defined under SEC Rule 501. This page does not constitute an offer to sell or a solicitation of an offer to buy securities. Past performance of affiliated funds does not guarantee future results. Investment in private placements involves significant risk, including potential loss of principal. Prospective investors should review the full Private Placement Memorandum and consult independent legal, tax, and financial advisors prior to investing.
+      <br /><br />
+      First Mover Fund N.V. is incorporated in the Netherlands and listed on Euronext Amsterdam. U.S. offerings are conducted through a registered U.S. affiliate. All statistics referencing historical land performance are sourced from USDA National Agricultural Statistics Service data.
+      <br /><br />
+      &copy; 2025 First Mover Fund N.V. &middot; Amsterdam, Netherlands &middot; All rights reserved.
     </div>
   </div>
 </footer>
 
-<script>
-window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>50));
-const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in')}),{threshold:.1});
-document.querySelectorAll('.fade-up').forEach(el=>io.observe(el));
-function handleSubmit(e){
-  e.preventDefault();
-  const b=e.target.querySelector('[type=submit]');
-  b.textContent="🎉 You're on the list! We'll be in touch.";
-  b.style.background='linear-gradient(135deg,#2563eb,#1d4ed8)';
-  b.style.color='#fff';
-  b.disabled=true;
-  e.target.querySelectorAll('input').forEach(i=>i.disabled=true);
-}
-function handleSubmitWL(e){
-  e.preventDefault();
-  const b=e.target.querySelector('[type=submit]');
-  b.textContent="🎉 Spot reserved! Watch your inbox.";
-  b.style.background='linear-gradient(135deg,#2563eb,#1d4ed8)';
-  b.style.color='#fff';
-  b.disabled=true;
-  e.target.querySelectorAll('input').forEach(i=>i.disabled=true);
-}
-document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{
-  const t=document.querySelector(a.getAttribute('href'));
-  if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'})}
-}));
-</script>
 </body>
 </html>
