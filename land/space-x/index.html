@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Don't Look Up — First Mover Farmland America Fund</title>
+  <meta name="description" content="While the world watches rocket launches, the smartest money is moving into what it's always been — the ground beneath your feet. First Mover Farmland America Fund." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:    #0c1825;
+      --mid:    #1c3a5c;
+      --gold:   #b8965a;
+      --gold-lt:#d4b07a;
+      --paper:  #f8f6f2;
+      --rule:   #dedad3;
+      --stone:  #6b6459;
+      --white:  #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--ink); color: var(--white); line-height: 1.65; font-weight: 400; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(12,24,37,0.95); height: 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(8px);
+    }
+    .nav-brand { display: flex; align-items: baseline; gap: 14px; text-decoration: none; }
+    .nav-brand .name { color: #fff; font-weight: 600; font-size: 14px; letter-spacing: 0.3px; }
+    .nav-brand .divider { color: rgba(255,255,255,0.2); }
+    .nav-brand .sub { color: rgba(255,255,255,0.45); font-size: 11px; font-weight: 400; letter-spacing: 0.5px; }
+    .nav-cta {
+      background: transparent; color: var(--gold); border: 1px solid var(--gold);
+      font-weight: 600; font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+      padding: 7px 20px; text-decoration: none; transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--ink); }
+
+    /* VIDEO HERO */
+    .video-hero {
+      position: relative; width: 100%; padding-top: 60px;
+      background: #000;
+    }
+    video {
+      width: 100%; display: block;
+      max-height: 100vh; object-fit: cover;
+    }
+    .video-overlay {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(to bottom,
+        rgba(12,24,37,0.15) 0%,
+        transparent 30%,
+        transparent 60%,
+        rgba(12,24,37,0.85) 100%);
+    }
+    .video-caption {
+      position: absolute; bottom: 48px; left: 0; right: 0;
+      text-align: center; padding: 0 24px;
+    }
+    .video-caption .eyebrow {
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); font-weight: 600; margin-bottom: 12px;
+    }
+    .video-caption h1 {
+      font-size: clamp(2rem, 5vw, 4.2rem); font-weight: 700;
+      color: #fff; line-height: 1.05; letter-spacing: -0.5px;
+      max-width: 760px; margin: 0 auto 20px;
+    }
+    .video-caption h1 em { font-style: normal; color: var(--gold); }
+    .video-caption .sub-caption {
+      font-size: 1rem; color: rgba(255,255,255,0.65); font-weight: 300;
+      max-width: 520px; margin: 0 auto;
+    }
+
+    /* CONTRAST BAND */
+    .contrast-band {
+      background: var(--gold); color: var(--ink);
+      padding: 20px 48px; text-align: center;
+    }
+    .contrast-band p {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.5px; line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    /* THESIS SECTION */
+    .thesis {
+      max-width: 900px; margin: 0 auto; padding: 100px 48px;
+      text-align: center;
+    }
+    .section-label {
+      font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 20px;
+    }
+    .thesis h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700;
+      color: var(--white); line-height: 1.15; letter-spacing: -0.3px;
+      margin-bottom: 32px;
+    }
+    .thesis p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.8;
+      font-weight: 300; max-width: 680px; margin: 0 auto 24px;
+    }
+
+    /* STATS GRID */
+    .stats {
+      background: var(--mid);
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .stats-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4,1fr);
+    }
+    .stat {
+      padding: 52px 40px; border-right: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .stat:last-child { border-right: none; }
+    .stat .n { font-size: 2.4rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+    .stat .l { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 1.2px; text-transform: uppercase; font-weight: 500; }
+
+    /* THREE COLUMNS */
+    .three-col {
+      max-width: 1100px; margin: 0 auto; padding: 100px 48px;
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+    .col-item {
+      background: var(--ink); padding: 48px 40px;
+      border-bottom: 3px solid transparent; transition: border-color 0.2s;
+    }
+    .col-item:hover { border-bottom-color: var(--gold); }
+    .col-num { font-size: 10px; color: var(--gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+    .col-item h3 { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 12px; letter-spacing: -0.2px; }
+    .col-item p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.75; font-weight: 400; }
+
+    /* FORM SECTION */
+    .form-section {
+      background: var(--paper); color: var(--ink);
+      padding: 100px 48px;
+    }
+    .form-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: start;
+    }
+    .form-left h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700;
+      color: var(--ink); line-height: 1.15; letter-spacing: -0.3px; margin-bottom: 20px;
+    }
+    .form-left h2 em { font-style: normal; color: var(--gold); }
+    .form-left p { font-size: 14px; color: var(--stone); line-height: 1.75; margin-bottom: 32px; }
+    .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+    .bullet-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 13px; color: var(--stone); line-height: 1.6; }
+    .bullet-list li::before { content: ''; width: 18px; height: 1px; background: var(--gold); margin-top: 10px; flex-shrink: 0; }
+
+    .form-card {
+      background: var(--white); padding: 40px 36px;
+      border-top: 3px solid var(--gold);
+      box-shadow: 0 20px 60px rgba(12,24,37,0.1);
+    }
+    .form-card h3 { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .form-card .form-notice { font-size: 11px; color: var(--stone); margin-bottom: 28px; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+
+    .field { margin-bottom: 18px; }
+    .field label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: var(--stone); margin-bottom: 6px; }
+    .field input, .field select {
+      width: 100%; padding: 11px 14px; border: 1px solid var(--rule);
+      background: var(--paper); color: var(--ink); font-family: 'Montserrat', sans-serif;
+      font-size: 13px; outline: none; transition: border-color 0.2s;
+    }
+    .field input:focus, .field select:focus { border-color: var(--gold); }
+    .field select { appearance: none; cursor: pointer; }
+
+    .form-submit {
+      width: 100%; padding: 14px; background: var(--ink); color: var(--white);
+      border: none; font-family: 'Montserrat', sans-serif; font-size: 12px;
+      font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; cursor: pointer;
+      transition: background 0.2s; margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--mid); }
+    .form-legal { font-size: 10px; color: rgba(12,24,37,0.35); line-height: 1.6; margin-top: 16px; text-align: center; }
+
+    /* FOOTER */
+    footer {
+      background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 40px 48px; text-align: center;
+    }
+    .footer-brand { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 500; margin-bottom: 10px; }
+    .footer-legal { font-size: 10px; color: rgba(255,255,255,0.25); line-height: 1.7; max-width: 720px; margin: 0 auto; }
+
+    /* SUCCESS */
+    .form-success { display: none; text-align: center; padding: 32px 0; }
+    .form-success h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .form-success p { font-size: 13px; color: var(--stone); }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .video-caption { bottom: 32px; }
+      .thesis, .form-section { padding: 64px 24px; }
+      .stats-inner { grid-template-columns: repeat(2,1fr); }
+      .three-col { grid-template-columns: 1fr; padding: 64px 24px; }
+      .form-inner { grid-template-columns: 1fr; gap: 40px; }
+      .contrast-band { padding: 20px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="https://land.firstmoverfund.com">
+      <span class="name">First Mover Fund N.V.</span>
+      <span class="divider">/</span>
+      <span class="sub">Farmland America Fund</span>
+    </a>
+    <a class="nav-cta" href="#reserve">Reserve a Position</a>
+  </nav>
+
+  <!-- VIDEO HERO -->
+  <section class="video-hero">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="https://d2bytdz64ej6q4.cloudfront.net/2026_06_FMF_Dont_look_up_TV_Commercial_v7.mp4" type="video/mp4" />
+    </video>
+    <div class="video-overlay"></div>
+    <div class="video-caption">
+      <p class="eyebrow">First Mover Farmland America Fund</p>
+      <h1>Everyone is <em>looking up.</em><br>The best investment is right<br>under your feet.</h1>
+      <p class="sub-caption">While the world chases rockets and screen time, institutional capital has been quietly moving into American farmland for decades.</p>
+    </div>
+  </section>
+
+  <!-- CONTRAST BAND -->
+  <div class="contrast-band">
+    <p>Reg D &nbsp;|&nbsp; Accredited Investors &nbsp;|&nbsp; Minimum $10,000 &nbsp;|&nbsp; Reservation of Interest — No Commitment Required</p>
+  </div>
+
+  <!-- THESIS -->
+  <section class="thesis">
+    <p class="section-label">The Thesis</p>
+    <h2>The asset class nobody is talking about<br>is the one that never fails.</h2>
+    <p>SpaceX launches make headlines. Farmland returns make portfolios. U.S. agricultural land has delivered positive returns in 47 of the last 50 years — uncorrelated to equity markets, resistant to inflation, and underpinned by something no rocket can replicate: people need to eat.</p>
+    <p>First Mover Fund N.V. has been listed on Euronext since 1957. We are bringing the same institutional discipline that built a 65-year track record in European real assets to the American farmland market — at a minimum ticket accessible to individual accredited investors.</p>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="n">47/50</div>
+        <div class="l">Positive return years</div>
+      </div>
+      <div class="stat">
+        <div class="n">+11.5%</div>
+        <div class="l">20-yr avg annual return</div>
+      </div>
+      <div class="stat">
+        <div class="n">$10K</div>
+        <div class="l">Minimum investment</div>
+      </div>
+      <div class="stat">
+        <div class="n">1957</div>
+        <div class="l">Euronext-listed since</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- THREE REASONS -->
+  <div class="three-col">
+    <div class="col-item">
+      <div class="col-num">01</div>
+      <h3>Inelastic Demand</h3>
+      <p>Global population grows. Arable land does not. The math has been favorable for 10,000 years and nothing in the current macro environment changes it.</p>
+    </div>
+    <div class="col-item">
+      <div class="col-num">02</div>
+      <h3>Inflation Hedge</h3>
+      <p>Farmland rents are tied to commodity prices and CPI. When inflation rises, so does the income the land generates. It is one of the few real assets that benefits from the environment that destroys others.</p>
+    </div>
+    <div class="col-item">
+      <div class="col-num">03</div>
+      <h3>Institutional Access, Private Ticket</h3>
+      <p>Nuveen, TIAA, and Brookfield have been accumulating U.S. farmland for decades. The First Mover Farmland America Fund opens that same allocation to accredited investors starting at $10,000.</p>
+    </div>
+  </div>
+
+  <!-- FORM -->
+  <section class="form-section" id="reserve">
+    <div class="form-inner">
+      <div class="form-left">
+        <p class="section-label" style="color:var(--gold)">Reserve Your Position</p>
+        <h2>Stop looking up.<br>Start investing in <em>the ground.</em></h2>
+        <p>Submit a non-binding Reservation of Interest. Our team will follow up with the full offering memorandum and onboarding steps. No commitment is made until you review and sign the subscription documents.</p>
+        <ul class="bullet-list">
+          <li>Minimum investment: $10,000 (accredited investors only)</li>
+          <li>Reg D Rule 506(b) structure — up to 2,000 investors</li>
+          <li>Dual revenue: farmland appreciation + rental income</li>
+          <li>Managed by First Mover Fund N.V., Euronext-listed since 1957</li>
+          <li>Quarterly reporting and full transparency</li>
+        </ul>
+      </div>
+
+      <div class="form-card">
+        <h3>Reservation of Interest</h3>
+        <p class="form-notice">Non-binding — no payment or commitment required at this stage.</p>
+        <form id="reserve-form">
+          <div class="field">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstName" required placeholder="John" />
+          </div>
+          <div class="field">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastName" required placeholder="Smith" />
+          </div>
+          <div class="field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com" />
+          </div>
+          <div class="field">
+            <label for="amount">Intended Investment Amount</label>
+            <select id="amount" name="amount">
+              <option value="">Select range</option>
+              <option>$10,000 – $25,000</option>
+              <option>$25,000 – $50,000</option>
+              <option>$50,000 – $100,000</option>
+              <option>$100,000 – $250,000</option>
+              <option>$250,000+</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit">Submit Reservation</button>
+          <p class="form-legal">By submitting you confirm you are an accredited investor as defined under SEC Reg D Rule 501. This is not an offer to sell securities.</p>
+        </form>
+        <div class="form-success" id="form-success">
+          <h3>Reservation Received</h3>
+          <p>Our team will be in touch within one business day with the offering memorandum and next steps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-brand">First Mover Fund N.V. — Euronext Amsterdam — Est. 1957</p>
+    <p class="footer-legal">This page is for informational purposes only and does not constitute an offer or solicitation to buy or sell any security. The First Mover Farmland America Fund is offered under Reg D Rule 506(b) and is available to accredited investors only. Past performance is not indicative of future results. All investments involve risk, including possible loss of principal. First Mover Fund N.V. is a Dutch-listed investment firm and does not provide tax or legal advice.</p>
+  </footer>
+
+  <script>
+    // Sticky nav opacity
+    window.addEventListener('scroll', () => {
+      document.querySelector('nav').style.background =
+        window.scrollY > 40 ? 'rgba(12,24,37,0.98)' : 'rgba(12,24,37,0.95)';
+    });
+
+    // Form submit
+    document.getElementById('reserve-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('.form-submit');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      const data = {
+        firstName: e.target.firstName.value,
+        lastName: e.target.lastName.value,
+        email: e.target.email.value,
+        amount: e.target.amount.value,
+        source: 'space-x',
+        fund: 'farmland-america'
+      };
+
+      try {
+        await fetch('https://worker.green-earth-platform.com/fmf-lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+      } catch (_) {}
+
+      document.getElementById('reserve-form').style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    });
+  </script>
+</body>
+</html>
