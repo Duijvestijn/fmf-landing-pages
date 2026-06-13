@@ -52,34 +52,59 @@
     }
     video {
       width: 100%; display: block;
-      max-height: 100vh; object-fit: cover;
+      max-height: calc(100vh - 60px); object-fit: cover;
     }
     .video-overlay {
       position: absolute; inset: 0; pointer-events: none;
       background: linear-gradient(to bottom,
-        rgba(12,24,37,0.15) 0%,
-        transparent 30%,
-        transparent 60%,
-        rgba(12,24,37,0.85) 100%);
+        rgba(12,24,37,0.2) 0%,
+        transparent 20%,
+        transparent 75%,
+        rgba(12,24,37,1) 100%);
     }
-    .video-caption {
-      position: absolute; bottom: 48px; left: 0; right: 0;
-      text-align: center; padding: 0 24px;
+    .scroll-hint {
+      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: 0.5;
     }
-    .video-caption .eyebrow {
-      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--gold); font-weight: 600; margin-bottom: 12px;
+    .scroll-hint span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #fff; font-weight: 500; }
+    .scroll-arrow {
+      width: 20px; height: 20px; border-right: 1px solid #fff; border-bottom: 1px solid #fff;
+      transform: rotate(45deg);
+      animation: bounce 1.8s ease-in-out infinite;
     }
-    .video-caption h1 {
-      font-size: clamp(2rem, 5vw, 4.2rem); font-weight: 700;
-      color: #fff; line-height: 1.05; letter-spacing: -0.5px;
-      max-width: 760px; margin: 0 auto 20px;
+    @keyframes bounce { 0%,100% { transform: rotate(45deg) translateY(0); } 50% { transform: rotate(45deg) translateY(5px); } }
+
+    /* IMPACT HEADLINE */
+    .impact {
+      background: var(--ink); padding: 96px 48px 80px;
+      text-align: center;
     }
-    .video-caption h1 em { font-style: normal; color: var(--gold); }
-    .video-caption .sub-caption {
-      font-size: 1rem; color: rgba(255,255,255,0.65); font-weight: 300;
-      max-width: 520px; margin: 0 auto;
+    .impact .eyebrow {
+      font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--gold); font-weight: 600; margin-bottom: 28px;
+      display: flex; align-items: center; justify-content: center; gap: 16px;
     }
+    .impact .eyebrow::before,
+    .impact .eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--gold); opacity: 0.5; }
+    .impact h1 {
+      font-size: clamp(2.4rem, 5.5vw, 5rem); font-weight: 700;
+      color: #fff; line-height: 1.0; letter-spacing: -1px;
+      max-width: 860px; margin: 0 auto 32px;
+    }
+    .impact h1 em { font-style: normal; color: var(--gold); }
+    .impact .sub {
+      font-size: 1.05rem; color: rgba(255,255,255,0.55); font-weight: 300;
+      max-width: 560px; margin: 0 auto 48px; line-height: 1.75;
+    }
+    .impact-cta {
+      display: inline-block; padding: 16px 44px;
+      background: transparent; color: var(--gold); border: 1px solid var(--gold);
+      font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .impact-cta:hover { background: var(--gold); color: var(--ink); }
 
     /* CONTRAST BAND */
     .contrast-band {
@@ -224,17 +249,24 @@
     <a class="nav-cta" href="#reserve">Reserve a Position</a>
   </nav>
 
-  <!-- VIDEO HERO -->
+  <!-- VIDEO HERO — clean, no text overlay; the video speaks for itself -->
   <section class="video-hero">
     <video autoplay muted loop playsinline preload="auto">
       <source src="https://d2bytdz64ej6q4.cloudfront.net/2026_06_FMF_Dont_look_up_TV_Commercial_v7.mp4" type="video/mp4" />
     </video>
     <div class="video-overlay"></div>
-    <div class="video-caption">
-      <p class="eyebrow">First Mover Farmland America Fund</p>
-      <h1>Everyone is <em>looking up.</em><br>The best investment is right<br>under your feet.</h1>
-      <p class="sub-caption">While the world chases rockets and screen time, institutional capital has been quietly moving into American farmland for decades.</p>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
     </div>
+  </section>
+
+  <!-- IMPACT HEADLINE -->
+  <section class="impact">
+    <p class="eyebrow">First Mover Farmland America Fund</p>
+    <h1>Everyone is <em>looking up.</em><br>The best investment is right<br>under your feet.</h1>
+    <p class="sub">While the world chases rockets and screen time, institutional capital has been quietly moving into American farmland for decades. The question is whether you move first.</p>
+    <a class="impact-cta" href="#reserve">Reserve a Position</a>
   </section>
 
   <!-- CONTRAST BAND -->
