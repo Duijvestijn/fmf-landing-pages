@@ -33,10 +33,10 @@
       padding: 0 48px;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    .nav-brand { display: flex; align-items: baseline; gap: 14px; }
-    .nav-brand .name { color: #fff; font-weight: 600; font-size: 14px; letter-spacing: 0.3px; }
-    .nav-brand .divider { color: rgba(255,255,255,0.2); font-size: 14px; }
-    .nav-brand .sub { color: rgba(255,255,255,0.45); font-size: 11px; font-weight: 400; letter-spacing: 0.5px; }
+    .nav-brand { display: flex; align-items: center; gap: 16px; text-decoration: none; }
+    .nav-logo { height: 30px; width: auto; filter: brightness(0) invert(1); display: block; }
+    .nav-brand .divider { color: rgba(255,255,255,0.15); font-size: 16px; font-weight: 200; }
+    .nav-brand .sub { color: rgba(255,255,255,0.4); font-size: 11px; font-weight: 400; letter-spacing: 0.5px; }
     .nav-right { display: flex; align-items: center; gap: 24px; }
     .nav-exchange { font-size: 11px; color: rgba(255,255,255,0.4); font-weight: 500; letter-spacing: 0.5px; }
     .nav-exchange span { color: rgba(255,255,255,0.65); }
@@ -361,11 +361,11 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-brand">
-    <span class="name">First Mover Fund N.V.</span>
-    <span class="divider">/</span>
-    <span class="sub">Est. 1957 &middot; Euronext Amsterdam</span>
-  </div>
+  <a class="nav-brand" href="https://firstmoverfund.com">
+    <img src="https://d2bytdz64ej6q4.cloudfront.net/fmf-logo-horizontal.png" alt="First Mover Fund" class="nav-logo" />
+    <span class="divider">|</span>
+    <span class="sub">Farmland America Fund</span>
+  </a>
   <div class="nav-right">
     <div class="nav-exchange"><span class="status-dot"></span><span>AMS: FMF</span> &nbsp; Euronext Amsterdam</div>
     <a href="#reserve" class="nav-cta">Reserve Position</a>
