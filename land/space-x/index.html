@@ -44,6 +44,7 @@
       padding: 7px 20px; text-decoration: none; transition: background 0.2s, color 0.2s;
     }
     .nav-cta:hover { background: var(--gold); color: var(--ink); }
+    .cta-short { display: none; }
 
     /* VIDEO HERO */
     .video-hero {
@@ -229,12 +230,38 @@
 
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
-      .video-caption { bottom: 32px; }
       .thesis, .form-section { padding: 64px 24px; }
       .stats-inner { grid-template-columns: repeat(2,1fr); }
       .three-col { grid-template-columns: 1fr; padding: 64px 24px; }
       .form-inner { grid-template-columns: 1fr; gap: 40px; }
       .contrast-band { padding: 20px 24px; }
+    }
+    @media (max-width: 600px) {
+      /* M1: nav cleanup */
+      .nav-brand .divider,
+      .nav-brand .sub { display: none; }
+      .nav-cta { font-size: 10px; padding: 7px 14px; letter-spacing: 0.8px; }
+      .cta-full { display: none; }
+      .cta-short { display: inline; }
+    }
+
+    /* M1: sticky mobile CTA */
+    .mobile-cta-bar { display: none; }
+    @media (max-width: 600px) {
+      .mobile-cta-bar {
+        display: flex;
+        position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+        background: var(--gold); padding: 14px 24px;
+        align-items: center; justify-content: center;
+        box-shadow: 0 -4px 24px rgba(12,24,37,0.18);
+      }
+      .mobile-cta-bar a {
+        color: var(--ink); font-family: 'Montserrat', sans-serif;
+        font-size: 12px; font-weight: 700; letter-spacing: 1.5px;
+        text-transform: uppercase; text-decoration: none;
+        width: 100%; text-align: center;
+      }
+      body { padding-bottom: 56px; }
     }
   </style>
 </head>
@@ -246,7 +273,7 @@
     <span class="divider">|</span>
     <span class="sub">Farmland America Fund</span>
   </a>
-    <a class="nav-cta" href="#reserve">Reserve a Position</a>
+    <a class="nav-cta" href="#reserve"><span class="cta-full">Reserve a Position</span><span class="cta-short">Invest</span></a>
   </nav>
 
   <!-- VIDEO HERO — clean, no text overlay; the video speaks for itself -->
@@ -416,6 +443,22 @@
       document.getElementById('reserve-form').style.display = 'none';
       document.getElementById('form-success').style.display = 'block';
     });
+  </script>
+
+  <!-- M1: sticky mobile CTA -->
+  <div class="mobile-cta-bar" id="mobile-cta">
+    <a href="#reserve">Reserve a Position — $10K Minimum</a>
+  </div>
+  <script>
+    (function() {
+      var bar = document.getElementById('mobile-cta');
+      var form = document.getElementById('reserve');
+      if (!bar || !form) return;
+      var obs = new IntersectionObserver(function(entries) {
+        bar.style.display = entries[0].isIntersecting ? 'none' : '';
+      }, { threshold: 0.1 });
+      obs.observe(form);
+    })();
   </script>
 </body>
 </html>
