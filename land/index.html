@@ -352,7 +352,7 @@
     @media (max-width: 600px) {
       .why-grid, .rev-grid, .str-grid, .process-steps { grid-template-columns: 1fr; }
       .h-stats { grid-template-columns: 1fr 1fr; }
-      .hero-metrics { gap: 24px; }
+      .hero-metrics { gap: 20px; }
       .nav-exchange { display: none; }
       .scarcity { padding: 24px; }
       /* M1: nav cleanup */
@@ -361,6 +361,20 @@
       .nav-cta { font-size: 10px; padding: 7px 14px; letter-spacing: 0.8px; }
       .cta-full { display: none; }
       .cta-short { display: inline; }
+      /* M2: hero & status bar */
+      .status-bar { flex-wrap: nowrap; overflow-x: auto; gap: 20px; padding: 10px 20px; -webkit-overflow-scrolling: touch; }
+      .status-bar::-webkit-scrollbar { display: none; }
+      .sb-hide { display: none; }
+      .hero-inner { padding: 32px 20px; gap: 32px; }
+      .hero h1 { font-size: 2rem; }
+      .hero-tagline { font-size: 0.9rem; }
+      .hero-metrics .hm .n { font-size: 1.4rem; }
+      .form-card { display: none; }
+      .hero-provenance span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
+      /* M2: section padding tightening */
+      section { padding: 48px 20px !important; }
+      .thesis-statement { padding: 40px 20px; }
+      .tech-inner { padding: 48px 20px; }
     }
 
     /* M1: sticky mobile CTA */
@@ -402,11 +416,11 @@
 
 <!-- STATUS BAR -->
 <div class="status-bar">
-  <span>Farmland America Fund &nbsp;&mdash;&nbsp; <strong>Reservation of Interest Open</strong></span>
-  <span>Reg D &middot; Rule 506(b) &nbsp;&mdash;&nbsp; <strong>Accredited Investors Only</strong></span>
-  <span>Minimum Investment &nbsp;&mdash;&nbsp; <strong>$10,000</strong></span>
-  <span>Capacity &nbsp;&mdash;&nbsp; <strong>2,000 Investors</strong></span>
-  <span>Netherlands &nbsp;&mdash;&nbsp; <strong>Since 1957</strong></span>
+  <span><span class="status-dot"></span>Reservation of Interest &nbsp;&mdash;&nbsp; <strong>Open</strong></span>
+  <span>Minimum &nbsp;&mdash;&nbsp; <strong>$10,000</strong></span>
+  <span class="sb-hide">Reg D &middot; Rule 506(b) &nbsp;&mdash;&nbsp; <strong>Accredited Investors Only</strong></span>
+  <span class="sb-hide">Capacity &nbsp;&mdash;&nbsp; <strong>2,000 Investors</strong></span>
+  <span class="sb-hide">Netherlands &nbsp;&mdash;&nbsp; <strong>Since 1957</strong></span>
 </div>
 
 <!-- HERO -->

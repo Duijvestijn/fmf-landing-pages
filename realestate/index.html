@@ -243,6 +243,17 @@
       .nav-cta { font-size: 10px; padding: 7px 14px; letter-spacing: 0.8px; }
       .cta-full { display: none; }
       .cta-short { display: inline; }
+      /* M2: hero & status bar */
+      .status-bar { flex-wrap: nowrap; overflow-x: auto; gap: 20px; padding: 10px 20px; -webkit-overflow-scrolling: touch; }
+      .status-bar::-webkit-scrollbar { display: none; }
+      .sb-hide { display: none; }
+      .hero-inner { padding: 32px 20px; gap: 32px; }
+      .hero h1 { font-size: 2rem; }
+      .hero-tagline { font-size: 0.9rem; }
+      .hero-metrics .hm .n { font-size: 1.4rem; }
+      .form-card { display: none; }
+      .hero-provenance span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
+      section { padding: 48px 20px !important; }
     }
 
     /* M1: sticky mobile CTA */
@@ -282,11 +293,11 @@
 
 <!-- STATUS BAR -->
 <div class="status-bar">
-  <span>U.S. Real Estate &nbsp;&mdash;&nbsp; <strong>Waitlist Now Open</strong></span>
-  <span>Netherlands &nbsp;&mdash;&nbsp; <strong>Est. 1957</strong></span>
-  <span>Euronext Amsterdam &nbsp;&mdash;&nbsp; <strong>Regulated &amp; Publicly Listed</strong></span>
-  <span>Investors &nbsp;&mdash;&nbsp; <strong>850,000+</strong></span>
+  <span><span class="status-dot"></span>Waitlist &nbsp;&mdash;&nbsp; <strong>Now Open</strong></span>
   <span>Minimum &nbsp;&mdash;&nbsp; <strong>$10,000</strong></span>
+  <span class="sb-hide">Netherlands &nbsp;&mdash;&nbsp; <strong>Est. 1957</strong></span>
+  <span class="sb-hide">Euronext Amsterdam &nbsp;&mdash;&nbsp; <strong>Regulated &amp; Publicly Listed</strong></span>
+  <span class="sb-hide">Investors &nbsp;&mdash;&nbsp; <strong>850,000+</strong></span>
 </div>
 
 <!-- HERO -->
