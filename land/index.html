@@ -181,7 +181,7 @@
       color: var(--gold); margin-bottom: 14px; display: block;
     }
     .s-eyebrow.dark { color: var(--stone); }
-    h2 { font-size: clamp(1.8rem, 2.8vw, 2.5rem); font-weight: 700; color: var(--ink); line-height: 1.15; margin-bottom: 16px; letter-spacing: -0.3px; }
+    h2 { font-size: clamp(2rem, 3.2vw, 3.2rem); font-weight: 700; color: var(--ink); line-height: 1.1; margin-bottom: 16px; letter-spacing: -0.5px; }
     h2 em { font-style: normal; color: var(--mid); }
     h2.white { color: #fff; }
     h2.white em { color: var(--gold); }
@@ -471,7 +471,7 @@
       .thesis-statement { padding: 40px 20px; }
       .tech-inner { padding: 48px 20px; }
       /* M3: content sections */
-      h2 { font-size: 1.6rem !important; }
+      h2 { font-size: 1.7rem !important; }
       .why-item, .rev-item { padding: 28px 20px; }
       .rev-grid { grid-template-columns: 1fr 1fr; }
       .ts-formula { flex-direction: column; align-items: flex-start; gap: 8px; }
@@ -508,6 +508,61 @@
         width: 100%; text-align: center;
       }
       body { padding-bottom: 56px; }
+    }
+
+    /* === EDITORIAL REDESIGN === */
+    /* Giant ghost number for revenue/editorial sections */
+    .editorial-num {
+      font-size: clamp(6rem, 11vw, 10rem); font-weight: 700;
+      color: rgba(12,24,37,0.08); line-height: 0.8;
+      letter-spacing: -4px; user-select: none; flex-shrink: 0; margin-top: -8px;
+    }
+    .rev-intro { display: flex; align-items: flex-start; gap: 28px; margin-bottom: 52px; }
+    .rev-intro-text { flex: 1; }
+    .rev-intro-text h2 { margin-bottom: 12px; }
+
+    /* Process steps — editorial numbered list */
+    .process-editorial { display: flex; flex-direction: column; margin-top: 40px; }
+    .pe-step {
+      display: grid; grid-template-columns: 96px 1fr; gap: 24px;
+      padding: 32px 0; border-bottom: 1px solid var(--rule); align-items: start;
+    }
+    .pe-step:last-child { border-bottom: none; }
+    .pe-left { display: flex; flex-direction: column; gap: 8px; }
+    .pe-num { font-size: 3.8rem; font-weight: 700; color: rgba(12,24,37,0.1); line-height: 0.85; letter-spacing: -2px; }
+    .pe-phase { font-size: 9px; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
+    .pe-right h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 8px; padding-top: 4px; }
+    .pe-right p { font-size: 13px; color: var(--stone); line-height: 1.7; }
+    .pe-timeline { font-size: 10px; color: var(--gold); font-weight: 600; letter-spacing: 0.5px; margin-top: 10px; }
+
+    /* Heritage stats — open editorial layout (replaces boxed h-stats) */
+    .h-stats-row { display: flex; gap: 48px; margin: 28px 0; flex-wrap: wrap; }
+    .h-sr-item .n { font-size: 2.2rem; font-weight: 700; color: var(--gold); line-height: 1; }
+    .h-sr-item .l { font-size: 9px; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1.5px; margin-top: 6px; font-weight: 500; }
+
+    /* Compare cards (replaces HTML table) */
+    .compare-cards { display: grid; grid-template-columns: 1.1fr 1fr 1fr; border: 1px solid var(--rule); }
+    .cc-col { display: flex; flex-direction: column; }
+    .cc-col + .cc-col { border-left: 1px solid var(--rule); }
+    .cc-head { padding: 18px 22px; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; }
+    .cc-fmf > .cc-head { background: var(--ink); color: var(--gold-lt); }
+    .cc-alt > .cc-head { background: #ece9e2; color: var(--stone); }
+    .cc-attr { padding: 13px 22px; font-size: 12px; border-top: 1px solid var(--rule); line-height: 1.5; flex: 1; }
+    .cc-fmf .cc-attr { background: var(--white); color: var(--ink); font-weight: 500; }
+    .cc-fmf .cc-attr .ck { color: #4a8c5c; font-weight: 600; }
+    .cc-alt .cc-attr { background: var(--paper); color: var(--stone); }
+
+    /* Responsive editorial */
+    @media (max-width: 960px) {
+      .compare-cards { grid-template-columns: 1fr; }
+      .cc-col + .cc-col { border-left: none; border-top: 1px solid var(--rule); }
+    }
+    @media (max-width: 600px) {
+      .pe-step { grid-template-columns: 60px 1fr; gap: 16px; }
+      .pe-num { font-size: 2.4rem; }
+      .rev-intro { flex-direction: column; gap: 4px; }
+      .editorial-num { font-size: 4rem; }
+      .h-stats-row { gap: 24px; }
     }
 
     /* Prefers reduced motion */
@@ -614,8 +669,6 @@
 <!-- WHY FIRST MOVER RESONATES -->
 <section class="why-bg">
   <div class="container">
-    <div class="rule"></div>
-    <span class="s-eyebrow">Investment rationale</span>
     <h2 class="white">Nine reasons accredited investors<br />choose <em>Farmland America</em></h2>
     <p class="lead white">First Mover is not simply a farmland fund. It is a technology-enabled real asset investment platform that acquires undervalued farmland, partners with local farmers, and generates returns from multiple revenue streams tied to the same underlying asset.</p>
     <div class="why-grid">
@@ -684,7 +737,6 @@
   <div class="container">
     <div class="thesis-grid">
       <div>
-        <div class="rule"></div>
         <span class="s-eyebrow dark">Investment thesis</span>
         <h2>Land. Farmers.<br /><em>Technology. Returns.</em></h2>
         <p class="lead" style="margin-bottom: 0;">A four-pillar framework built on the conviction that the most compelling investment opportunity in America is in the soil beneath our feet.</p>
@@ -706,10 +758,13 @@
 <!-- REVENUE STREAMS -->
 <section class="rev-bg">
   <div class="container">
-    <div class="rule"></div>
-    <span class="s-eyebrow dark">Multiple revenue drivers</span>
-    <h2>Eight independent ways<br /><em>your investment earns</em></h2>
-    <p class="lead">Unlike single-strategy funds, the Farmland America Fund generates value from eight independent revenue streams &mdash; all tied to the same underlying land asset.</p>
+    <div class="rev-intro">
+      <div class="editorial-num">8</div>
+      <div class="rev-intro-text">
+        <h2>Independent ways<br /><em>your investment earns</em></h2>
+        <p class="lead">Unlike single-strategy funds, the Farmland America Fund generates value from eight independent revenue streams &mdash; all tied to the same underlying land asset.</p>
+      </div>
+    </div>
     <div class="rev-grid">
       <div class="rev-card">
         <h3>Agricultural production</h3>
@@ -766,8 +821,7 @@
 <!-- THESIS STATEMENT -->
 <div class="thesis-statement">
   <div class="ts-inner">
-    <div class="rule"></div>
-    <span class="s-eyebrow">The First Mover difference</span>
+    <span class="s-eyebrow" style="margin-bottom:20px;">The First Mover difference</span>
     <p class="body" style="margin-top: 20px;">First Mover is not simply a farmland fund. It is a <em>technology-enabled real asset investment platform</em> that acquires undervalued and underutilized farmland, partners with local farmers, enhances operational performance through environmental intelligence, and seeks to generate returns from multiple revenue streams tied to the same underlying asset.</p>
     <div class="ts-formula">
       <div class="ts-term">Real Assets</div>
@@ -786,8 +840,6 @@
 <!-- TECH BAND -->
 <div class="tech-band">
   <div class="tech-inner">
-    <div class="rule"></div>
-    <span class="s-eyebrow">Technology-enabled advantage</span>
     <h2 class="white">Dutch precision.<br />American scale.</h2>
     <p class="lead white">The Netherlands produces more food per square meter than almost any nation on earth. We bring that environmental intelligence to American farmland &mdash; identifying and unlocking value that traditional investors cannot see.</p>
     <div class="pillars">
@@ -806,15 +858,13 @@
   <div class="container">
     <div class="her-grid">
       <div>
-        <div class="rule"></div>
-        <span class="s-eyebrow">Institutional heritage</span>
-        <h2 class="white">Institutional heritage.<br /><em>From Holland.</em></h2>
         <div class="flag-bar"><div class="f fr"></div><div class="f fw"></div><div class="f fb"></div></div>
+        <h2 class="white">Institutional heritage.<br /><em>From Holland.</em></h2>
         <p class="lead white">First Mover Fund is an initiative of Green Earth Group N.V. — a European investment group with roots going back to 1957. For decades, Green Earth Group has managed real asset portfolios for investors across Europe, from the Netherlands — the global leader in precision agriculture and food technology.</p>
-        <div class="h-stats">
-          <div class="h-stat"><div class="n">1957</div><div class="l">Green Earth Group est.</div></div>
-          <div class="h-stat"><div class="n">850,000+</div><div class="l">Investors</div></div>
-          <div class="h-stat"><div class="n">AMS</div><div class="l">Euronext</div></div>
+        <div class="h-stats-row">
+          <div class="h-sr-item"><div class="n">1957</div><div class="l">Green Earth Group est.</div></div>
+          <div class="h-sr-item"><div class="n">850,000+</div><div class="l">Investors</div></div>
+          <div class="h-sr-item"><div class="n">AMS</div><div class="l">Euronext</div></div>
         </div>
         <div class="timeline">
           <div class="tl"><div class="tl-year">1957</div><div><h4>Green Earth Group founded</h4><p>Green Earth Group N.V. established in Amsterdam and listed on a European exchange.</p></div></div>
@@ -833,8 +883,6 @@
 <!-- FUND STRUCTURE -->
 <section class="structure-bg">
   <div class="container">
-    <div class="rule"></div>
-    <span class="s-eyebrow dark">Fund structure</span>
     <h2>Structured for<br /><em>accredited investors</em></h2>
     <p class="lead">The First Mover Farmland America Fund is structured as a Regulation D private offering &mdash; designed to maximize accessibility without compromising institutional discipline.</p>
     <div class="str-grid">
@@ -849,37 +897,46 @@
 <!-- COMPARISON -->
 <section class="compare-bg">
   <div class="container">
-    <div class="rule"></div>
-    <span class="s-eyebrow dark">Competitive positioning</span>
     <h2>How First Mover compares</h2>
     <p class="lead">Institutional-grade real assets, now accessible to accredited investors from $10,000.</p>
-    <table>
-      <thead>
-        <tr>
-          <th>Attribute</th>
-          <th class="hl">First Mover Farmland America</th>
-          <th>Farmland REIT</th>
-          <th>Standard Private Fund</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Minimum investment</td><td class="hl">$10,000</td><td>$500&ndash;$10,000</td><td>$100K&ndash;$500K</td></tr>
-        <tr><td>Publicly listed parent</td><td class="hl"><span class="ck">Yes</span> &mdash; Green Earth Group N.V.</td><td>Yes</td><td><span class="xk">No</span></td></tr>
-        <tr><td>European institutional heritage</td><td class="hl"><span class="ck">Yes</span> &mdash; est. 1957</td><td><span class="xk">No</span></td><td><span class="xk">No</span></td></tr>
-        <tr><td>Environmental credit revenue</td><td class="hl"><span class="ck">Yes</span> &mdash; carbon + biodiversity</td><td>Partial</td><td>Rare</td></tr>
-        <tr><td>Active farmer partnerships</td><td class="hl"><span class="ck">Yes</span> &mdash; long-term leases</td><td>Variable</td><td><span class="xk">No</span></td></tr>
-        <tr><td>Quarterly distributions</td><td class="hl"><span class="ck">Yes</span></td><td>Yes</td><td>Annual or irregular</td></tr>
-        <tr><td>Regulation D structure</td><td class="hl"><span class="ck">Yes</span> &mdash; 506(b)</td><td>Public security</td><td>Yes</td></tr>
-      </tbody>
-    </table>
+    <div class="compare-cards">
+      <div class="cc-col cc-fmf">
+        <div class="cc-head">First Mover Farmland America</div>
+        <div class="cc-attr"><span class="ck">&#x2713;</span> $10,000 minimum</div>
+        <div class="cc-attr"><span class="ck">&#x2713;</span> Listed parent &mdash; Green Earth Group N.V.</div>
+        <div class="cc-attr"><span class="ck">&#x2713;</span> European institutional heritage since 1957</div>
+        <div class="cc-attr"><span class="ck">&#x2713;</span> Carbon + biodiversity credit revenue</div>
+        <div class="cc-attr"><span class="ck">&#x2713;</span> Active farmer partnerships &mdash; long-term leases</div>
+        <div class="cc-attr"><span class="ck">&#x2713;</span> Quarterly distributions</div>
+        <div class="cc-attr"><span class="ck">&#x2713;</span> Reg D &mdash; Rule 506(b)</div>
+      </div>
+      <div class="cc-col cc-alt">
+        <div class="cc-head">Farmland REIT</div>
+        <div class="cc-attr">$500 &ndash; $10,000</div>
+        <div class="cc-attr">Yes &mdash; publicly listed</div>
+        <div class="cc-attr">U.S.-focused, no European roots</div>
+        <div class="cc-attr">Partial or limited</div>
+        <div class="cc-attr">Variable</div>
+        <div class="cc-attr">Yes</div>
+        <div class="cc-attr">Public security</div>
+      </div>
+      <div class="cc-col cc-alt">
+        <div class="cc-head">Standard Private Fund</div>
+        <div class="cc-attr">$100K &ndash; $500K typical</div>
+        <div class="cc-attr">No listed parent</div>
+        <div class="cc-attr">No institutional heritage</div>
+        <div class="cc-attr">Rare</div>
+        <div class="cc-attr">No</div>
+        <div class="cc-attr">Annual or irregular</div>
+        <div class="cc-attr">Varies</div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- FAQ -->
 <section class="faq-bg">
   <div class="faq-inner">
-    <div class="rule"></div>
-    <span class="s-eyebrow">Investor Questions</span>
     <h2>Frequently asked<br /><em>questions</em></h2>
     <div class="faq-item">
       <div class="faq-q"><span>Does a Reservation of Interest obligate me to invest?</span><div class="faq-icon"></div></div>
@@ -931,16 +988,29 @@
 <!-- PROCESS -->
 <section class="process-bg">
   <div class="container">
-    <div class="rule"></div>
-    <span class="s-eyebrow dark">Value creation process</span>
     <h2>How First Mover<br /><em>creates and delivers value</em></h2>
     <p class="lead">A disciplined five-stage institutional process &mdash; the same private equity framework deployed by leading asset managers, now accessible from $10,000.</p>
-    <div class="process-steps">
-      <div class="p-step"><div class="p-num">01 &mdash; Acquire</div><h4>Acquisition</h4><p>Identify and acquire undervalued, underutilized farmland below full potential value using data-driven sourcing and market intelligence.</p><div class="p-timeline">Months 0&ndash;6</div></div>
-      <div class="p-step"><div class="p-num">02 &mdash; Improve</div><h4>Improvement</h4><p>Partner with local farmers. Implement operational improvements. Enroll in conservation and environmental programs.</p><div class="p-timeline">Months 6&ndash;18</div></div>
-      <div class="p-step"><div class="p-num">03 &mdash; Optimize</div><h4>Optimization</h4><p>Deploy satellite monitoring, soil analytics, and environmental intelligence to unlock all revenue streams from each parcel.</p><div class="p-timeline">Months 12&ndash;36</div></div>
-      <div class="p-step"><div class="p-num">04 &mdash; Monetize</div><h4>Monetization</h4><p>Generate returns across eight channels: leases, production, carbon, biodiversity, conservation programs, appreciation, water, and data services.</p><div class="p-timeline">Ongoing</div></div>
-      <div class="p-step"><div class="p-num">05 &mdash; Exit</div><h4>Exit</h4><p>Realize appreciation through strategic disposition of optimized parcels at full potential value &mdash; returning capital to investors.</p><div class="p-timeline">Years 5&ndash;7</div></div>
+    <div class="process-editorial">
+      <div class="pe-step">
+        <div class="pe-left"><div class="pe-num">01</div><div class="pe-phase">Acquire</div></div>
+        <div class="pe-right"><h4>Acquisition</h4><p>Identify and acquire undervalued, underutilized farmland below full potential value using data-driven sourcing and market intelligence.</p><div class="pe-timeline">Months 0&ndash;6</div></div>
+      </div>
+      <div class="pe-step">
+        <div class="pe-left"><div class="pe-num">02</div><div class="pe-phase">Improve</div></div>
+        <div class="pe-right"><h4>Improvement</h4><p>Partner with local farmers. Implement operational improvements. Enroll in conservation and environmental programs.</p><div class="pe-timeline">Months 6&ndash;18</div></div>
+      </div>
+      <div class="pe-step">
+        <div class="pe-left"><div class="pe-num">03</div><div class="pe-phase">Optimize</div></div>
+        <div class="pe-right"><h4>Optimization</h4><p>Deploy satellite monitoring, soil analytics, and environmental intelligence to unlock all revenue streams from each parcel.</p><div class="pe-timeline">Months 12&ndash;36</div></div>
+      </div>
+      <div class="pe-step">
+        <div class="pe-left"><div class="pe-num">04</div><div class="pe-phase">Monetize</div></div>
+        <div class="pe-right"><h4>Monetization</h4><p>Generate returns across eight channels: leases, production, carbon, biodiversity, conservation programs, appreciation, water, and data services.</p><div class="pe-timeline">Ongoing</div></div>
+      </div>
+      <div class="pe-step">
+        <div class="pe-left"><div class="pe-num">05</div><div class="pe-phase">Exit</div></div>
+        <div class="pe-right"><h4>Exit</h4><p>Realize appreciation through strategic disposition of optimized parcels at full potential value &mdash; returning capital to investors.</p><div class="pe-timeline">Years 5&ndash;7</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -948,9 +1018,7 @@
 <!-- RESERVATION -->
 <section class="reserve-bg" id="reserve">
   <div class="res-inner">
-    <div class="rule"></div>
-    <span class="s-eyebrow" style="display:block;margin-bottom:14px;">Reservation of Interest</span>
-    <h2 class="white" style="margin-bottom:14px;">Secure your position in<br /><em>Farmland America</em></h2>
+    <h2 class="white" style="margin-bottom:16px;">Secure your position in<br /><em>Farmland America</em></h2>
     <p class="lead white" style="margin-bottom:40px;">This offering is limited to 2,000 accredited investors. Submit your Reservation of Interest now &mdash; no commitment required until you have reviewed the full offering documents and Private Placement Memorandum.</p>
     <div class="big-form">
       <h3>Reservation of Interest Form</h3>
