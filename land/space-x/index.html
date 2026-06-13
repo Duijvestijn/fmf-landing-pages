@@ -5,8 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Don't Look Up — First Mover Farmland America Fund</title>
   <meta name="description" content="While the world watches rocket launches, the smartest money is moving into what it's always been — the ground beneath your feet. First Mover Farmland America Fund." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://land.firstmoverfund.com/space-x" />
+  <meta property="og:title" content="Don't Look Up — First Mover Farmland America Fund" />
+  <meta property="og:description" content="Everyone is looking up. The best investment is right under your feet. U.S. farmland. Dutch institution. $10K minimum. Reserve your position." />
+  <meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Don't Look Up — First Mover Farmland America Fund" />
+  <meta name="twitter:description" content="Everyone is looking up. The best investment is right under your feet." />
+  <meta name="twitter:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230c1825'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23b8965a'>F</text></svg>" />
+
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://d2bytdz64ej6q4.cloudfront.net" />
+  <link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -47,14 +68,8 @@
     .cta-short { display: none; }
 
     /* VIDEO HERO */
-    .video-hero {
-      position: relative; width: 100%; padding-top: 60px;
-      background: #000;
-    }
-    video {
-      width: 100%; display: block;
-      max-height: calc(100vh - 60px); object-fit: cover;
-    }
+    .video-hero { position: relative; width: 100%; padding-top: 60px; background: #000; }
+    video { width: 100%; display: block; max-height: calc(100vh - 60px); object-fit: cover; }
     .video-overlay {
       position: absolute; inset: 0; pointer-events: none;
       background: linear-gradient(to bottom,
@@ -77,10 +92,7 @@
     @keyframes bounce { 0%,100% { transform: rotate(45deg) translateY(0); } 50% { transform: rotate(45deg) translateY(5px); } }
 
     /* IMPACT HEADLINE */
-    .impact {
-      background: var(--ink); padding: 96px 48px 80px;
-      text-align: center;
-    }
+    .impact { background: var(--ink); padding: 96px 48px 80px; text-align: center; }
     .impact .eyebrow {
       font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
       color: var(--gold); font-weight: 600; margin-bottom: 28px;
@@ -107,86 +119,104 @@
     }
     .impact-cta:hover { background: var(--gold); color: var(--ink); }
 
-    /* CONTRAST BAND */
+    /* Scroll-triggered entrance animation */
+    .fade-up {
+      opacity: 0; transform: translateY(40px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-up.delay-1 { transition-delay: 0.1s; }
+    .fade-up.delay-2 { transition-delay: 0.25s; }
+    .fade-up.delay-3 { transition-delay: 0.4s; }
+    .fade-up.delay-4 { transition-delay: 0.55s; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* CONTRAST BAND — pill badges */
     .contrast-band {
       background: var(--gold); color: var(--ink);
       padding: 20px 48px; text-align: center;
     }
-    .contrast-band p {
-      font-size: 13px; font-weight: 700; letter-spacing: 0.5px; line-height: 1.5;
-      text-transform: uppercase;
+    .contrast-pills {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 12px;
     }
+    .cpill {
+      background: rgba(12,24,37,0.12); color: var(--ink);
+      font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 2px;
+    }
+    .cpill-sep { color: rgba(12,24,37,0.3); font-size: 18px; font-weight: 200; }
 
     /* THESIS SECTION */
-    .thesis {
-      max-width: 900px; margin: 0 auto; padding: 100px 48px;
-      text-align: center;
-    }
-    .section-label {
-      font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--gold); margin-bottom: 20px;
-    }
+    .thesis { max-width: 900px; margin: 0 auto; padding: 100px 48px; text-align: center; }
+    .section-label { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
     .thesis h2 {
       font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700;
-      color: var(--white); line-height: 1.15; letter-spacing: -0.3px;
-      margin-bottom: 32px;
+      color: var(--white); line-height: 1.15; letter-spacing: -0.3px; margin-bottom: 32px;
     }
-    .thesis p {
-      font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.8;
-      font-weight: 300; max-width: 680px; margin: 0 auto 24px;
-    }
+    .thesis p { font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.8; font-weight: 300; max-width: 680px; margin: 0 auto 24px; }
 
     /* STATS GRID */
-    .stats {
-      background: var(--mid);
-      border-top: 1px solid rgba(255,255,255,0.08);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-    .stats-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: repeat(4,1fr);
-    }
-    .stat {
-      padding: 52px 40px; border-right: 1px solid rgba(255,255,255,0.08);
-      text-align: center;
-    }
+    .stats { background: var(--mid); border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .stats-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); }
+    .stat { padding: 52px 40px; border-right: 1px solid rgba(255,255,255,0.08); text-align: center; }
     .stat:last-child { border-right: none; }
     .stat .n { font-size: 2.4rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 8px; }
     .stat .l { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 1.2px; text-transform: uppercase; font-weight: 500; }
 
+    /* WHY NOW */
+    .why-now { background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .why-now-inner { max-width: 1100px; margin: 0 auto; padding: 88px 48px; }
+    .why-now-inner > .section-label { text-align: center; margin-bottom: 12px; }
+    .why-now-inner > h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700;
+      color: var(--white); line-height: 1.15; letter-spacing: -0.3px;
+      text-align: center; margin-bottom: 56px;
+    }
+    .why-now-inner > h2 em { font-style: normal; color: var(--gold); }
+    .wn-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(255,255,255,0.07); }
+    .wn-item { background: var(--ink); padding: 40px 32px; }
+    .wn-num { font-size: 10px; font-weight: 700; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; }
+    .wn-item h4 { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 12px; }
+    .wn-item p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.75; }
+
     /* THREE COLUMNS */
+    .three-col-wrap { background: var(--ink); }
+    .three-col-header { max-width: 1100px; margin: 0 auto; padding: 80px 48px 0; text-align: center; }
+    .three-col-header .section-label { margin-bottom: 10px; }
+    .three-col-header h2 {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem); font-weight: 700;
+      color: var(--white); line-height: 1.15; margin-bottom: 0;
+    }
     .three-col {
-      max-width: 1100px; margin: 0 auto; padding: 100px 48px;
+      max-width: 1100px; margin: 0 auto; padding: 40px 48px 100px;
       display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
       background: rgba(255,255,255,0.08);
     }
-    .col-item {
-      background: var(--ink); padding: 48px 40px;
-      border-bottom: 3px solid transparent; transition: border-color 0.2s;
-    }
+    .col-item { background: var(--ink); padding: 48px 40px; border-bottom: 3px solid transparent; transition: border-color 0.2s; }
     .col-item:hover { border-bottom-color: var(--gold); }
     .col-num { font-size: 10px; color: var(--gold); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
     .col-item h3 { font-size: 1.1rem; font-weight: 700; color: var(--white); margin-bottom: 12px; letter-spacing: -0.2px; }
     .col-item p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.75; font-weight: 400; }
 
+    /* SOCIAL PROOF STRIP */
+    .proof-strip { background: var(--mid); border-top: 1px solid rgba(255,255,255,0.08); border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .proof-inner { max-width: 1100px; margin: 0 auto; padding: 48px; display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: 32px; }
+    .proof-stat { text-align: center; }
+    .proof-stat .pn { display: block; font-size: 1.8rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 6px; }
+    .proof-stat .pl { display: block; font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.8px; text-transform: uppercase; max-width: 200px; margin: 0 auto; line-height: 1.5; }
+    .proof-div { width: 1px; height: 48px; background: rgba(255,255,255,0.1); }
+
     /* FORM SECTION */
-    .form-section {
-      background: var(--paper); color: var(--ink);
-      padding: 100px 48px;
-    }
-    .form-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: start;
-    }
-    .form-left h2 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700;
-      color: var(--ink); line-height: 1.15; letter-spacing: -0.3px; margin-bottom: 20px;
-    }
+    .form-section { background: var(--paper); color: var(--ink); padding: 100px 48px; }
+    .form-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 420px; gap: 80px; align-items: start; }
+    .form-left h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: var(--ink); line-height: 1.15; letter-spacing: -0.3px; margin-bottom: 20px; }
     .form-left h2 em { font-style: normal; color: var(--gold); }
     .form-left p { font-size: 14px; color: var(--stone); line-height: 1.75; margin-bottom: 32px; }
     .bullet-list { list-style: none; display: flex; flex-direction: column; gap: 14px; }
     .bullet-list li { display: flex; align-items: flex-start; gap: 14px; font-size: 13px; color: var(--stone); line-height: 1.6; }
     .bullet-list li::before { content: ''; width: 18px; height: 1px; background: var(--gold); margin-top: 10px; flex-shrink: 0; }
+    .back-link { display: inline-block; margin-top: 32px; font-size: 12px; color: var(--mid); text-decoration: none; border-bottom: 1px solid var(--rule); padding-bottom: 2px; }
+    .back-link:hover { border-bottom-color: var(--mid); }
 
     .form-card {
       background: var(--white); padding: 40px 36px;
@@ -215,26 +245,35 @@
     .form-submit:hover { background: var(--mid); }
     .form-legal { font-size: 10px; color: rgba(12,24,37,0.35); line-height: 1.6; margin-top: 16px; text-align: center; }
 
-    /* FOOTER */
-    footer {
-      background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08);
-      padding: 40px 48px; text-align: center;
-    }
-    .footer-brand { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 500; margin-bottom: 10px; }
-    .footer-legal { font-size: 10px; color: rgba(255,255,255,0.25); line-height: 1.7; max-width: 720px; margin: 0 auto; }
+    /* Form success */
+    .form-success { display: none; }
+    .form-success-full { display: none; text-align: center; padding: 32px 0; }
+    .form-success-full .s-icon { width: 44px; height: 44px; border-radius: 50%; background: #f0f7f2; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .form-success-full .s-icon svg { width: 22px; height: 22px; stroke: #4a8c5c; stroke-width: 2; fill: none; }
+    .form-success-full h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .form-success-full .sref { font-size: 11px; color: var(--stone); margin-bottom: 16px; }
+    .form-success-full .sref strong { color: var(--ink); }
+    .form-success-full p { font-size: 13px; color: var(--stone); line-height: 1.6; margin-bottom: 20px; }
+    .s-cal { display: inline-block; padding: 11px 24px; background: var(--ink); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; text-decoration: none; }
 
-    /* SUCCESS */
-    .form-success { display: none; text-align: center; padding: 32px 0; }
-    .form-success h3 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
-    .form-success p { font-size: 13px; color: var(--stone); }
+    /* FOOTER */
+    footer { background: var(--ink); border-top: 1px solid rgba(255,255,255,0.08); padding: 40px 48px; text-align: center; }
+    .footer-brand { font-size: 13px; color: rgba(255,255,255,0.55); font-weight: 500; margin-bottom: 10px; }
+    .footer-logo { height: 22px; width: auto; filter: brightness(0) invert(1); opacity: 0.5; margin-bottom: 10px; }
+    .footer-legal { font-size: 10px; color: rgba(255,255,255,0.25); line-height: 1.7; max-width: 720px; margin: 0 auto; }
 
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
       .thesis, .form-section { padding: 64px 24px; }
       .stats-inner { grid-template-columns: repeat(2,1fr); }
-      .three-col { grid-template-columns: 1fr; padding: 64px 24px; }
+      .three-col { grid-template-columns: 1fr; padding: 40px 24px 64px; }
+      .three-col-header { padding: 64px 24px 0; }
       .form-inner { grid-template-columns: 1fr; gap: 40px; }
       .contrast-band { padding: 20px 24px; }
+      .why-now-inner { padding: 64px 24px; }
+      .wn-grid { grid-template-columns: 1fr; }
+      .proof-inner { padding: 36px 24px; }
+      .proof-div { display: none; }
     }
     @media (max-width: 600px) {
       /* M1: nav cleanup */
@@ -246,8 +285,10 @@
       /* M2: hero & sections */
       .impact { padding: 56px 20px 48px; }
       .impact h1 { font-size: clamp(1.9rem, 8vw, 3rem); letter-spacing: -0.5px; }
-      .contrast-band p { font-size: 11px; letter-spacing: 0; }
       .contrast-band { padding: 14px 20px; }
+      .contrast-pills { gap: 8px; }
+      .cpill { font-size: 10px; padding: 5px 10px; }
+      .cpill-sep { display: none; }
       .thesis { padding: 56px 20px; }
       .form-section { padding: 56px 20px; }
       .stats-inner { grid-template-columns: repeat(2,1fr); }
@@ -260,8 +301,9 @@
       .col-item { padding: 32px 20px; }
       .impact h1 { font-size: clamp(1.9rem, 8vw, 3rem); }
       .form-left h2 { font-size: 1.6rem; }
-      .three-col { gap: 1px; }
-      /* M4: form tap targets & footer */
+      .why-now-inner { padding: 48px 20px; }
+      .why-now-inner > h2 { font-size: 1.6rem; }
+      /* M4: form tap targets */
       .form-card { padding: 28px 20px; }
       .field input, .field select { padding: 13px 14px; min-height: 44px; font-size: 14px; }
       .form-submit { min-height: 52px; font-size: 13px; }
@@ -286,23 +328,52 @@
       }
       body { padding-bottom: 56px; }
     }
+
+    /* STATUS STRIP */
+    .status-strip { background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.07); padding: 0 48px; display: flex; align-items: center; gap: 32px; overflow-x: auto; white-space: nowrap; scrollbar-width: none; -ms-overflow-style: none; }
+    .status-strip::-webkit-scrollbar { display: none; }
+    .status-strip span { font-size: 11px; color: rgba(255,255,255,0.45); letter-spacing: 0.5px; padding: 10px 0; flex-shrink: 0; }
+    .status-strip strong { color: rgba(255,255,255,0.8); font-weight: 600; }
+    .status-strip .ss-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #4a8c5c; margin-right: 8px; animation: pulse 2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1}50%{opacity:0.4} }
+    @media (max-width: 600px) { .status-strip { padding: 0 16px; gap: 20px; } }
+
+    /* Prefers reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-arrow { animation: none; }
+      .fade-up { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+      video { display: none; }
+      .video-hero { background: url('https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png') center/cover; min-height: calc(100vh - 60px); }
+    }
   </style>
 </head>
 <body>
 
   <nav>
     <a class="nav-brand" href="https://land.firstmoverfund.com">
-    <img src="https://d2bytdz64ej6q4.cloudfront.net/fmf-logo-horizontal.png" alt="First Mover Fund" class="nav-logo" />
-    <span class="divider">|</span>
-    <span class="sub">Farmland America Fund</span>
-  </a>
+      <img src="https://d2bytdz64ej6q4.cloudfront.net/fmf-logo-horizontal.png" alt="First Mover Fund" class="nav-logo" />
+      <span class="divider">|</span>
+      <span class="sub">Farmland America Fund</span>
+    </a>
     <a class="nav-cta" href="#reserve"><span class="cta-full">Reserve a Position</span><span class="cta-short">Invest</span></a>
   </nav>
+
+  <!-- STATUS STRIP -->
+  <div class="status-strip">
+    <span><span class="ss-dot"></span>Reservation of Interest &mdash; <strong>Open</strong></span>
+    <span>Minimum &mdash; <strong>$10,000</strong></span>
+    <span>Reg D &middot; Rule 506(b) &mdash; <strong>Accredited Investors Only</strong></span>
+    <span>Capacity &mdash; <strong>2,000 Investors</strong></span>
+    <span>Green Earth Group N.V. &mdash; <strong>European-listed</strong></span>
+  </div>
 
   <!-- VIDEO HERO — clean, no text overlay; the video speaks for itself -->
   <section class="video-hero">
     <video autoplay muted loop playsinline preload="auto" poster="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png">
+      <!-- Mobile-optimized cut recommended: 720p ~15MB — upload as ..._mobile.mp4 and add source here -->
       <source src="https://d2bytdz64ej6q4.cloudfront.net/2026_06_FMF_Dont_look_up_TV_Commercial_v7.mp4" type="video/mp4" />
+      <p>Your browser does not support video. The film shows American farmland as the world's most resilient investment.</p>
     </video>
     <div class="video-overlay"></div>
     <div class="scroll-hint">
@@ -313,63 +384,122 @@
 
   <!-- IMPACT HEADLINE -->
   <section class="impact">
-    <p class="eyebrow">First Mover Farmland America Fund</p>
-    <h1>Everyone is <em>looking up.</em><br>The best investment is right<br>under your feet.</h1>
-    <p class="sub">While the world chases rockets and screen time, institutional capital has been quietly moving into American farmland for decades. The question is whether you move first.</p>
-    <a class="impact-cta" href="#reserve">Reserve a Position</a>
+    <p class="eyebrow fade-up">First Mover Farmland America Fund</p>
+    <h1 class="fade-up delay-1">Everyone is <em>looking up.</em><br>The best investment is right<br>under your feet.</h1>
+    <p class="sub fade-up delay-2">While the world chases rockets and screen time, institutional capital has been quietly moving into American farmland for decades. The question is whether you move first.</p>
+    <a class="impact-cta fade-up delay-3" href="#reserve">Reserve a Position</a>
   </section>
 
-  <!-- CONTRAST BAND -->
+  <!-- CONTRAST BAND — pill badges -->
   <div class="contrast-band">
-    <p>Reg D &nbsp;|&nbsp; Accredited Investors &nbsp;|&nbsp; Minimum $10,000 &nbsp;|&nbsp; Reservation of Interest — No Commitment Required</p>
+    <div class="contrast-pills">
+      <span class="cpill">Reg D &middot; Rule 506(b)</span>
+      <span class="cpill-sep">|</span>
+      <span class="cpill">Accredited Investors Only</span>
+      <span class="cpill-sep">|</span>
+      <span class="cpill">Minimum $10,000</span>
+      <span class="cpill-sep">|</span>
+      <span class="cpill">Non-Binding Reservation</span>
+    </div>
   </div>
 
   <!-- THESIS -->
   <section class="thesis">
-    <p class="section-label">The Thesis</p>
-    <h2>The asset class nobody is talking about<br>is the one that never fails.</h2>
-    <p>SpaceX launches make headlines. Farmland returns make portfolios. U.S. agricultural land has delivered positive returns in 47 of the last 50 years — uncorrelated to equity markets, resistant to inflation, and underpinned by something no rocket can replicate: people need to eat.</p>
-    <p>First Mover Fund N.V. has been listed on Euronext since 1957. We are bringing the same institutional discipline that built a 65-year track record in European real assets to the American farmland market — at a minimum ticket accessible to individual accredited investors.</p>
+    <p class="section-label fade-up">The Thesis</p>
+    <h2 class="fade-up delay-1">The asset class nobody is talking about<br>is the one that never fails.</h2>
+    <p class="fade-up delay-2">SpaceX launches make headlines. Farmland returns make portfolios. U.S. agricultural land has delivered positive returns in 47 of the last 50 years — uncorrelated to equity markets, resistant to inflation, and underpinned by something no rocket can replicate: people need to eat.</p>
+    <p class="fade-up delay-2">First Mover Fund is an initiative of Green Earth Group N.V. — a European investment group with roots going back to 1957. We are bringing the same institutional discipline built over decades of managing real assets in Europe to the American farmland market, at a minimum ticket accessible to individual accredited investors.</p>
   </section>
 
   <!-- STATS -->
   <div class="stats">
     <div class="stats-inner">
-      <div class="stat">
+      <div class="stat fade-up">
         <div class="n">47/50</div>
         <div class="l">Positive return years</div>
       </div>
-      <div class="stat">
+      <div class="stat fade-up delay-1">
         <div class="n">+11.5%</div>
         <div class="l">20-yr avg annual return</div>
       </div>
-      <div class="stat">
+      <div class="stat fade-up delay-2">
         <div class="n">$10K</div>
         <div class="l">Minimum investment</div>
       </div>
-      <div class="stat">
+      <div class="stat fade-up delay-3">
         <div class="n">1957</div>
-        <div class="l">Euronext-listed since</div>
+        <div class="l">Green Earth Group founded</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY NOW -->
+  <div class="why-now">
+    <div class="why-now-inner">
+      <p class="section-label fade-up">Why 2026</p>
+      <h2 class="fade-up delay-1">The macro setup has never been<br>more favorable for <em>farmland.</em></h2>
+      <div class="wn-grid">
+        <div class="wn-item fade-up">
+          <div class="wn-num">01</div>
+          <h4>The rate cycle is turning</h4>
+          <p>As interest rates normalize, real assets benefit from falling discount rates. The same dynamic that drove real estate valuations in 2010–2020 is now setting up for agricultural land — with the added protection of food security as a structural floor.</p>
+        </div>
+        <div class="wn-item fade-up delay-1">
+          <div class="wn-num">02</div>
+          <h4>Dollar dynamics amplify returns</h4>
+          <p>Commodity prices — corn, soybeans, wheat — are priced globally in dollars. Shifts in dollar strength flow directly into farm income and land values. In the current macro environment, that creates a natural tailwind for U.S. agricultural assets.</p>
+        </div>
+        <div class="wn-item fade-up delay-2">
+          <div class="wn-num">03</div>
+          <h4>Institutions are accelerating</h4>
+          <p>Nuveen, TIAA, and Brookfield have been accumulating U.S. farmland for over a decade. As institutional demand compresses availability, individual accredited investors face a narrowing window to access this asset class at current valuations.</p>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- THREE REASONS -->
-  <div class="three-col">
-    <div class="col-item">
-      <div class="col-num">01</div>
-      <h3>Inelastic Demand</h3>
-      <p>Global population grows. Arable land does not. The math has been favorable for 10,000 years and nothing in the current macro environment changes it.</p>
+  <div class="three-col-wrap">
+    <div class="three-col-header">
+      <p class="section-label fade-up">Why Farmland</p>
+      <h2 class="fade-up delay-1">Three reasons the world's smartest<br>capital keeps coming back to the soil.</h2>
     </div>
-    <div class="col-item">
-      <div class="col-num">02</div>
-      <h3>Inflation Hedge</h3>
-      <p>Farmland rents are tied to commodity prices and CPI. When inflation rises, so does the income the land generates. It is one of the few real assets that benefits from the environment that destroys others.</p>
+    <div class="three-col">
+      <div class="col-item fade-up">
+        <div class="col-num">01</div>
+        <h3>Inelastic Demand</h3>
+        <p>Global population grows. Arable land does not. The math has been favorable for 10,000 years and nothing in the current macro environment changes it.</p>
+      </div>
+      <div class="col-item fade-up delay-1">
+        <div class="col-num">02</div>
+        <h3>Inflation Hedge</h3>
+        <p>Farmland rents are tied to commodity prices and CPI. When inflation rises, so does the income the land generates. It is one of the few real assets that benefits from the environment that destroys others.</p>
+      </div>
+      <div class="col-item fade-up delay-2">
+        <div class="col-num">03</div>
+        <h3>Institutional Access, Private Ticket</h3>
+        <p>Nuveen, TIAA, and Brookfield have been accumulating U.S. farmland for decades. The First Mover Farmland America Fund opens that same allocation to accredited investors starting at $10,000.</p>
+      </div>
     </div>
-    <div class="col-item">
-      <div class="col-num">03</div>
-      <h3>Institutional Access, Private Ticket</h3>
-      <p>Nuveen, TIAA, and Brookfield have been accumulating U.S. farmland for decades. The First Mover Farmland America Fund opens that same allocation to accredited investors starting at $10,000.</p>
+  </div>
+
+  <!-- SOCIAL PROOF STRIP -->
+  <div class="proof-strip">
+    <div class="proof-inner">
+      <div class="proof-stat fade-up">
+        <span class="pn">850,000+</span>
+        <span class="pl">Investors in Green Earth Group's funds across Europe</span>
+      </div>
+      <div class="proof-div"></div>
+      <div class="proof-stat fade-up delay-1">
+        <span class="pn">Euronext</span>
+        <span class="pl">Green Earth Group N.V. — publicly listed in Europe</span>
+      </div>
+      <div class="proof-div"></div>
+      <div class="proof-stat fade-up delay-2">
+        <span class="pn">Est. 1957</span>
+        <span class="pl">Green Earth Group's European real asset heritage</span>
+      </div>
     </div>
   </div>
 
@@ -384,9 +514,10 @@
           <li>Minimum investment: $10,000 (accredited investors only)</li>
           <li>Reg D Rule 506(b) structure — up to 2,000 investors</li>
           <li>Dual revenue: farmland appreciation + rental income</li>
-          <li>Managed by First Mover Fund N.V., Euronext-listed since 1957</li>
+          <li>An initiative of Green Earth Group N.V., a European-listed investment group</li>
           <li>Quarterly reporting and full transparency</li>
         </ul>
+        <a class="back-link" href="https://land.firstmoverfund.com">See the full Farmland America Fund details &rarr;</a>
       </div>
 
       <div class="form-card">
@@ -395,19 +526,23 @@
         <form id="reserve-form">
           <div class="field">
             <label for="fname">First Name</label>
-            <input type="text" id="fname" name="firstName" required placeholder="John" />
+            <input type="text" id="fname" name="firstName" required placeholder="John" autocomplete="given-name" />
           </div>
           <div class="field">
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lastName" required placeholder="Smith" />
+            <input type="text" id="lname" name="lastName" required placeholder="Smith" autocomplete="family-name" />
           </div>
           <div class="field">
             <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required placeholder="john@example.com" />
+            <input type="email" id="email" name="email" required placeholder="john@example.com" autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel" />
           </div>
           <div class="field">
             <label for="amount">Intended Investment Amount</label>
-            <select id="amount" name="amount">
+            <select id="amount" name="amount" autocomplete="off">
               <option value="">Select range</option>
               <option>$10,000 – $25,000</option>
               <option>$25,000 – $50,000</option>
@@ -419,69 +554,101 @@
           <button type="submit" class="form-submit">Submit Reservation</button>
           <p class="form-legal">By submitting you confirm you are an accredited investor as defined under SEC Reg D Rule 501. This is not an offer to sell securities.</p>
         </form>
-        <div class="form-success" id="form-success">
+        <div class="form-success-full" id="form-success">
+          <div class="s-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          </div>
           <h3>Reservation Received</h3>
-          <p>Our team will be in touch within one business day with the offering memorandum and next steps.</p>
+          <p class="sref">Reference: <strong id="reserve-ref"></strong></p>
+          <p>Our investor relations team will contact you within one business day with the offering memorandum and next steps.</p>
+          <a class="s-cal" href="https://firstmoverfund.com/contact-us" target="_blank">Schedule a 15-Minute Call</a>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <p class="footer-brand">First Mover Fund N.V. — Euronext Amsterdam — Est. 1957</p>
-    <p class="footer-legal">This page is for informational purposes only and does not constitute an offer or solicitation to buy or sell any security. The First Mover Farmland America Fund is offered under Reg D Rule 506(b) and is available to accredited investors only. Past performance is not indicative of future results. All investments involve risk, including possible loss of principal. First Mover Fund N.V. is a Dutch-listed investment firm and does not provide tax or legal advice.</p>
+    <img src="https://d2bytdz64ej6q4.cloudfront.net/fmf-logo-horizontal.png" alt="First Mover Fund" class="footer-logo" />
+    <p class="footer-brand">First Mover Fund &mdash; an initiative of Green Earth Group N.V.</p>
+    <p class="footer-legal">This page is for informational purposes only and does not constitute an offer or solicitation to buy or sell any security. The First Mover Farmland America Fund is offered under Reg D Rule 506(b) and is available to accredited investors only. Past performance is not indicative of future results. All investments involve risk, including possible loss of principal. &copy; 2026 First Mover Fund. First Mover Fund is an initiative of Green Earth Group N.V.</p>
   </footer>
 
   <script>
+    // UTM capture
+    function getUTM() {
+      var params = new URLSearchParams(window.location.search);
+      return {
+        utm_source: params.get('utm_source') || '',
+        utm_medium: params.get('utm_medium') || '',
+        utm_campaign: params.get('utm_campaign') || '',
+        utm_content: params.get('utm_content') || ''
+      };
+    }
+
+    function genRef() { return 'FMF-SX-' + Date.now().toString(36).toUpperCase().slice(-6); }
+
     // Sticky nav opacity
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', function() {
       document.querySelector('nav').style.background =
         window.scrollY > 40 ? 'rgba(12,24,37,0.98)' : 'rgba(12,24,37,0.95)';
     });
 
     // Form submit
-    document.getElementById('reserve-form').addEventListener('submit', async (e) => {
+    document.getElementById('reserve-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      const btn = e.target.querySelector('.form-submit');
-      btn.textContent = 'Submitting...';
-      btn.disabled = true;
-
-      const data = {
+      var btn = e.target.querySelector('.form-submit');
+      btn.textContent = 'Submitting...'; btn.disabled = true;
+      var ref = genRef();
+      var data = Object.assign({
         firstName: e.target.firstName.value,
         lastName: e.target.lastName.value,
         email: e.target.email.value,
+        phone: e.target.phone.value,
         amount: e.target.amount.value,
         source: 'space-x',
+        ref: ref,
         fund: 'farmland-america'
-      };
-
-      try {
-        await fetch('https://worker.green-earth-platform.com/fmf-lead', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
-      } catch (_) {}
-
+      }, getUTM());
+      fetch('https://worker.green-earth-platform.com/fmf-lead', {
+        method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+      }).catch(function(){});
       document.getElementById('reserve-form').style.display = 'none';
-      document.getElementById('form-success').style.display = 'block';
+      document.getElementById('reserve-ref').textContent = ref;
+      var success = document.getElementById('form-success');
+      success.style.display = 'block';
+      success.scrollIntoView({behavior: 'smooth', block: 'center'});
     });
+
+    // Scroll-triggered fade-up animations
+    if ('IntersectionObserver' in window) {
+      var fadeEls = document.querySelectorAll('.fade-up');
+      var fadeObs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            fadeObs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      fadeEls.forEach(function(el) { fadeObs.observe(el); });
+    } else {
+      document.querySelectorAll('.fade-up').forEach(function(el) { el.classList.add('visible'); });
+    }
+
+    // Mobile CTA hide when form visible
+    var bar = document.getElementById('mobile-cta');
+    var form = document.getElementById('reserve');
+    if (bar && form && 'IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        bar.style.display = entries[0].isIntersecting ? 'none' : '';
+      }, { threshold: 0.1 });
+      obs.observe(form);
+    }
   </script>
 
   <!-- M1: sticky mobile CTA -->
   <div class="mobile-cta-bar" id="mobile-cta">
     <a href="#reserve">Reserve a Position — $10K Minimum</a>
   </div>
-  <script>
-    (function() {
-      var bar = document.getElementById('mobile-cta');
-      var form = document.getElementById('reserve');
-      if (!bar || !form) return;
-      var obs = new IntersectionObserver(function(entries) {
-        bar.style.display = entries[0].isIntersecting ? 'none' : '';
-      }, { threshold: 0.1 });
-      obs.observe(form);
-    })();
-  </script>
 </body>
 </html>

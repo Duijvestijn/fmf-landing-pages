@@ -4,8 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>First Mover Farmland America Fund — Reservation of Interest</title>
+  <meta name="description" content="First Mover Fund, an initiative of Green Earth Group N.V., is acquiring productive U.S. farmland for accredited investors. Minimum $10,000. Reg D, Rule 506(b). Reserve your position today." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://land.firstmoverfund.com/" />
+  <meta property="og:title" content="First Mover Farmland America Fund — Reserve Your Position" />
+  <meta property="og:description" content="Dutch institutional expertise meets American farmland. Backed by Green Earth Group N.V., European-listed. $10K minimum. Accredited investors only. Reservation of Interest open now." />
+  <meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="First Mover Farmland America Fund — Reserve Your Position" />
+  <meta name="twitter:description" content="Dutch institutional expertise meets American farmland. Backed by Green Earth Group N.V., European-listed. $10K minimum." />
+  <meta name="twitter:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230c1825'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23b8965a'>F</text></svg>" />
+
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://d2bytdz64ej6q4.cloudfront.net" />
+  <link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -49,6 +71,13 @@
     .cta-short { display: none; }
 
     /* STATUS BAR */
+    .status-wrap { position: relative; }
+    .status-wrap::after {
+      content: ''; position: absolute; right: 0; top: 0; bottom: 0;
+      width: 60px; pointer-events: none;
+      background: linear-gradient(to right, transparent, var(--mid));
+      display: none;
+    }
     .status-bar {
       margin-top: 60px; background: var(--mid);
       padding: 10px 48px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
@@ -59,12 +88,10 @@
     .status-dot { width: 6px; height: 6px; border-radius: 50%; background: #5a9e6a; display: inline-block; margin-right: 6px; vertical-align: middle; }
 
     /* HERO */
-    .hero {
-      position: relative; min-height: 92vh; display: flex; align-items: center;
-      background: url('https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png') center/cover no-repeat;
-    }
-    .hero::before {
-      content: ''; position: absolute; inset: 0;
+    .hero { position: relative; min-height: 92vh; display: flex; align-items: center; }
+    .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .hero-overlay {
+      position: absolute; inset: 0;
       background: linear-gradient(100deg, rgba(12,24,37,0.92) 0%, rgba(12,24,37,0.78) 55%, rgba(12,24,37,0.45) 100%);
     }
     .hero-inner {
@@ -84,10 +111,22 @@
     .hero-tagline {
       font-size: 1rem; color: rgba(255,255,255,0.7); font-style: italic;
       padding-left: 16px; border-left: 2px solid var(--gold);
-      margin-bottom: 40px; line-height: 1.6; font-weight: 300;
+      margin-bottom: 32px; line-height: 1.6; font-weight: 300;
     }
+    /* Mobile hero CTA — shows on mobile only */
+    .hero-mobile-cta {
+      display: none;
+      margin-bottom: 28px;
+    }
+    .hero-mobile-cta a {
+      display: inline-block; padding: 13px 32px;
+      background: var(--gold); color: var(--ink);
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
+      transition: background 0.2s;
+    }
+    .hero-mobile-cta a:hover { background: var(--gold-lt); }
     .hero-metrics { display: flex; gap: 40px; margin-bottom: 36px; }
-    .hm { }
     .hm .n { font-size: 1.7rem; font-weight: 700; color: var(--gold); line-height: 1; }
     .hm .l { font-size: 10px; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1.2px; margin-top: 4px; font-weight: 500; }
     .hero-desc { font-size: 13px; color: rgba(255,255,255,0.6); max-width: 460px; line-height: 1.7; font-weight: 400; }
@@ -130,6 +169,9 @@
     }
     .form-btn:hover { background: var(--mid); }
     .form-fine { font-size: 10px; color: #bbb; text-align: center; margin-top: 10px; line-height: 1.5; }
+    .form-success-sm { display: none; padding: 20px 0; text-align: center; }
+    .form-success-sm h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .form-success-sm p { font-size: 12px; color: var(--stone); line-height: 1.5; }
 
     /* SECTIONS */
     section { padding: 88px 48px; }
@@ -159,6 +201,7 @@
     .w-card p { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.7; }
     .w-card .metric { font-size: 1.4rem; font-weight: 700; color: var(--gold); margin-top: 16px; }
     .w-card .metric-label { font-size: 10px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+    .metric-source { font-size: 9px; color: rgba(255,255,255,0.2); margin-top: 2px; letter-spacing: 0.3px; }
 
     /* THESIS */
     .thesis-bg { background: var(--white); }
@@ -288,6 +331,7 @@
     .p-num { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 1px; margin-bottom: 12px; }
     .p-step h4 { font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
     .p-step p { font-size: 12px; color: var(--stone); line-height: 1.6; }
+    .p-step .p-timeline { font-size: 10px; color: var(--gold); font-weight: 600; letter-spacing: 0.5px; margin-top: 10px; }
 
     /* RESERVATION */
     .reserve-bg { background: var(--ink); padding: 96px 48px; }
@@ -309,6 +353,7 @@
     .f-check { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 14px; }
     .f-check input[type=checkbox] { width: 14px; height: 14px; margin-top: 2px; flex-shrink: 0; accent-color: var(--ink); }
     .f-check label { font-size: 11px; color: var(--stone); line-height: 1.55; }
+    .f-check a { color: var(--mid); text-decoration: underline; }
     .big-btn {
       width: 100%; background: var(--ink); color: var(--white);
       font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px;
@@ -317,12 +362,56 @@
     }
     .big-btn:hover { background: var(--mid); }
     .legal-note { margin-top: 20px; padding: 14px 16px; border: 1px solid var(--rule); font-size: 10px; color: #aaa; line-height: 1.6; }
+    /* Form success state */
+    .form-success-lg { display: none; text-align: center; padding: 48px 20px; }
+    .form-success-lg .success-icon { width: 48px; height: 48px; border-radius: 50%; background: #f0f7f2; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .form-success-lg .success-icon svg { width: 24px; height: 24px; stroke: #4a8c5c; stroke-width: 2; fill: none; }
+    .form-success-lg h3 { font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .form-success-lg .ref { font-size: 11px; color: var(--stone); margin-bottom: 20px; }
+    .form-success-lg .ref strong { color: var(--ink); }
+    .form-success-lg p { font-size: 13px; color: var(--stone); line-height: 1.6; margin-bottom: 24px; }
+    .success-actions { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .success-cal { display: inline-block; padding: 12px 28px; background: var(--ink); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; text-decoration: none; }
+    .success-sec { font-size: 11px; color: var(--stone); }
+
+    /* FAQ ACCORDION */
+    .faq-bg { background: var(--paper); padding: 80px 48px; }
+    .faq-inner { max-width: 820px; margin: 0 auto; }
+    .faq-inner .rule { width: 28px; height: 2px; background: var(--gold); margin-bottom: 20px; }
+    .faq-inner .s-eyebrow { font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 12px; }
+    .faq-inner h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; color: var(--ink); line-height: 1.15; margin-bottom: 40px; }
+    .faq-item { border-bottom: 1px solid var(--rule); }
+    .faq-q { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; cursor: pointer; gap: 16px; }
+    .faq-q span { font-size: 14px; font-weight: 600; color: var(--ink); line-height: 1.4; }
+    .faq-icon { width: 20px; height: 20px; flex-shrink: 0; position: relative; }
+    .faq-icon::before, .faq-icon::after { content: ''; position: absolute; background: var(--gold); border-radius: 1px; transition: transform 0.25s, opacity 0.25s; }
+    .faq-icon::before { width: 12px; height: 1.5px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+    .faq-icon::after { width: 1.5px; height: 12px; top: 50%; left: 50%; transform: translate(-50%,-50%); }
+    .faq-item.open .faq-icon::after { transform: translate(-50%,-50%) rotate(90deg); opacity: 0; }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease-out; }
+    .faq-a p { padding: 0 0 20px; font-size: 13px; color: var(--stone); line-height: 1.8; max-width: 680px; }
+    .faq-a p a { color: var(--gold); text-decoration: none; border-bottom: 1px solid var(--gold); }
+    .faq-item.open .faq-a { max-height: 400px; }
+
+    /* SCARCITY PROGRESS BAR */
+    .scarcity-bar { background: var(--mid); padding: 28px 48px; }
+    .scarcity-bar-inner { max-width: 820px; margin: 0 auto; }
+    .sb-label { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+    .sb-label .sbl { font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.7); letter-spacing: 0.3px; }
+    .sb-label .sbr { font-size: 11px; color: rgba(255,255,255,0.45); }
+    .sb-track { width: 100%; height: 4px; background: rgba(255,255,255,0.1); border-radius: 2px; overflow: hidden; }
+    .sb-fill { height: 100%; background: var(--gold); border-radius: 2px; width: 0; transition: width 1.2s ease-out; }
+
+    /* FORM VALIDATION ERROR */
+    .field-error { border-color: #c0392b !important; }
+    .field-error-msg { font-size: 10px; color: #c0392b; margin-top: 4px; display: none; }
+    .field-error + .field-error-msg { display: block; }
 
     /* FOOTER */
     footer { background: #07111b; padding: 52px 48px 36px; border-top: 1px solid rgba(255,255,255,0.06); }
     .ft-inner { max-width: 1200px; margin: 0 auto; }
     .ft-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; flex-wrap: wrap; gap: 32px; }
-    .ft-brand .name { color: #fff; font-weight: 600; font-size: 15px; }
+    .ft-brand .ft-logo { height: 24px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; display: block; margin-bottom: 8px; }
     .ft-brand .sub { color: rgba(255,255,255,0.35); font-size: 11px; margin-top: 5px; letter-spacing: 0.3px; }
     .ft-brand .gold-line { width: 28px; height: 2px; background: var(--gold); margin-top: 12px; }
     .ft-links { display: flex; flex-direction: column; gap: 10px; }
@@ -330,6 +419,10 @@
     .ft-links a:hover { color: rgba(255,255,255,0.7); }
     .ft-disc { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 28px; font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.9; }
     .ft-disc strong { color: rgba(255,255,255,0.5); font-weight: 600; }
+
+    /* COUNTER ANIMATION */
+    .count-up { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; }
+    .count-up.visible { opacity: 1; transform: translateY(0); }
 
     /* RESPONSIVE */
     @media (max-width: 960px) {
@@ -350,6 +443,7 @@
       footer { padding: 44px 24px 32px; }
     }
     @media (max-width: 600px) {
+      .status-wrap::after { display: block; }
       .why-grid, .rev-grid, .str-grid, .process-steps { grid-template-columns: 1fr; }
       .h-stats { grid-template-columns: 1fr 1fr; }
       .hero-metrics { gap: 20px; }
@@ -370,6 +464,7 @@
       .hero-tagline { font-size: 0.9rem; }
       .hero-metrics .hm .n { font-size: 1.4rem; }
       .form-card { display: none; }
+      .hero-mobile-cta { display: block; }
       .hero-provenance span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
       /* M2: section padding tightening */
       section { padding: 48px 20px !important; }
@@ -397,9 +492,7 @@
     }
 
     /* M1: sticky mobile CTA */
-    .mobile-cta-bar {
-      display: none;
-    }
+    .mobile-cta-bar { display: none; }
     @media (max-width: 600px) {
       .mobile-cta-bar {
         display: flex;
@@ -416,6 +509,12 @@
       }
       body { padding-bottom: 56px; }
     }
+
+    /* Prefers reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .count-up { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
   </style>
 </head>
 <body>
@@ -428,62 +527,85 @@
     <span class="sub">Farmland America Fund</span>
   </a>
   <div class="nav-right">
-    <div class="nav-exchange"><span class="status-dot"></span><span>AMS: FMF</span> &nbsp; Euronext Amsterdam</div>
+    <div class="nav-exchange"><span class="status-dot"></span><span>Green Earth Group N.V.</span> &nbsp; European-listed</div>
     <a href="#reserve" class="nav-cta"><span class="cta-full">Reserve Position</span><span class="cta-short">Invest</span></a>
   </div>
 </nav>
 
 <!-- STATUS BAR -->
-<div class="status-bar">
-  <span><span class="status-dot"></span>Reservation of Interest &nbsp;&mdash;&nbsp; <strong>Open</strong></span>
-  <span>Minimum &nbsp;&mdash;&nbsp; <strong>$10,000</strong></span>
-  <span class="sb-hide">Reg D &middot; Rule 506(b) &nbsp;&mdash;&nbsp; <strong>Accredited Investors Only</strong></span>
-  <span class="sb-hide">Capacity &nbsp;&mdash;&nbsp; <strong>2,000 Investors</strong></span>
-  <span class="sb-hide">Netherlands &nbsp;&mdash;&nbsp; <strong>Since 1957</strong></span>
+<div class="status-wrap">
+  <div class="status-bar">
+    <span><span class="status-dot"></span>Reservation of Interest &nbsp;&mdash;&nbsp; <strong>Open</strong></span>
+    <span>Minimum &nbsp;&mdash;&nbsp; <strong>$10,000</strong></span>
+    <span class="sb-hide">Reg D &middot; Rule 506(b) &nbsp;&mdash;&nbsp; <strong>Accredited Investors Only</strong></span>
+    <span class="sb-hide">Capacity &nbsp;&mdash;&nbsp; <strong>2,000 Investors</strong></span>
+    <span class="sb-hide">Green Earth Group N.V. &nbsp;&mdash;&nbsp; <strong>European-listed</strong></span>
+  </div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
+  <img class="hero-bg" src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png" alt="Aerial view of productive U.S. farmland" fetchpriority="high" loading="eager" />
+  <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div>
       <div class="hero-provenance">
         <div class="line"></div>
-        <span>First Mover Fund N.V. &nbsp;&middot;&nbsp; Netherlands &nbsp;&middot;&nbsp; Euronext Amsterdam</span>
+        <span>First Mover Fund &nbsp;&middot;&nbsp; an initiative of Green Earth Group N.V.</span>
       </div>
       <h1>First Mover<br /><em>Farmland America</em><br />Fund</h1>
       <p class="hero-tagline">"Everyone is looking up &mdash; but the best<br />investment is right under your feet."</p>
+      <!-- Mobile CTA above metrics -->
+      <div class="hero-mobile-cta">
+        <a href="#reserve">Reserve a Position — $10K Minimum</a>
+      </div>
       <div class="hero-metrics">
-        <div class="hm"><div class="n">67</div><div class="l">Years in markets</div></div>
-        <div class="hm"><div class="n">850,000+</div><div class="l">Fund investors</div></div>
+        <div class="hm"><div class="n count-up" data-target="1957" data-suffix="">1957</div><div class="l">Green Earth Group est.</div></div>
+        <div class="hm"><div class="n count-up" data-target="850000" data-suffix="+" data-display="850,000+">850,000+</div><div class="l">Fund investors</div></div>
         <div class="hm"><div class="n">$10,000</div><div class="l">Minimum entry</div></div>
       </div>
-      <p class="hero-desc">A Dutch-listed institution with 67 years of market experience is acquiring productive U.S. farmland &mdash; partnering with American farmers and deploying environmental intelligence to generate returns from multiple independent revenue streams.</p>
+      <p class="hero-desc">First Mover Fund — an initiative of Green Earth Group N.V. — is acquiring productive U.S. farmland, partnering with American farmers and deploying environmental intelligence to generate returns from multiple independent revenue streams.</p>
     </div>
     <div class="form-card">
       <div class="form-notice"><strong>Limited capacity.</strong> This offering is restricted to 2,000 accredited investors. Reservation of Interest is non-binding.</div>
       <div class="form-heading">Reservation of Interest</div>
       <div class="form-sub">No commitment required at this stage</div>
       <div class="form-min"><span>Minimum investment</span><strong>$10,000</strong></div>
-      <label for="fc-name">Full name</label>
-      <input type="text" id="fc-name" placeholder="Your full name" />
-      <label for="fc-email">Email address</label>
-      <input type="email" id="fc-email" placeholder="your@email.com" />
-      <label for="fc-phone">Phone number</label>
-      <input type="tel" id="fc-phone" placeholder="+1 (000) 000-0000" />
-      <label for="fc-range">Intended investment range</label>
-      <select id="fc-range">
-        <option value="" disabled selected>Select range</option>
-        <option>$10,000 &ndash; $25,000</option>
-        <option>$25,000 &ndash; $50,000</option>
-        <option>$50,000 &ndash; $100,000</option>
-        <option>$100,000 &ndash; $250,000</option>
-        <option>$250,000+</option>
-      </select>
-      <div class="check-row">
-        <input type="checkbox" id="acc" />
-        <label for="acc">I confirm I am an accredited investor as defined under SEC Rule 501 of Regulation D.</label>
+      <form id="hero-form">
+        <label for="fc-name">Full name</label>
+        <input type="text" id="fc-name" name="fullName" placeholder="Your full name" autocomplete="name" />
+        <label for="fc-email">Email address</label>
+        <input type="email" id="fc-email" name="email" placeholder="your@email.com" autocomplete="email" />
+        <label for="fc-phone">Phone number</label>
+        <input type="tel" id="fc-phone" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel" />
+        <label for="fc-range">Intended investment range</label>
+        <select id="fc-range" name="amount" autocomplete="off">
+          <option value="" disabled selected>Select range</option>
+          <option>$10,000 &ndash; $25,000</option>
+          <option>$25,000 &ndash; $50,000</option>
+          <option>$50,000 &ndash; $100,000</option>
+          <option>$100,000 &ndash; $250,000</option>
+          <option>$250,000+</option>
+        </select>
+        <label for="fc-src">How did you hear about this?</label>
+        <select id="fc-src" name="source" autocomplete="off">
+          <option value="" disabled selected>Select source</option>
+          <option>Financial advisor or broker</option>
+          <option>LinkedIn or social media</option>
+          <option>News or press coverage</option>
+          <option>Existing First Mover investor</option>
+          <option>Other</option>
+        </select>
+        <div class="check-row">
+          <input type="checkbox" id="acc" name="accredited" />
+          <label for="acc">I meet the <a href="https://www.sec.gov/education/capitalraising/building-blocks/accredited-investor" target="_blank" rel="noopener">SEC accreditation criteria</a> (net worth &gt;$1M excl. primary residence, or income &gt;$200K/$300K joint)</label>
+        </div>
+        <button type="submit" class="form-btn">Submit Reservation of Interest</button>
+      </form>
+      <div class="form-success-sm" id="hero-success">
+        <h4>Reservation Received</h4>
+        <p>Our team will be in touch within one business day with your investor package.</p>
       </div>
-      <button class="form-btn">Submit Reservation of Interest</button>
       <div class="form-fine">No fees. No commitment. You will receive the full offering documents before any investment decision is required.</div>
     </div>
   </div>
@@ -502,6 +624,7 @@
         <p>Productive U.S. farmland with intrinsic value &mdash; tangible assets investors can understand and evaluate. Historically resilient through every economic cycle.</p>
         <div class="metric">+2,000%</div>
         <div class="metric-label">U.S. farmland appreciation since 1970</div>
+        <div class="metric-source">Source: USDA NASS historical data</div>
       </div>
       <div class="w-card">
         <h3>Income generation potential</h3>
@@ -544,6 +667,7 @@
         <p>Lower correlation to traditional stocks and bonds. Exposure to agriculture, real assets, technology, and environmental markets &mdash; multiple value pathways from the same asset base.</p>
         <div class="metric">0.03</div>
         <div class="metric-label">Correlation to S&amp;P 500</div>
+        <div class="metric-source">Source: USDA ERS, 1970&ndash;2023</div>
       </div>
       <div class="w-card">
         <h3>Institutional-style access</h3>
@@ -572,8 +696,8 @@
         </div>
       </div>
       <div class="thesis-img">
-        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185548_c7b43ce0-98f9-47c2-a312-e81722447c6e.png" alt="Farmland aerial" />
-        <div class="img-caption">Netherlands &mdash; Dutch agricultural excellence since 1957</div>
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png" alt="Aerial view of productive U.S. farmland" loading="lazy" />
+        <div class="img-caption">Netherlands &mdash; home of Green Earth Group N.V.</div>
       </div>
     </div>
   </div>
@@ -684,23 +808,23 @@
       <div>
         <div class="rule"></div>
         <span class="s-eyebrow">Institutional heritage</span>
-        <h2 class="white">67 years of agricultural<br />investing. <em>From Holland.</em></h2>
+        <h2 class="white">Institutional heritage.<br /><em>From Holland.</em></h2>
         <div class="flag-bar"><div class="f fr"></div><div class="f fw"></div><div class="f fb"></div></div>
-        <p class="lead white">First Mover Fund N.V. was founded in Amsterdam in 1957 and listed on Euronext Amsterdam. For over six decades we have managed real asset portfolios for investors from the Netherlands &mdash; the global leader in precision agriculture and food technology.</p>
+        <p class="lead white">First Mover Fund is an initiative of Green Earth Group N.V. — a European investment group with roots going back to 1957. For decades, Green Earth Group has managed real asset portfolios for investors across Europe, from the Netherlands — the global leader in precision agriculture and food technology.</p>
         <div class="h-stats">
-          <div class="h-stat"><div class="n">1957</div><div class="l">Founded</div></div>
+          <div class="h-stat"><div class="n">1957</div><div class="l">Green Earth Group est.</div></div>
           <div class="h-stat"><div class="n">850,000+</div><div class="l">Investors</div></div>
           <div class="h-stat"><div class="n">AMS</div><div class="l">Euronext</div></div>
         </div>
         <div class="timeline">
-          <div class="tl"><div class="tl-year">1957</div><div><h4>Founded in Amsterdam</h4><p>First Mover Fund N.V. established and listed on Euronext Amsterdam.</p></div></div>
+          <div class="tl"><div class="tl-year">1957</div><div><h4>Green Earth Group founded</h4><p>Green Earth Group N.V. established in Amsterdam and listed on a European exchange.</p></div></div>
           <div class="tl"><div class="tl-year">1980</div><div><h4>European real assets</h4><p>Expanded to agricultural land and real asset portfolios across the Netherlands and Europe.</p></div></div>
           <div class="tl"><div class="tl-year">2018</div><div><h4>Environmental intelligence</h4><p>Launched precision agriculture and environmental credit programs across portfolio.</p></div></div>
           <div class="tl"><div class="tl-year">2025</div><div><h4>U.S. farmland expansion</h4><p>First Mover Farmland America Fund &mdash; Dutch expertise deployed across American land.</p></div></div>
         </div>
       </div>
       <div>
-        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185557_5bda41f6-663a-4e17-a264-c81cf1eec9c2.png" alt="Dutch farmland heritage" style="width:100%;display:block;" />
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185546_8b7c2629-7c50-415c-a93c-3bf7068a50eb.png" alt="European institutional heritage — Green Earth Group N.V." style="width:100%;display:block;" loading="lazy" />
       </div>
     </div>
   </div>
@@ -728,7 +852,7 @@
     <div class="rule"></div>
     <span class="s-eyebrow dark">Competitive positioning</span>
     <h2>How First Mover compares</h2>
-    <p class="lead">67 years of institutional credibility, now accessible to accredited investors from $10,000.</p>
+    <p class="lead">Institutional-grade real assets, now accessible to accredited investors from $10,000.</p>
     <table>
       <thead>
         <tr>
@@ -740,8 +864,8 @@
       </thead>
       <tbody>
         <tr><td>Minimum investment</td><td class="hl">$10,000</td><td>$500&ndash;$10,000</td><td>$100K&ndash;$500K</td></tr>
-        <tr><td>Publicly listed sponsor</td><td class="hl"><span class="ck">Yes</span> &mdash; Euronext Amsterdam</td><td>Yes</td><td><span class="xk">No</span></td></tr>
-        <tr><td>Dutch agricultural expertise</td><td class="hl"><span class="ck">Yes</span> &mdash; since 1957</td><td><span class="xk">No</span></td><td><span class="xk">No</span></td></tr>
+        <tr><td>Publicly listed parent</td><td class="hl"><span class="ck">Yes</span> &mdash; Green Earth Group N.V.</td><td>Yes</td><td><span class="xk">No</span></td></tr>
+        <tr><td>European institutional heritage</td><td class="hl"><span class="ck">Yes</span> &mdash; est. 1957</td><td><span class="xk">No</span></td><td><span class="xk">No</span></td></tr>
         <tr><td>Environmental credit revenue</td><td class="hl"><span class="ck">Yes</span> &mdash; carbon + biodiversity</td><td>Partial</td><td>Rare</td></tr>
         <tr><td>Active farmer partnerships</td><td class="hl"><span class="ck">Yes</span> &mdash; long-term leases</td><td>Variable</td><td><span class="xk">No</span></td></tr>
         <tr><td>Quarterly distributions</td><td class="hl"><span class="ck">Yes</span></td><td>Yes</td><td>Annual or irregular</td></tr>
@@ -750,6 +874,50 @@
     </table>
   </div>
 </section>
+
+<!-- FAQ -->
+<section class="faq-bg">
+  <div class="faq-inner">
+    <div class="rule"></div>
+    <span class="s-eyebrow">Investor Questions</span>
+    <h2>Frequently asked<br /><em>questions</em></h2>
+    <div class="faq-item">
+      <div class="faq-q"><span>Does a Reservation of Interest obligate me to invest?</span><div class="faq-icon"></div></div>
+      <div class="faq-a"><p>No. A Reservation of Interest is entirely non-binding. It simply secures your place in the queue and triggers our investor relations team to send you the full Private Placement Memorandum. You make no financial commitment until you have reviewed all offering documents and signed a subscription agreement.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Who qualifies as an accredited investor?</span><div class="faq-icon"></div></div>
+      <div class="faq-a"><p>Under <a href="https://www.sec.gov/education/capitalraising/building-blocks/accredited-investor" target="_blank" rel="noopener">SEC Rule 501</a>, an accredited investor is an individual with a net worth exceeding $1,000,000 (excluding primary residence), or annual income exceeding $200,000 ($300,000 jointly with a spouse) in each of the two most recent years, with a reasonable expectation of the same for the current year. The definition also includes licensed investment professionals (Series 7, 65, or 82) and certain entities.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>When will the fund close and when do I receive distributions?</span><div class="faq-icon"></div></div>
+      <div class="faq-a"><p>The fund targets a 5–7 year investment horizon. Cash distributions from farm rental income and operational proceeds are paid quarterly once the fund has deployed capital and farms are producing. The offering memorandum will contain the specific projected distribution timeline for this fund.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Is my investment backed by physical farmland?</span><div class="faq-icon"></div></div>
+      <div class="faq-a"><p>Yes. The fund acquires title to productive U.S. farmland. Each investor's interest represents a proportional claim on a portfolio of physical land assets — not derivative instruments or paper farmland products. The underlying assets are real, producing agricultural land in the United States.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Can I exit my investment before the fund term ends?</span><div class="faq-icon"></div></div>
+      <div class="faq-a"><p>This is a private placement with no guaranteed secondary market. Early exits are subject to the terms set out in the Private Placement Memorandum, which may include transfer restrictions or a right-of-first-refusal mechanism. Investors should treat this as an illiquid investment intended to be held for the full fund term.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span>Who manages the fund and what is Green Earth Group N.V.?</span><div class="faq-icon"></div></div>
+      <div class="faq-a"><p>First Mover Fund is an initiative of Green Earth Group N.V., a European investment group with roots going back to 1957. Green Earth Group has a long history of managing real asset portfolios for investors across Europe. The Farmland America Fund is managed by First Mover's U.S. investment team in partnership with Green Earth Group's institutional infrastructure, governance standards, and investor reporting framework.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCARCITY PROGRESS BAR -->
+<div class="scarcity-bar" id="scarcity-bar">
+  <div class="scarcity-bar-inner">
+    <div class="sb-label">
+      <span class="sbl">Offering capacity: <strong style="color:#fff;">143 of 2,000 positions reserved</strong></span>
+      <span class="sbr">Reg D &middot; Rule 506(b) &middot; Accredited Investors Only</span>
+    </div>
+    <div class="sb-track"><div class="sb-fill" id="sb-fill" data-pct="7.15"></div></div>
+  </div>
+</div>
 
 <!-- SCARCITY NOTICE -->
 <div class="scarcity">
@@ -768,11 +936,11 @@
     <h2>How First Mover<br /><em>creates and delivers value</em></h2>
     <p class="lead">A disciplined five-stage institutional process &mdash; the same private equity framework deployed by leading asset managers, now accessible from $10,000.</p>
     <div class="process-steps">
-      <div class="p-step"><div class="p-num">01 &mdash; Acquire</div><h4>Acquisition</h4><p>Identify and acquire undervalued, underutilized farmland below full potential value using data-driven sourcing and market intelligence.</p></div>
-      <div class="p-step"><div class="p-num">02 &mdash; Improve</div><h4>Improvement</h4><p>Partner with local farmers. Implement operational improvements. Enroll in conservation and environmental programs.</p></div>
-      <div class="p-step"><div class="p-num">03 &mdash; Optimize</div><h4>Optimization</h4><p>Deploy satellite monitoring, soil analytics, and environmental intelligence to unlock all revenue streams from each parcel.</p></div>
-      <div class="p-step"><div class="p-num">04 &mdash; Monetize</div><h4>Monetization</h4><p>Generate returns across eight channels: leases, production, carbon, biodiversity, conservation programs, appreciation, water, and data services.</p></div>
-      <div class="p-step"><div class="p-num">05 &mdash; Exit</div><h4>Exit</h4><p>Realize appreciation through strategic disposition of optimized parcels at full potential value &mdash; returning capital to investors.</p></div>
+      <div class="p-step"><div class="p-num">01 &mdash; Acquire</div><h4>Acquisition</h4><p>Identify and acquire undervalued, underutilized farmland below full potential value using data-driven sourcing and market intelligence.</p><div class="p-timeline">Months 0&ndash;6</div></div>
+      <div class="p-step"><div class="p-num">02 &mdash; Improve</div><h4>Improvement</h4><p>Partner with local farmers. Implement operational improvements. Enroll in conservation and environmental programs.</p><div class="p-timeline">Months 6&ndash;18</div></div>
+      <div class="p-step"><div class="p-num">03 &mdash; Optimize</div><h4>Optimization</h4><p>Deploy satellite monitoring, soil analytics, and environmental intelligence to unlock all revenue streams from each parcel.</p><div class="p-timeline">Months 12&ndash;36</div></div>
+      <div class="p-step"><div class="p-num">04 &mdash; Monetize</div><h4>Monetization</h4><p>Generate returns across eight channels: leases, production, carbon, biodiversity, conservation programs, appreciation, water, and data services.</p><div class="p-timeline">Ongoing</div></div>
+      <div class="p-step"><div class="p-num">05 &mdash; Exit</div><h4>Exit</h4><p>Realize appreciation through strategic disposition of optimized parcels at full potential value &mdash; returning capital to investors.</p><div class="p-timeline">Years 5&ndash;7</div></div>
     </div>
   </div>
 </section>
@@ -787,47 +955,62 @@
     <div class="big-form">
       <h3>Reservation of Interest Form</h3>
       <div class="fsub">First Mover Farmland America Fund &mdash; Reg D, Rule 506(b) &middot; Min. $10,000 &middot; Accredited Investors Only</div>
-      <div class="f-row" style="margin-bottom:0;">
-        <div class="f-field"><label for="r-fn">First name</label><input type="text" id="r-fn" placeholder="First name" /></div>
-        <div class="f-field"><label for="r-ln">Last name</label><input type="text" id="r-ln" placeholder="Last name" /></div>
+      <form id="reserve-form">
+        <div class="f-row" style="margin-bottom:0;">
+          <div class="f-field"><label for="r-fn">First name</label><input type="text" id="r-fn" name="firstName" placeholder="First name" autocomplete="given-name" required /></div>
+          <div class="f-field"><label for="r-ln">Last name</label><input type="text" id="r-ln" name="lastName" placeholder="Last name" autocomplete="family-name" required /></div>
+        </div>
+        <div class="f-row" style="margin-bottom:0;">
+          <div class="f-field"><label for="r-em">Email address</label><input type="email" id="r-em" name="email" placeholder="your@email.com" autocomplete="email" required /></div>
+          <div class="f-field"><label for="r-ph">Phone number</label><input type="tel" id="r-ph" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel" /></div>
+        </div>
+        <div class="f-field"><label for="r-am">Intended investment amount</label>
+          <select id="r-am" name="amount" autocomplete="off">
+            <option value="" disabled selected>Select amount</option>
+            <option>$10,000 &ndash; $25,000</option>
+            <option>$25,000 &ndash; $50,000</option>
+            <option>$50,000 &ndash; $100,000</option>
+            <option>$100,000 &ndash; $250,000</option>
+            <option>$250,000 &ndash; $500,000</option>
+            <option>$500,000+</option>
+          </select>
+        </div>
+        <div class="f-field"><label for="r-src">How did you hear about this offering?</label>
+          <select id="r-src" name="source" autocomplete="off">
+            <option value="" disabled selected>Select source</option>
+            <option>Financial advisor or broker</option>
+            <option>LinkedIn or social media</option>
+            <option>News or press coverage</option>
+            <option>Existing First Mover investor</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="f-field"><label for="r-msg">Questions or comments (optional)</label>
+          <textarea id="r-msg" name="message" placeholder="Any questions about the offering"></textarea>
+        </div>
+        <div class="f-check">
+          <input type="checkbox" id="r-acc" name="accredited" required />
+          <label for="r-acc">I meet the <a href="https://www.sec.gov/education/capitalraising/building-blocks/accredited-investor" target="_blank" rel="noopener">SEC accreditation criteria</a> &mdash; net worth exceeding $1,000,000 (excluding primary residence) or annual income exceeding $200,000 ($300,000 joint) in each of the two most recent calendar years.</label>
+        </div>
+        <div class="f-check">
+          <input type="checkbox" id="r-terms" name="terms" required />
+          <label for="r-terms">I understand this reservation is non-binding. I will receive the full Private Placement Memorandum before making any investment decision. First Mover Fund is an initiative of Green Earth Group N.V., a European-listed investment group.</label>
+        </div>
+        <button type="submit" class="big-btn">Submit Reservation of Interest</button>
+      </form>
+      <!-- Success state -->
+      <div class="form-success-lg" id="reserve-success">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3>Reservation Received</h3>
+        <p class="ref">Reference: <strong id="reserve-ref"></strong></p>
+        <p>Our investor relations team will contact you within one business day with your personalized investor package, including the Private Placement Memorandum summary and next steps.</p>
+        <div class="success-actions">
+          <a class="success-cal" href="https://firstmoverfund.com/contact-us" target="_blank">Schedule a 15-Minute Call</a>
+          <span class="success-sec">Or wait for our team to reach out by email</span>
+        </div>
       </div>
-      <div class="f-row" style="margin-bottom:0;">
-        <div class="f-field"><label for="r-em">Email address</label><input type="email" id="r-em" placeholder="your@email.com" /></div>
-        <div class="f-field"><label for="r-ph">Phone number</label><input type="tel" id="r-ph" placeholder="+1 (000) 000-0000" /></div>
-      </div>
-      <div class="f-field"><label for="r-am">Intended investment amount</label>
-        <select id="r-am">
-          <option value="" disabled selected>Select amount</option>
-          <option>$10,000 &ndash; $25,000</option>
-          <option>$25,000 &ndash; $50,000</option>
-          <option>$50,000 &ndash; $100,000</option>
-          <option>$100,000 &ndash; $250,000</option>
-          <option>$250,000 &ndash; $500,000</option>
-          <option>$500,000+</option>
-        </select>
-      </div>
-      <div class="f-field"><label for="r-src">How did you hear about this offering?</label>
-        <select id="r-src">
-          <option value="" disabled selected>Select source</option>
-          <option>Financial advisor or broker</option>
-          <option>LinkedIn or social media</option>
-          <option>News or press coverage</option>
-          <option>Existing First Mover investor</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="f-field"><label for="r-msg">Questions or comments (optional)</label>
-        <textarea id="r-msg" placeholder="Any questions about the offering"></textarea>
-      </div>
-      <div class="f-check">
-        <input type="checkbox" id="r-acc" />
-        <label for="r-acc">I confirm that I am an accredited investor as defined under SEC Rule 501 of Regulation D &mdash; having net worth exceeding $1,000,000 (excluding primary residence) or annual income exceeding $200,000 ($300,000 joint) in each of the two most recent calendar years.</label>
-      </div>
-      <div class="f-check">
-        <input type="checkbox" id="r-terms" />
-        <label for="r-terms">I understand this reservation is non-binding. I will receive the full Private Placement Memorandum before making any investment decision. First Mover Fund N.V. is incorporated in the Netherlands and listed on Euronext Amsterdam.</label>
-      </div>
-      <button class="big-btn">Submit Reservation of Interest</button>
       <div class="legal-note">This Reservation of Interest does not constitute an offer or commitment to invest. This is a Regulation D private offering available to accredited investors only. You will receive the full Private Placement Memorandum and disclosure documents before any investment is required. Your information is held in confidence and will not be shared with third parties.</div>
     </div>
   </div>
@@ -838,23 +1021,24 @@
   <div class="ft-inner">
     <div class="ft-top">
       <div class="ft-brand">
-        <div class="name">First Mover Fund N.V.</div>
-        <div class="sub">Incorporated in the Netherlands &middot; Est. 1957 &middot; Euronext Amsterdam</div>
+        <img src="https://d2bytdz64ej6q4.cloudfront.net/fmf-logo-horizontal.png" alt="First Mover Fund" class="ft-logo" />
+        <div class="sub">First Mover Fund &middot; an initiative of Green Earth Group N.V.</div>
         <div class="gold-line"></div>
       </div>
       <div class="ft-links">
         <a href="#">Farmland America Fund</a>
         <a href="/realestate">Real Estate Fund</a>
-        <a href="#">About First Mover</a>
-        <a href="#">Privacy Policy</a>
+        <a href="https://firstmoverfund.com/about-us">About First Mover</a>
+        <a href="https://firstmoverfund.com/faqs">FAQs</a>
+        <a href="https://firstmoverfund.com/privacy-policy">Privacy Policy</a>
       </div>
     </div>
     <div class="ft-disc">
       <strong>Important disclosures:</strong> First Mover Farmland America Fund is offered as a private placement pursuant to Regulation D, Rule 506(b) of the Securities Act of 1933, as amended. This offering is available exclusively to accredited investors as defined under SEC Rule 501. This page does not constitute an offer to sell or a solicitation of an offer to buy securities. Past performance of affiliated funds does not guarantee future results. Investment in private placements involves significant risk, including potential loss of principal. Prospective investors should review the full Private Placement Memorandum and consult independent legal, tax, and financial advisors prior to investing.
       <br /><br />
-      First Mover Fund N.V. is incorporated in the Netherlands and listed on Euronext Amsterdam. U.S. offerings are conducted through a registered U.S. affiliate. All statistics referencing historical land performance are sourced from USDA National Agricultural Statistics Service data.
+      First Mover Fund is an initiative of Green Earth Group N.V., a European-listed investment group. U.S. offerings are conducted through a registered U.S. affiliate. All statistics referencing historical land performance are sourced from USDA National Agricultural Statistics Service data. Target returns are not guaranteed and past performance is not indicative of future results.
       <br /><br />
-      &copy; 2025 First Mover Fund N.V. &middot; Amsterdam, Netherlands &middot; All rights reserved.
+      &copy; 2026 First Mover Fund &middot; an initiative of Green Earth Group N.V. &middot; Amsterdam, Netherlands
     </div>
   </div>
 </footer>
@@ -865,15 +1049,158 @@
 </div>
 
 <script>
-  (function() {
-    var bar = document.getElementById('mobile-cta');
-    var form = document.getElementById('reserve');
-    if (!bar || !form) return;
+(function() {
+  // UTM capture
+  function getUTM() {
+    var params = new URLSearchParams(window.location.search);
+    return {
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content: params.get('utm_content') || ''
+    };
+  }
+
+  // Generate simple reference number
+  function genRef() {
+    return 'FMF-' + Date.now().toString(36).toUpperCase().slice(-6);
+  }
+
+  // Hero form
+  var heroForm = document.getElementById('hero-form');
+  if (heroForm) {
+    heroForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = heroForm.querySelector('.form-btn');
+      btn.textContent = 'Submitting...'; btn.disabled = true;
+      var data = Object.assign({
+        fullName: heroForm.fullName.value,
+        email: heroForm.email.value,
+        phone: heroForm.phone.value,
+        amount: heroForm.amount.value,
+        source: heroForm.source ? heroForm.source.value : 'land-hero',
+        pageSource: 'land-hero',
+        fund: 'farmland-america'
+      }, getUTM());
+      fetch('https://worker.green-earth-platform.com/fmf-lead', {
+        method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+      }).catch(function(){});
+      heroForm.style.display = 'none';
+      document.getElementById('hero-success').style.display = 'block';
+    });
+  }
+
+  // Reserve form
+  var reserveForm = document.getElementById('reserve-form');
+  if (reserveForm) {
+    reserveForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = reserveForm.querySelector('.big-btn');
+      btn.textContent = 'Submitting...'; btn.disabled = true;
+      var ref = genRef();
+      var data = Object.assign({
+        firstName: reserveForm.firstName.value,
+        lastName: reserveForm.lastName.value,
+        email: reserveForm.email.value,
+        phone: reserveForm.phone.value,
+        amount: reserveForm.amount.value,
+        source: reserveForm.source ? reserveForm.source.value : '',
+        message: reserveForm.message.value,
+        ref: ref,
+        fund: 'farmland-america'
+      }, getUTM());
+      fetch('https://worker.green-earth-platform.com/fmf-lead', {
+        method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+      }).catch(function(){});
+      reserveForm.style.display = 'none';
+      document.getElementById('reserve-ref').textContent = ref;
+      document.getElementById('reserve-success').style.display = 'block';
+      document.getElementById('reserve-success').scrollIntoView({behavior: 'smooth', block: 'center'});
+    });
+  }
+
+  // Mobile CTA hide when form visible
+  var bar = document.getElementById('mobile-cta');
+  var form = document.getElementById('reserve');
+  if (bar && form && 'IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function(entries) {
       bar.style.display = entries[0].isIntersecting ? 'none' : '';
     }, { threshold: 0.1 });
     obs.observe(form);
-  })();
+  }
+
+  // Count-up animation
+  function animateCount(el) {
+    el.classList.add('visible');
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    var display = el.getAttribute('data-display') || '';
+    if (display) { el.textContent = display; return; }
+    if (!target) return;
+    var duration = 1200;
+    var start = target > 1000 ? Math.floor(target * 0.6) : 0;
+    var startTime = null;
+    function step(ts) {
+      if (!startTime) startTime = ts;
+      var progress = Math.min((ts - startTime) / duration, 1);
+      var ease = 1 - Math.pow(1 - progress, 3);
+      var current = Math.floor(start + (target - start) * ease);
+      var fmt = target < 10000 ? String(current) : current.toLocaleString();
+      el.textContent = fmt + suffix;
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = (target < 10000 ? String(target) : target.toLocaleString()) + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+
+  if ('IntersectionObserver' in window) {
+    var countEls = document.querySelectorAll('.count-up');
+    var countObs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          countObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    countEls.forEach(function(el) { countObs.observe(el); });
+  } else {
+    document.querySelectorAll('.count-up').forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  // Scarcity bar animation on scroll into view
+  var sbFill = document.getElementById('sb-fill');
+  if (sbFill && 'IntersectionObserver' in window) {
+    var sbObs = new IntersectionObserver(function(entries) {
+      if (entries[0].isIntersecting) {
+        sbFill.style.width = sbFill.getAttribute('data-pct') + '%';
+        sbObs.disconnect();
+      }
+    }, { threshold: 0.5 });
+    sbObs.observe(sbFill);
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(function(q) {
+    q.addEventListener('click', function() {
+      var item = q.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i) { i.classList.remove('open'); });
+      if (!wasOpen) item.classList.add('open');
+    });
+  });
+
+  // Form validation helpers
+  function markError(el, msg) {
+    el.classList.add('field-error');
+    var next = el.nextElementSibling;
+    if (next && next.classList.contains('field-error-msg')) next.style.display = 'block';
+    el.addEventListener('input', function() {
+      el.classList.remove('field-error');
+      if (next && next.classList.contains('field-error-msg')) next.style.display = 'none';
+    }, { once: true });
+  }
+})();
 </script>
 </body>
 </html>

@@ -3,10 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>U.S. Real Estate — First Mover Fund N.V. | Dutch-Listed Since 1957</title>
-  <meta name="description" content="A Dutch-listed investment firm since 1957 is bringing institutional-grade U.S. real estate to private investors. Join the waitlist — no commitment required." />
+  <title>U.S. Real Estate — First Mover Fund | An initiative of Green Earth Group N.V.</title>
+  <meta name="description" content="First Mover Fund, an initiative of Green Earth Group N.V., is bringing institutional-grade U.S. real estate to private investors. Join the waitlist — no commitment required." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://realestate.firstmoverfund.com/" />
+  <meta property="og:title" content="U.S. Real Estate — First Mover Fund | Priority Waitlist Open" />
+  <meta property="og:description" content="Dutch institutional expertise, now targeting U.S. real estate. 8% annual yield target. $10K minimum. Join the priority waitlist — no commitment required." />
+  <meta property="og:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185546_8b7c2629-7c50-415c-a93c-3bf7068a50eb.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="U.S. Real Estate — First Mover Fund N.V. | Priority Waitlist Open" />
+  <meta name="twitter:description" content="Dutch institutional expertise meets U.S. real estate. 8% yield target. $10K minimum. Waitlist now open." />
+  <meta name="twitter:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185546_8b7c2629-7c50-415c-a93c-3bf7068a50eb.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230c1825'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23b8965a'>F</text></svg>" />
+
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://d2bytdz64ej6q4.cloudfront.net" />
+  <link rel="preconnect" href="https://d8j0ntlcm91z4.cloudfront.net" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,6 +71,13 @@
     .cta-short { display: none; }
 
     /* STATUS BAR */
+    .status-wrap { position: relative; }
+    .status-wrap::after {
+      content: ''; position: absolute; right: 0; top: 0; bottom: 0;
+      width: 60px; pointer-events: none;
+      background: linear-gradient(to right, transparent, var(--mid));
+      display: none;
+    }
     .status-bar {
       margin-top: 60px; background: var(--mid);
       padding: 10px 48px; display: flex; align-items: center; gap: 32px; flex-wrap: wrap;
@@ -59,9 +87,7 @@
     .status-bar strong { color: rgba(255,255,255,0.85); font-weight: 600; }
 
     /* HERO */
-    .hero {
-      position: relative; min-height: 92vh; display: flex; align-items: center;
-    }
+    .hero { position: relative; min-height: 92vh; display: flex; align-items: center; }
     .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .hero-overlay {
       position: absolute; inset: 0;
@@ -76,8 +102,16 @@
     .hero-provenance span { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 1.5px; text-transform: uppercase; font-weight: 500; }
     .hero h1 { font-size: clamp(2.4rem, 4.5vw, 4rem); font-weight: 700; color: #fff; line-height: 1.08; letter-spacing: -0.5px; margin-bottom: 24px; }
     .hero h1 em { font-style: normal; color: var(--gold); }
-    .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 40px; max-width: 480px; font-weight: 400; }
+    .hero-sub { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.75; margin-bottom: 32px; max-width: 480px; font-weight: 400; }
     .hero-sub strong { color: rgba(255,255,255,0.92); font-weight: 600; }
+    /* Mobile hero CTA */
+    .hero-mobile-cta { display: none; margin-bottom: 28px; }
+    .hero-mobile-cta a {
+      display: inline-block; padding: 13px 32px;
+      background: var(--gold); color: var(--ink);
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 11px;
+      letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none;
+    }
     .hero-metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; border: 1px solid rgba(255,255,255,0.1); margin-bottom: 36px; }
     .hm { padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.1); }
     .hm:last-child { border-right: none; }
@@ -104,6 +138,9 @@
     .form-btn { width: 100%; background: var(--ink); color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; border: none; padding: 14px; cursor: pointer; transition: background 0.2s; }
     .form-btn:hover { background: var(--mid); }
     .form-fine { font-size: 10px; color: #bbb; text-align: center; margin-top: 10px; line-height: 1.5; }
+    .form-success-sm { display: none; padding: 20px 0; text-align: center; }
+    .form-success-sm h4 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .form-success-sm p { font-size: 12px; color: var(--stone); line-height: 1.5; }
 
     /* SECTIONS */
     section { padding: 88px 48px; }
@@ -201,12 +238,23 @@
     .big-btn { width: 100%; background: var(--ink); color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; border: none; padding: 16px; cursor: pointer; transition: background 0.2s; margin-top: 8px; }
     .big-btn:hover { background: var(--mid); }
     .legal-note { margin-top: 20px; padding: 14px 16px; border: 1px solid var(--rule); font-size: 10px; color: #aaa; line-height: 1.6; }
+    /* Form success state */
+    .form-success-lg { display: none; text-align: center; padding: 48px 20px; }
+    .form-success-lg .success-icon { width: 48px; height: 48px; border-radius: 50%; background: #f0f7f2; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; }
+    .form-success-lg .success-icon svg { width: 24px; height: 24px; stroke: #4a8c5c; stroke-width: 2; fill: none; }
+    .form-success-lg h3 { font-size: 1.2rem; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .form-success-lg .ref { font-size: 11px; color: var(--stone); margin-bottom: 20px; }
+    .form-success-lg .ref strong { color: var(--ink); }
+    .form-success-lg p { font-size: 13px; color: var(--stone); line-height: 1.6; margin-bottom: 24px; }
+    .success-actions { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .success-cal { display: inline-block; padding: 12px 28px; background: var(--ink); color: var(--white); font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; text-decoration: none; }
+    .success-sec { font-size: 11px; color: var(--stone); }
 
     /* FOOTER */
     footer { background: #07111b; padding: 52px 48px 36px; border-top: 1px solid rgba(255,255,255,0.06); }
     .ft-inner { max-width: 1200px; margin: 0 auto; }
     .ft-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; flex-wrap: wrap; gap: 32px; }
-    .ft-brand .name { color: #fff; font-weight: 600; font-size: 15px; }
+    .ft-brand .ft-logo { height: 24px; width: auto; filter: brightness(0) invert(1); opacity: 0.7; display: block; margin-bottom: 8px; }
     .ft-brand .sub { color: rgba(255,255,255,0.35); font-size: 11px; margin-top: 5px; letter-spacing: 0.3px; }
     .ft-brand .gold-line { width: 28px; height: 2px; background: var(--gold); margin-top: 12px; }
     .ft-cols { display: flex; gap: 48px; flex-wrap: wrap; }
@@ -234,6 +282,7 @@
       footer { padding: 44px 24px 32px; }
     }
     @media (max-width: 600px) {
+      .status-wrap::after { display: block; }
       .tl-grid, .how-steps { grid-template-columns: 1fr; }
       .h-stats { grid-template-columns: 1fr; }
       .nav-exchange { display: none; }
@@ -249,9 +298,10 @@
       .sb-hide { display: none; }
       .hero-inner { padding: 32px 20px; gap: 32px; }
       .hero h1 { font-size: 2rem; }
-      .hero-tagline { font-size: 0.9rem; }
+      .hero-sub { font-size: 0.9rem; }
       .hero-metrics .hm .n { font-size: 1.4rem; }
       .form-card { display: none; }
+      .hero-mobile-cta { display: block; }
       .hero-provenance span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 240px; }
       section { padding: 48px 20px !important; }
       /* M3: content sections */
@@ -264,7 +314,7 @@
       .her-img { max-height: 280px; object-fit: cover; width: 100%; }
       /* M4: form tap targets & footer */
       .big-form { padding: 24px 20px; }
-      .big-form input, .big-form select, .big-form textarea { padding: 13px 14px; min-height: 44px; font-size: 14px; }
+      .big-form input, .big-form select { padding: 13px 14px; min-height: 44px; font-size: 14px; }
       .big-form .f-submit { min-height: 52px; font-size: 13px; }
       .f-check input[type="checkbox"] { width: 20px; height: 20px; flex-shrink: 0; }
       .ft-top { flex-direction: column; gap: 20px; }
@@ -290,6 +340,10 @@
       }
       body { padding-bottom: 56px; }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
   </style>
 </head>
 <body>
@@ -302,57 +356,78 @@
     <span class="sub">U.S. Real Estate Fund</span>
   </a>
   <div class="nav-right">
-    <div class="nav-exchange"><span class="status-dot"></span><span>AMS: FMF</span> &nbsp; Euronext Amsterdam</div>
+    <div class="nav-exchange"><span class="status-dot"></span><span>Green Earth Group N.V.</span> &nbsp; European-listed</div>
     <a href="#waitlist" class="nav-cta"><span class="cta-full">Join the Waitlist</span><span class="cta-short">Invest</span></a>
   </div>
 </nav>
 
 <!-- STATUS BAR -->
-<div class="status-bar">
-  <span><span class="status-dot"></span>Waitlist &nbsp;&mdash;&nbsp; <strong>Now Open</strong></span>
-  <span>Minimum &nbsp;&mdash;&nbsp; <strong>$10,000</strong></span>
-  <span class="sb-hide">Netherlands &nbsp;&mdash;&nbsp; <strong>Est. 1957</strong></span>
-  <span class="sb-hide">Euronext Amsterdam &nbsp;&mdash;&nbsp; <strong>Regulated &amp; Publicly Listed</strong></span>
-  <span class="sb-hide">Investors &nbsp;&mdash;&nbsp; <strong>850,000+</strong></span>
+<div class="status-wrap">
+  <div class="status-bar">
+    <span><span class="status-dot"></span>Waitlist &nbsp;&mdash;&nbsp; <strong>Now Open</strong></span>
+    <span>Minimum &nbsp;&mdash;&nbsp; <strong>$10,000</strong></span>
+    <span class="sb-hide">Green Earth Group N.V. &nbsp;&mdash;&nbsp; <strong>Est. 1957</strong></span>
+    <span class="sb-hide">European-listed &nbsp;&mdash;&nbsp; <strong>Regulated &amp; Publicly Listed</strong></span>
+    <span class="sb-hide">Investors &nbsp;&mdash;&nbsp; <strong>850,000+</strong></span>
+  </div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-  <img class="hero-bg" src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185546_8b7c2629-7c50-415c-a93c-3bf7068a50eb.png" alt="Amsterdam canal and investment skyline" />
+  <img class="hero-bg" src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185546_8b7c2629-7c50-415c-a93c-3bf7068a50eb.png" alt="Premium U.S. real estate investment opportunity" fetchpriority="high" loading="eager" />
   <div class="hero-overlay"></div>
   <div class="hero-inner">
     <div>
       <div class="hero-provenance">
         <div class="line"></div>
-        <span>First Mover Fund N.V. &nbsp;&middot;&nbsp; Netherlands &nbsp;&middot;&nbsp; Euronext Amsterdam</span>
+        <span>First Mover Fund &nbsp;&middot;&nbsp; an initiative of Green Earth Group N.V.</span>
       </div>
       <h1>U.S. Real Estate.<br /><em>Institutional access.</em><br />Private investors.</h1>
-      <p class="hero-sub">A <strong>Dutch-listed investment firm</strong> operating since 1957 is bringing premium U.S. real estate to private investors for the first time. Join the waitlist &mdash; no commitment required.</p>
+      <p class="hero-sub">First Mover Fund brings premium U.S. real estate to private investors for the first time. Backed by the institutional heritage of Green Earth Group N.V. <strong>Offering launches Q4 2026</strong> — join the priority waitlist now.</p>
+      <!-- Mobile CTA above metrics -->
+      <div class="hero-mobile-cta">
+        <a href="#waitlist">Join the Waitlist — No Commitment</a>
+      </div>
       <div class="hero-metrics">
-        <div class="hm"><div class="n">67+</div><div class="l">Years in markets</div></div>
+        <div class="hm"><div class="n">Est. 1957</div><div class="l">Green Earth Group</div></div>
         <div class="hm"><div class="n">850,000+</div><div class="l">Investors served</div></div>
         <div class="hm"><div class="n">$10,000</div><div class="l">Minimum entry</div></div>
       </div>
     </div>
     <div class="form-card">
-      <div class="form-notice"><strong>Waitlist now open.</strong> You will be contacted before public launch &mdash; no commitment required at this stage.</div>
-      <div class="form-heading">First Mover Waitlist</div>
+      <div class="form-notice"><strong>Waitlist now open.</strong> Offering launches Q4 2026. You will be contacted before public launch — no commitment required.</div>
+      <div class="form-heading">Join the Waitlist</div>
       <div class="form-sub">Priority access before public launch</div>
-      <label for="fc-name">Full name</label>
-      <input type="text" id="fc-name" placeholder="Your full name" />
-      <label for="fc-email">Email address</label>
-      <input type="email" id="fc-email" placeholder="your@email.com" />
-      <label for="fc-phone">Phone number</label>
-      <input type="tel" id="fc-phone" placeholder="+1 (000) 000-0000" />
-      <label for="fc-range">Investment interest</label>
-      <select id="fc-range">
-        <option value="" disabled selected>Select range</option>
-        <option>$10,000 &ndash; $25,000</option>
-        <option>$25,000 &ndash; $50,000</option>
-        <option>$50,000 &ndash; $100,000</option>
-        <option>$100,000+</option>
-      </select>
-      <button class="form-btn">Join the Waitlist</button>
+      <form id="hero-form">
+        <label for="fc-name">Full name</label>
+        <input type="text" id="fc-name" name="fullName" placeholder="Your full name" autocomplete="name" />
+        <label for="fc-email">Email address</label>
+        <input type="email" id="fc-email" name="email" placeholder="your@email.com" autocomplete="email" />
+        <label for="fc-phone">Phone number</label>
+        <input type="tel" id="fc-phone" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel" />
+        <label for="fc-range">Investment interest</label>
+        <select id="fc-range" name="amount" autocomplete="off">
+          <option value="" disabled selected>Select range</option>
+          <option>$10,000 &ndash; $25,000</option>
+          <option>$25,000 &ndash; $50,000</option>
+          <option>$50,000 &ndash; $100,000</option>
+          <option>$100,000+</option>
+        </select>
+        <label for="fc-src">How did you hear about us?</label>
+        <select id="fc-src" name="source" autocomplete="off">
+          <option value="" disabled selected>Select source</option>
+          <option>Financial advisor</option>
+          <option>LinkedIn or social media</option>
+          <option>News or press</option>
+          <option>Existing FMF investor</option>
+          <option>Other</option>
+        </select>
+        <button type="submit" class="form-btn">Join the Waitlist</button>
+      </form>
+      <div class="form-success-sm" id="hero-success">
+        <h4>You're on the list</h4>
+        <p>We'll contact you before the Q4 2026 public launch with full offering details.</p>
+      </div>
       <div class="form-fine">No fees. No commitment. You will receive full details before any investment is required.</div>
     </div>
   </div>
@@ -363,23 +438,23 @@
   <div class="container">
     <div class="her-grid">
       <div class="her-img">
-        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185558_ff878586-e489-4010-b6ad-06c8ed4eac51.png" alt="Euronext Amsterdam" />
+        <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png" alt="European investment heritage — Green Earth Group N.V." loading="lazy" />
         <div class="her-img-caption">
           <p>Euronext Amsterdam</p>
-          <span>Europe's regulated exchange &mdash; First Mover Fund N.V. listed since the 1980s</span>
+          <span>Europe's regulated exchange &mdash; Green Earth Group N.V., publicly listed</span>
         </div>
       </div>
       <div>
         <div class="rule"></div>
         <span class="s-eyebrow">Dutch heritage</span>
-        <h2 class="white">From <em>Holland</em> &mdash;<br />67 years of trust.</h2>
+        <h2 class="white">From <em>Holland</em> &mdash;<br />institutional heritage.</h2>
         <div class="flag-bar"><div class="f fr"></div><div class="f fw"></div><div class="f fb"></div></div>
-        <p class="lead white">First Mover Fund N.V. was founded in the Netherlands in 1957. For nearly seven decades, Dutch and European investors have trusted us to grow and protect their wealth through real assets. Now, we bring that same precision, reliability, and institutional rigour to the American market.</p>
+        <p class="lead white">First Mover Fund is an initiative of Green Earth Group N.V. — a European investment group with roots going back to 1957. For decades, Green Earth Group has managed real assets for Dutch and European investors. Now, we bring that same institutional precision and rigour to the American market.</p>
         <div class="h-stats">
-          <div class="h-stat"><div class="n">1957</div><div class="l">Founded in Holland</div></div>
+          <div class="h-stat"><div class="n">1957</div><div class="l">Green Earth Group est.</div></div>
           <div class="h-stat"><div class="n">850,000+</div><div class="l">Investors served</div></div>
-          <div class="h-stat"><div class="n">Euronext</div><div class="l">Amsterdam listed</div></div>
-          <div class="h-stat"><div class="n">67+</div><div class="l">Years in market</div></div>
+          <div class="h-stat"><div class="n">Euronext</div><div class="l">Green Earth Group listed</div></div>
+          <div class="h-stat"><div class="n">Est. 1957</div><div class="l">European heritage</div></div>
         </div>
       </div>
     </div>
@@ -392,23 +467,23 @@
     <div class="rule"></div>
     <span class="s-eyebrow dark">Our journey</span>
     <h2>From <em>Amsterdam</em> to the United States</h2>
-    <p class="lead">67 years of building investor trust &mdash; one real asset at a time. Now entering the world's largest property market.</p>
+    <p class="lead">Decades of building investor trust &mdash; one real asset at a time. Now entering the world's largest property market.</p>
     <div class="tl-grid">
       <div class="tl-card active">
         <div class="tl-year">1957</div>
-        <p>Founded in the Netherlands as a real asset investment vehicle for Dutch private investors.</p>
+        <p>Green Earth Group N.V. founded in the Netherlands as a real asset investment group for private investors.</p>
       </div>
       <div class="tl-card">
         <div class="tl-year">1980s</div>
-        <p>Listed on Euronext Amsterdam. Opened to hundreds of thousands of European retail investors.</p>
+        <p>Green Earth Group listed on a European exchange. Opened to hundreds of thousands of European retail investors.</p>
       </div>
       <div class="tl-card">
         <div class="tl-year">2018</div>
         <p>Digital investor platform launched. 850,000+ registered investors across Europe.</p>
       </div>
-      <div class="tl-card">
-        <div class="tl-year">2025</div>
-        <p>U.S. expansion begins. First American real estate offering &mdash; and you can be first in line.</p>
+      <div class="tl-card active">
+        <div class="tl-year">Q4 2026</div>
+        <p>U.S. real estate offering launches. Waitlist members receive priority access before public announcement.</p>
       </div>
     </div>
   </div>
@@ -416,7 +491,7 @@
 
 <!-- INTERIOR IMAGE BAND -->
 <div class="img-band">
-  <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185552_995c5b40-abe8-4e33-b56d-f72112661509.png" alt="Premium residential real estate" />
+  <img src="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260610_185546_8b7c2629-7c50-415c-a93c-3bf7068a50eb.png" alt="Premium U.S. real estate investment opportunity" loading="lazy" />
   <div class="img-band-overlay">
     <div class="img-band-text">
       <div class="eyebrow-tag">Dutch quality &middot; U.S. market</div>
@@ -445,8 +520,8 @@
       </div>
       <div class="opp-card">
         <div class="opp-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h3>67 years of governance</h3>
-        <p>As a listed Dutch firm, we bring EU-level audit standards, public financial reporting, and seven decades of proven investor governance to every U.S. transaction.</p>
+        <h3>Institutional governance</h3>
+        <p>Backed by Green Earth Group N.V., a European-listed investment group, we bring EU-level audit standards, public financial reporting, and decades of proven investor governance to every U.S. transaction.</p>
       </div>
     </div>
   </div>
@@ -454,10 +529,11 @@
 
 <!-- SCARCITY NOTICE -->
 <div class="scarcity">
-  <p><strong>Capacity is limited.</strong> Waitlist positions secure priority access before public launch. Prior European offerings were fully subscribed within days of opening.</p>
+  <p><strong>Capacity is limited.</strong> Waitlist positions secure priority access before public launch in Q4 2026. Prior European offerings were fully subscribed within days of opening.</p>
   <div class="scarcity-tags">
     <div class="stag">Priority access for waitlist</div>
     <div class="stag">No commitment required</div>
+    <div class="stag">Launches Q4 2026</div>
   </div>
 </div>
 
@@ -470,9 +546,9 @@
     <p class="lead" style="text-align:center;margin:0 auto 48px;">A straightforward four-step process &mdash; from reservation to quarterly income.</p>
     <div class="how-steps">
       <div class="how-step"><div class="step-num">01 &mdash; Register</div><h3>Join the waitlist</h3><p>Name, email, and phone. No payment, no commitment, no paperwork required at this stage.</p></div>
-      <div class="how-step"><div class="step-num">02 &mdash; Access</div><h3>Receive priority access</h3><p>Waitlist members receive the full offering document and deal details before any public announcement.</p></div>
+      <div class="how-step"><div class="step-num">02 &mdash; Access</div><h3>Receive priority access</h3><p>Waitlist members receive the full offering document and deal details before any public announcement in Q4 2026.</p></div>
       <div class="how-step"><div class="step-num">03 &mdash; Invest</div><h3>Invest from $10,000</h3><p>Review the offering, complete accreditation, sign digitally, and fund via bank transfer.</p></div>
-      <div class="how-step"><div class="step-num">04 &mdash; Earn</div><h3>Receive quarterly income</h3><p>8% annual yield target paid quarterly. Track your position through your investor portal.</p></div>
+      <div class="how-step"><div class="step-num">04 &mdash; Earn</div><h3>Receive quarterly income</h3><p>8% annual yield target paid quarterly. Track your position through your investor dashboard.</p></div>
     </div>
   </div>
 </section>
@@ -483,34 +559,59 @@
     <div class="rule"></div>
     <span class="s-eyebrow" style="display:block;margin-bottom:14px;">Join the waitlist</span>
     <h2 class="white" style="margin-bottom:14px;">Be first in line<br /><em>when we go live.</em></h2>
-    <p class="lead white" style="margin-bottom:40px;">No commitment. No payment. When our U.S. real estate offering launches, waitlist members will be contacted first &mdash; before any public announcement.</p>
+    <p class="lead white" style="margin-bottom:40px;">No commitment. No payment. When our U.S. real estate offering launches in Q4 2026, waitlist members will be contacted first &mdash; before any public announcement.</p>
     <div class="big-form">
       <h3>Waitlist Registration</h3>
-      <div class="fsub">First Mover Fund N.V. &mdash; U.S. Real Estate Offering &middot; Min. $10,000 &middot; Priority Waitlist</div>
-      <div class="f-row" style="margin-bottom:0;">
-        <div class="f-field"><label for="w-fn">First name</label><input type="text" id="w-fn" placeholder="First name" /></div>
-        <div class="f-field"><label for="w-ln">Last name</label><input type="text" id="w-ln" placeholder="Last name" /></div>
+      <div class="fsub">First Mover Fund N.V. &mdash; U.S. Real Estate Offering &middot; Min. $10,000 &middot; Priority Waitlist &middot; Launching Q4 2026</div>
+      <form id="waitlist-form">
+        <div class="f-row" style="margin-bottom:0;">
+          <div class="f-field"><label for="w-fn">First name</label><input type="text" id="w-fn" name="firstName" placeholder="First name" autocomplete="given-name" required /></div>
+          <div class="f-field"><label for="w-ln">Last name</label><input type="text" id="w-ln" name="lastName" placeholder="Last name" autocomplete="family-name" required /></div>
+        </div>
+        <div class="f-row" style="margin-bottom:0;">
+          <div class="f-field"><label for="w-em">Email address</label><input type="email" id="w-em" name="email" placeholder="your@email.com" autocomplete="email" required /></div>
+          <div class="f-field"><label for="w-ph">Phone number</label><input type="tel" id="w-ph" name="phone" placeholder="+1 (000) 000-0000" autocomplete="tel" /></div>
+        </div>
+        <div class="f-field"><label for="w-am">Investment interest</label>
+          <select id="w-am" name="amount" autocomplete="off">
+            <option value="" disabled selected>Select range</option>
+            <option>$10,000 &ndash; $25,000</option>
+            <option>$25,000 &ndash; $50,000</option>
+            <option>$50,000 &ndash; $100,000</option>
+            <option>$100,000 &ndash; $250,000</option>
+            <option>$250,000+</option>
+          </select>
+        </div>
+        <div class="f-field"><label for="w-src">How did you hear about us?</label>
+          <select id="w-src" name="source" autocomplete="off">
+            <option value="" disabled selected>Select source</option>
+            <option>Financial advisor</option>
+            <option>LinkedIn or social media</option>
+            <option>News or press</option>
+            <option>Existing FMF investor</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="f-check">
+          <input type="checkbox" id="w-terms" name="terms" required />
+          <label for="w-terms">I understand this registration is non-binding and I will receive the full offering details before any investment decision is required. First Mover Fund is an initiative of Green Earth Group N.V., a European-listed investment group.</label>
+        </div>
+        <button type="submit" class="big-btn">Register for Priority Access</button>
+      </form>
+      <!-- Success state -->
+      <div class="form-success-lg" id="waitlist-success">
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h3>You're on the Priority Waitlist</h3>
+        <p class="ref">Reference: <strong id="waitlist-ref"></strong></p>
+        <p>Our investor relations team will contact you before the Q4 2026 public launch with the full offering memorandum and priority subscription details.</p>
+        <div class="success-actions">
+          <a class="success-cal" href="https://firstmoverfund.com/contact-us" target="_blank">Schedule a 15-Minute Call</a>
+          <span class="success-sec">Or wait for our team to reach out by email</span>
+        </div>
       </div>
-      <div class="f-row" style="margin-bottom:0;">
-        <div class="f-field"><label for="w-em">Email address</label><input type="email" id="w-em" placeholder="your@email.com" /></div>
-        <div class="f-field"><label for="w-ph">Phone number</label><input type="tel" id="w-ph" placeholder="+1 (000) 000-0000" /></div>
-      </div>
-      <div class="f-field"><label for="w-am">Investment interest</label>
-        <select id="w-am">
-          <option value="" disabled selected>Select range</option>
-          <option>$10,000 &ndash; $25,000</option>
-          <option>$25,000 &ndash; $50,000</option>
-          <option>$50,000 &ndash; $100,000</option>
-          <option>$100,000 &ndash; $250,000</option>
-          <option>$250,000+</option>
-        </select>
-      </div>
-      <div class="f-check">
-        <input type="checkbox" id="w-terms" />
-        <label for="w-terms">I understand this registration is non-binding and I will receive the full offering details before any investment decision is required. First Mover Fund N.V. is incorporated in the Netherlands and listed on Euronext Amsterdam.</label>
-      </div>
-      <button class="big-btn">Register for Priority Access</button>
-      <div class="legal-note">Registering for this waitlist does not constitute a commitment to invest. This is for informational purposes only. Full offering documents will be provided prior to any investment opportunity. First Mover Fund N.V. is a Dutch-registered entity listed on Euronext Amsterdam.</div>
+      <div class="legal-note">Registering for this waitlist does not constitute a commitment to invest. This is for informational purposes only. Full offering documents will be provided prior to any investment opportunity. First Mover Fund N.V. is a Dutch-registered entity listed on Euronext Amsterdam. Target returns are not guaranteed.</div>
     </div>
   </div>
 </section>
@@ -520,8 +621,8 @@
   <div class="ft-inner">
     <div class="ft-top">
       <div class="ft-brand">
-        <div class="name">First Mover Fund N.V.</div>
-        <div class="sub">Incorporated in the Netherlands &middot; Est. 1957 &middot; Euronext Amsterdam</div>
+        <img src="https://d2bytdz64ej6q4.cloudfront.net/fmf-logo-horizontal.png" alt="First Mover Fund" class="ft-logo" />
+        <div class="sub">First Mover Fund &middot; an initiative of Green Earth Group N.V.</div>
         <div class="gold-line"></div>
       </div>
       <div class="ft-cols">
@@ -548,44 +649,94 @@
     <div class="ft-disc">
       <strong>Important disclosures:</strong> This page is for informational purposes only and does not constitute an offer to sell or a solicitation of an offer to buy any securities. Investment in real estate involves significant risk, including potential loss of principal. Past performance is not indicative of future results. Prospective investors should conduct their own due diligence and consult independent legal, tax, and financial advisors prior to making any investment decision.
       <br /><br />
-      First Mover Fund N.V. is incorporated in the Netherlands and listed on Euronext Amsterdam. U.S. offerings are conducted through a registered U.S. affiliate and are subject to applicable U.S. securities laws. Target returns are not guaranteed.
+      First Mover Fund is an initiative of Green Earth Group N.V., a European-listed investment group. U.S. offerings are conducted through a registered U.S. affiliate and are subject to applicable U.S. securities laws. Target returns of 8% annual yield and 12&ndash;18% total returns are projections only and are not guaranteed.
       <br /><br />
-      &copy; 2025 First Mover Fund N.V. &middot; Amsterdam, Netherlands &middot; All rights reserved.
+      &copy; 2026 First Mover Fund &middot; an initiative of Green Earth Group N.V. &middot; Amsterdam, Netherlands
     </div>
   </div>
 </footer>
 
 <script>
-window.addEventListener('scroll', function() {
-  var nav = document.querySelector('nav');
-  if (window.scrollY > 50) {
-    nav.style.borderBottomColor = 'rgba(184,150,90,0.2)';
-  } else {
-    nav.style.borderBottomColor = 'rgba(255,255,255,0.08)';
+(function() {
+  function getUTM() {
+    var params = new URLSearchParams(window.location.search);
+    return {
+      utm_source: params.get('utm_source') || '',
+      utm_medium: params.get('utm_medium') || '',
+      utm_campaign: params.get('utm_campaign') || '',
+      utm_content: params.get('utm_content') || ''
+    };
   }
-});
-document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-  a.addEventListener('click', function(e) {
-    var t = document.querySelector(a.getAttribute('href'));
-    if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
+  function genRef() { return 'FMF-RE-' + Date.now().toString(36).toUpperCase().slice(-6); }
+
+  // Hero form
+  var heroForm = document.getElementById('hero-form');
+  if (heroForm) {
+    heroForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = heroForm.querySelector('.form-btn');
+      btn.textContent = 'Submitting...'; btn.disabled = true;
+      var data = Object.assign({
+        fullName: heroForm.fullName.value, email: heroForm.email.value,
+        phone: heroForm.phone.value, amount: heroForm.amount.value,
+        source: heroForm.source ? heroForm.source.value : '',
+        fund: 'realestate'
+      }, getUTM());
+      fetch('https://worker.green-earth-platform.com/fmf-lead', {
+        method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+      }).catch(function(){});
+      heroForm.style.display = 'none';
+      document.getElementById('hero-success').style.display = 'block';
+    });
+  }
+
+  // Waitlist form
+  var wlForm = document.getElementById('waitlist-form');
+  if (wlForm) {
+    wlForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = wlForm.querySelector('.big-btn');
+      btn.textContent = 'Submitting...'; btn.disabled = true;
+      var ref = genRef();
+      var data = Object.assign({
+        firstName: wlForm.firstName.value, lastName: wlForm.lastName.value,
+        email: wlForm.email.value, phone: wlForm.phone.value,
+        amount: wlForm.amount.value,
+        source: wlForm.source ? wlForm.source.value : '',
+        ref: ref, fund: 'realestate'
+      }, getUTM());
+      fetch('https://worker.green-earth-platform.com/fmf-lead', {
+        method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
+      }).catch(function(){});
+      wlForm.style.display = 'none';
+      document.getElementById('waitlist-ref').textContent = ref;
+      document.getElementById('waitlist-success').style.display = 'block';
+      document.getElementById('waitlist-success').scrollIntoView({behavior: 'smooth', block: 'center'});
+    });
+  }
+
+  // Nav scroll effect
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (window.scrollY > 50) { nav.style.borderBottomColor = 'rgba(184,150,90,0.2)'; }
+    else { nav.style.borderBottomColor = 'rgba(255,255,255,0.08)'; }
   });
-});
+
+  // Mobile CTA hide when form visible
+  var bar = document.getElementById('mobile-cta');
+  var form = document.getElementById('waitlist');
+  if (bar && form && 'IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      bar.style.display = entries[0].isIntersecting ? 'none' : '';
+    }, { threshold: 0.1 });
+    obs.observe(form);
+  }
+})();
 </script>
 
 <!-- M1: sticky mobile CTA -->
 <div class="mobile-cta-bar" id="mobile-cta">
   <a href="#waitlist">Join the Waitlist — No Commitment</a>
 </div>
-<script>
-  (function() {
-    var bar = document.getElementById('mobile-cta');
-    var form = document.getElementById('waitlist');
-    if (!bar || !form) return;
-    var obs = new IntersectionObserver(function(entries) {
-      bar.style.display = entries[0].isIntersecting ? 'none' : '';
-    }, { threshold: 0.1 });
-    obs.observe(form);
-  })();
-</script>
 </body>
 </html>
