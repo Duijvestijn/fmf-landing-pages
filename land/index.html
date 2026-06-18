@@ -23,6 +23,9 @@
   <!-- Favicon -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230c1825'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23b8965a'>F</text></svg>" />
 
+  <!-- HubSpot tracking -->
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8515463.js"></script>
+
   <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1134,6 +1137,19 @@
     return 'FMF-' + Date.now().toString(36).toUpperCase().slice(-6);
   }
 
+  // HubSpot form submission (portal 8515463, form 51ec588e)
+  function submitToHubSpot(fields) {
+    var hutk = (document.cookie.match(/hubspotutk=([^;]+)/) || [])[1];
+    var payload = {
+      fields: fields,
+      context: { pageUri: window.location.href, pageName: document.title }
+    };
+    if (hutk) payload.context.hutk = hutk;
+    fetch('https://api.hsforms.com/submissions/v3/integration/submit/8515463/51ec588e-fc44-4ad9-9c78-d41dabae3490', {
+      method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(payload)
+    }).catch(function(){});
+  }
+
   // Hero form
   var heroForm = document.getElementById('hero-form');
   if (heroForm) {
@@ -1141,6 +1157,8 @@
       e.preventDefault();
       var btn = heroForm.querySelector('.form-btn');
       btn.textContent = 'Submitting...'; btn.disabled = true;
+      var utm = getUTM();
+      var nameParts = heroForm.fullName.value.trim().split(' ');
       var data = Object.assign({
         fullName: heroForm.fullName.value,
         email: heroForm.email.value,
@@ -1149,10 +1167,20 @@
         source: heroForm.source ? heroForm.source.value : 'land-hero',
         pageSource: 'land-hero',
         fund: 'farmland-america'
-      }, getUTM());
+      }, utm);
       fetch('https://worker.green-earth-platform.com/fmf-lead', {
         method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
       }).catch(function(){});
+      submitToHubSpot([
+        {name: 'firstname', value: nameParts[0] || ''},
+        {name: 'lastname', value: nameParts.slice(1).join(' ') || ''},
+        {name: 'email', value: heroForm.email.value},
+        {name: 'phone', value: heroForm.phone.value},
+        {name: 'utm_source', value: utm.utm_source},
+        {name: 'utm_medium', value: utm.utm_medium},
+        {name: 'utm_campaign', value: utm.utm_campaign},
+        {name: 'utm_content', value: utm.utm_content}
+      ]);
       heroForm.style.display = 'none';
       document.getElementById('hero-success').style.display = 'block';
     });
@@ -1166,6 +1194,7 @@
       var btn = reserveForm.querySelector('.big-btn');
       btn.textContent = 'Submitting...'; btn.disabled = true;
       var ref = genRef();
+      var utm = getUTM();
       var data = Object.assign({
         firstName: reserveForm.firstName.value,
         lastName: reserveForm.lastName.value,
@@ -1176,10 +1205,20 @@
         message: reserveForm.message.value,
         ref: ref,
         fund: 'farmland-america'
-      }, getUTM());
+      }, utm);
       fetch('https://worker.green-earth-platform.com/fmf-lead', {
         method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(data)
       }).catch(function(){});
+      submitToHubSpot([
+        {name: 'firstname', value: reserveForm.firstName.value},
+        {name: 'lastname', value: reserveForm.lastName.value},
+        {name: 'email', value: reserveForm.email.value},
+        {name: 'phone', value: reserveForm.phone.value},
+        {name: 'utm_source', value: utm.utm_source},
+        {name: 'utm_medium', value: utm.utm_medium},
+        {name: 'utm_campaign', value: utm.utm_campaign},
+        {name: 'utm_content', value: utm.utm_content}
+      ]);
       reserveForm.style.display = 'none';
       document.getElementById('reserve-ref').textContent = ref;
       document.getElementById('reserve-success').style.display = 'block';
