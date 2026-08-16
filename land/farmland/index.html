@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -21,7 +21,7 @@
   <meta name="twitter:image" content="https://d8j0ntlcm91z4.cloudfront.net/user_3E7JAVPwA7DZLNJSwAYUmbE0qfD/hf_20260611_084748_62629445-3dd8-4cd8-8744-bbcd05efbacb.png" />
 
   <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230c1825'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23b8965a'>F</text></svg>" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231e293b'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23f59e0b'>F</text></svg>" />
 
   <!-- HubSpot tracking -->
   <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8515463.js"></script>
@@ -36,16 +36,23 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    :root {
-      --ink:    #1e293b;
-      --blue:   #2563eb;
-      --amber:  #f59e0b;
+        :root {
+      --blue:    #2563eb;
+      --slate:   #475569;
+      --bg:      #fef3c7;
+      --amber:   #f59e0b;
       --amber-lt:#fcd34d;
-      --bg:     #fef3c7;
-      --rule:   #e2e8f0;
-      --slate:  #475569;
-      --white:  #ffffff;
-      --ink-80: rgba(12,24,37,0.8);
+      --ink:     #1e293b;
+      --white:   #ffffff;
+      --rule:    #e2e8f0;
+      --blue-lt: #dbeafe;
+      /* legacy aliases */
+      --mid:     #2563eb;
+      --gold:    #f59e0b;
+      --gold-lt: #fcd34d;
+      --paper:   #fef3c7;
+      --paper-d: #fef3c7;
+      --stone:   #475569;
     }
 
     html { scroll-behavior: smooth; }
@@ -575,6 +582,24 @@
       .count-up { opacity: 1; transform: none; transition: none; }
       html { scroll-behavior: auto; }
     }
+    /* ===== FMF BRAND OVERHAUL â€” Clash Display + Blue/Amber palette ===== */
+    h1, h2, h3,
+    .section-h2, .hero h1, .page-header h1, .article-header h1,
+    .faq-cta h2, .mission-copy h2, .newsletter-section h2,
+    .ebook-body h2, .page-eyebrow h2 { font-family: 'Clash Display', sans-serif; }
+    .editorial-num, .pe-num, .oc-num, .stage-num,
+    .ret-val, .hs-val, .opp-num, .ben-num,
+    .opp-ghost, .article-stat-val, .spec-val,
+    .hm .n, .h-sr-item .n, .h-stat .n { font-family: 'Clash Display', sans-serif; }
+    .section-eyebrow, .hero-eyebrow, .page-eyebrow, .article-eyebrow,
+    .s-eyebrow, .team-category-label, .related-label, .faq-group-title { font-family: 'Clash Display', sans-serif; }
+    /* Ghost / watermark numbers â€” brand blue tint */
+    .opp-ghost, .oc-num, .pe-num, .editorial-num { color: rgba(37,99,235,0.08) !important; }
+    /* Hero bg â€” black & white treatment */
+    .hero-bg { filter: grayscale(100%) contrast(1.1); }
+    /* Logo fallback */
+    .nav-logo-text { font-family: 'Clash Display', sans-serif; }
+    /* ===== END BRAND OVERHAUL ===== */
   </style>
 </head>
 <body>
