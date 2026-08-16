@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Evaluate Investment Opportunities — First Mover Fund</title>
+  <meta name="description" content="For sophisticated investors, the challenge is not finding options but distinguishing valuable opportunities from noise. A practical framework for rigorous investment evaluation." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230c1825'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23b8965a'>F</text></svg>" />
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8515463.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:#0c1825; --mid:#1c3a5c; --gold:#b8965a; --gold-lt:#d4b07a;
+      --paper:#f8f6f2; --paper-d:#eeebe4; --rule:#dedad3; --stone:#6b6459;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; overflow-x: hidden; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: var(--ink); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav-logo { height: 28px; filter: brightness(0) invert(1); }
+    .nav-logo-text { color: #fff; font-size: 14px; font-weight: 700; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.3px; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-links .dropdown { position: relative; }
+    .nav-links .dropdown > a::after { content: ' ▾'; font-size: 10px; }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--ink); border: 1px solid rgba(255,255,255,0.1); padding: 8px 0; min-width: 140px; margin-top: 8px; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 9px 18px; font-size: 12px; color: rgba(255,255,255,0.6); white-space: nowrap; }
+    .dropdown-menu a:hover { color: #fff; background: rgba(255,255,255,0.04); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-exchange { font-size: 11px; color: rgba(255,255,255,0.35); font-weight: 500; letter-spacing: 0.4px; }
+    .nav-exchange span { color: rgba(255,255,255,0.6); }
+    .nav-cta { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 9px 22px; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--gold-lt); }
+    .article-header { background: var(--ink); padding: 120px 48px 80px; }
+    .article-header-inner { max-width: 740px; margin: 0 auto; }
+    .article-back { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+    .article-back:hover { color: var(--gold); }
+    .article-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .article-header h1 { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; color: #fff; line-height: 1.15; letter-spacing: -0.8px; margin-bottom: 24px; }
+    .article-meta { display: flex; align-items: center; gap: 20px; font-size: 12px; color: rgba(255,255,255,0.35); font-weight: 500; }
+    .article-meta-sep { color: rgba(255,255,255,0.15); }
+    .article-layout { max-width: 740px; margin: 0 auto; padding: 64px 48px; }
+    .article-lede { font-size: 1.1rem; font-weight: 300; color: var(--stone); line-height: 1.85; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--rule); font-style: italic; }
+    .article-body h2 { font-size: 1.25rem; font-weight: 700; color: var(--ink); margin: 40px 0 16px; letter-spacing: -0.3px; }
+    .article-body p { font-size: 14px; font-weight: 300; color: #3a3530; line-height: 1.9; margin-bottom: 20px; }
+    .article-body strong { font-weight: 600; color: var(--ink); }
+    .article-pullquote { border-left: 3px solid var(--gold); padding: 20px 24px; margin: 36px 0; background: var(--paper-d); }
+    .article-pullquote p { font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.6; margin: 0; font-style: italic; }
+
+    /* NUMBERED STEPS */
+    .steps { display: flex; flex-direction: column; gap: 0; margin: 40px 0; }
+    .step { display: grid; grid-template-columns: 56px 1fr; gap: 24px; padding: 28px 0; border-bottom: 1px solid var(--rule); }
+    .step:first-child { border-top: 1px solid var(--rule); }
+    .step-num { font-size: 2rem; font-weight: 700; color: var(--gold); opacity: 0.5; line-height: 1; padding-top: 4px; }
+    .step-body h3 { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .step-body p { font-size: 13px; font-weight: 300; color: var(--stone); line-height: 1.8; margin: 0; }
+
+    .fund-specs { background: var(--ink); padding: 32px; margin: 40px 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .spec-item { }
+    .spec-val { font-size: 1.6rem; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+    .spec-label { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.4); letter-spacing: 0.3px; }
+
+    .related-section { background: var(--paper-d); padding: 64px 48px; border-top: 1px solid var(--rule); }
+    .related-inner { max-width: 1200px; margin: 0 auto; }
+    .related-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { background: #fff; padding: 24px; border: 1px solid var(--rule); text-decoration: none; display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 24px rgba(12,24,37,0.08); }
+    .related-card-meta { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--stone); margin-bottom: 10px; }
+    .related-card-title { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.4; margin-bottom: 12px; }
+    .related-card:hover .related-card-title { color: var(--gold); }
+    .related-card-link { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gold); }
+    footer { background: #070e16; padding: 64px 48px 32px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 280px 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { height: 26px; filter: brightness(0) invert(1); opacity: 0.7; margin-bottom: 16px; }
+    .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.7; margin-bottom: 20px; }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; text-decoration: none; color: rgba(255,255,255,0.4); font-size: 13px; transition: border-color 0.2s, color 0.2s; }
+    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-col h5 { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: rgba(255,255,255,0.8); }
+    .footer-bottom { max-width: 1200px; margin: 32px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); }
+    .footer-legal { font-size: 10px; color: rgba(255,255,255,0.15); line-height: 1.7; max-width: 680px; }
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; } .nav-links { display: none; }
+      .article-header { padding: 100px 24px 60px; } .article-layout { padding: 48px 24px; }
+      .fund-specs { grid-template-columns: 1fr 1fr; }
+      .related-section { padding: 48px 24px; } .related-grid { grid-template-columns: 1fr; }
+      footer { padding: 48px 24px 24px; } .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">
+    <img src="https://www.firstmoverfund.com/hubfs/FMF%20Horizontal%20Logo-1.png" alt="First Mover Fund" class="nav-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'" />
+    <span class="nav-logo-text" style="display:none">First Mover Fund</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#offer">What we offer</a></li>
+    <li><a href="/#how">How it works</a></li>
+    <li><a href="/about/">About us</a></li>
+    <li class="dropdown">
+      <a href="#">Learn more</a>
+      <div class="dropdown-menu">
+        <a href="/blog/">Blog</a>
+        <a href="/faq/">FAQs</a>
+        <a href="/ebooks/">eBooks</a>
+      </div>
+    </li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-exchange">EARTH · <span>Euronext Amsterdam</span></span>
+    <a href="/#contact" class="nav-cta">Invest today</a>
+  </div>
+</nav>
+
+<div class="article-header">
+  <div class="article-header-inner">
+    <a href="/blog/" class="article-back">← Back to blog</a>
+    <div class="article-eyebrow">Framework</div>
+    <h1>How to Evaluate Investment Opportunities</h1>
+    <div class="article-meta">
+      <span>Mar 13, 2026</span>
+      <span class="article-meta-sep">·</span>
+      <span>7 min read</span>
+      <span class="article-meta-sep">·</span>
+      <span>First Mover Fund</span>
+    </div>
+  </div>
+</div>
+
+<div class="article-layout">
+  <p class="article-lede">For sophisticated investors, the primary challenge is not finding options. It is distinguishing valuable opportunities from noise. In a market flooded with speculative digital assets and structured products of questionable quality, rigorous evaluation separates long-term wealth from permanent loss.</p>
+
+  <div class="article-body">
+    <h2>What is Investment Analysis?</h2>
+    <p>Investment analysis is the process that bridges raw data and informed decision-making. It encompasses quantitative methods — financial modelling, discounted cash flow analysis, ratio comparisons — and qualitative judgements about management quality, market dynamics, and competitive positioning.</p>
+    <p>Of the available approaches, fundamental analysis proves most effective for long-term wealth building. Fundamental analysis asks a single question: what is this asset actually worth? By understanding intrinsic value, investors can identify situations where the market price diverges significantly from underlying reality — and position themselves to benefit when that divergence corrects.</p>
+
+    <h2>The Step-by-Step Evaluation Process</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h3>Define Investment Objectives</h3>
+          <p>Before evaluating any specific opportunity, clarify the role it should play in your portfolio. Aggressive growth and capital preservation require different asset profiles. An investment that is excellent in one context may be entirely wrong in another.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h3>Industry and Market Analysis</h3>
+          <p>Seek tailwinds: global trends that make success feel almost inevitable independent of execution. The best investments operate in markets where the structural demand is growing regardless of what individual operators do. Regulation, demographic shifts, and resource constraints create these conditions.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h3>Review Financial Statements</h3>
+          <p>Three documents matter most. The Balance Sheet reveals how an entity is capitalised — the ratio of debt to assets determines resilience under stress. The Income Statement reveals revenue diversity and cost structure. The Cash Flow Statement is the ultimate truth: you cannot pay dividends with projections; you pay them with cash.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h3>Evaluate Management Teams</h3>
+          <p>In capital investment decisions, you are betting on the jockey as much as the horse. Examine the track record, alignment of incentives, and the team's ability to execute through adversity. Management that has navigated prior downturns is categorically more valuable than management that has only operated in favourable conditions.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <div class="step-body">
+          <h3>Risk Assessment and Margin of Safety</h3>
+          <p>A margin of safety means buying into an asset at a price or structure that protects you if things do not go perfectly. In practice this means conservative projections, stress-testing downside scenarios, and refusing to pay for outcomes that have not yet been demonstrated.</p>
+        </div>
+      </div>
+    </div>
+
+    <h2>Quantitative Methods</h2>
+    <p>Net Present Value, Internal Rate of Return, and Payback Period provide rigorous numerical frameworks for comparing opportunities across different time horizons and risk profiles. But these metrics only describe one dimension of an investment. Correlation with existing portfolio holdings matters significantly: an investment generating 12% returns that moves in the same direction as the rest of your portfolio in a downturn provides less protection than one generating 9% that moves independently.</p>
+
+    <div class="article-pullquote">
+      <p>"The best investment evaluations are not about finding the highest projected return. They are about finding the widest gap between what something is worth and what you are being asked to pay for it."</p>
+    </div>
+
+    <h2>Land Restoration as an Alternative Asset</h2>
+    <p>Applying this framework to land restoration reveals why the asset class passes each stage of evaluation. Tangible physical value provides the foundation — the land itself has a floor. Inelastic demand for food and environmental integrity creates the structural tailwind. Dual revenue streams reduce dependence on any single market. Institutional-quality governance from a listed parent company addresses management credibility. And early-stage entry pricing creates the margin of safety that disciplined investors require.</p>
+
+    <h2>First Mover Fund</h2>
+    <div class="fund-specs">
+      <div class="spec-item">
+        <div class="spec-val">8%</div>
+        <div class="spec-label">Fixed annual cash flow, paid quarterly</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">Double-digit</div>
+        <div class="spec-label">Targeted total return potential</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">$200,000</div>
+        <div class="spec-label">Minimum investment</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-val">Geographic + crop</div>
+        <div class="spec-label">Diversification across projects</div>
+      </div>
+    </div>
+    <p>The investment horizon of 5 to 7 years is calibrated to allow restoration projects to progress through certification milestones and for the voluntary carbon market to continue its structural expansion. Both the income stream and the growth thesis have distinct, independently verifiable drivers.</p>
+  </div>
+</div>
+
+<div class="related-section">
+  <div class="related-inner">
+    <div class="related-label">Related articles</div>
+    <div class="related-grid">
+      <a href="/blog/the-yield-gap-in-modern-agriculture/" class="related-card">
+        <div class="related-card-meta">Jun 1, 2026 &nbsp;·&nbsp; 9 min</div>
+        <div class="related-card-title">The Yield Gap in Modern Agriculture</div>
+        <div class="related-card-link">Read →</div>
+      </a>
+      <a href="/blog/seeking-asymmetric-upside/" class="related-card">
+        <div class="related-card-meta">May 5, 2026 &nbsp;·&nbsp; 10 min</div>
+        <div class="related-card-title">Seeking the Asymmetric Upside in Overlooked Asset Classes</div>
+        <div class="related-card-link">Read →</div>
+      </a>
+      <a href="/blog/60-40-portfolio/" class="related-card">
+        <div class="related-card-meta">Mar 26, 2026 &nbsp;·&nbsp; 7 min</div>
+        <div class="related-card-title">Why the Traditional 60/40 Portfolio is Failing Today's Investor</div>
+        <div class="related-card-link">Read →</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://www.firstmoverfund.com/hubfs/FMF%20Horizontal%20Logo-1.png" alt="First Mover Fund" class="footer-logo" onerror="this.style.display='none'" />
+      <p class="footer-tagline">An initiative of Green Earth Group N.V., listed on Euronext Amsterdam (EARTH). Connecting private investors with land restoration opportunities generating real income from real assets.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/firstmoverfund" aria-label="LinkedIn">in</a>
+        <a href="https://www.facebook.com/firstmoverfund" aria-label="Facebook">f</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>About</h5>
+      <ul>
+        <li><a href="/#offer">What we offer</a></li>
+        <li><a href="/#how">How it works</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Learn More</h5>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/faq/">FAQs</a></li>
+        <li><a href="/ebooks/">eBooks</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="/corporate-governance/">Corporate governance</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 First Mover Fund · All Rights Reserved · An initiative of Green Earth Group N.V.</p>
+    <p class="footer-legal">This website does not constitute an offer to sell or solicitation of an offer to buy any security. Securities are offered only to accredited investors under Reg D, Rule 506(c). Projected returns are not guaranteed. Investing involves risk, including possible loss of principal. Past performance is not indicative of future results. Green Earth Group N.V. is listed on Euronext Amsterdam (ticker: EARTH).</p>
+  </div>
+</footer>
+
+</body>
+</html>

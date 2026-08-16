@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Yield Gap in Modern Agriculture — First Mover Fund Blog</title>
+  <meta name="description" content="The world is not running out of land. It is running out of productive land — and that distinction is worth billions." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230c1825'/><text x='16' y='22' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle' fill='%23b8965a'>F</text></svg>" />
+  <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/8515463.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --ink:#0c1825; --mid:#1c3a5c; --gold:#b8965a; --gold-lt:#d4b07a;
+      --paper:#f8f6f2; --paper-d:#eeebe4; --rule:#dedad3; --stone:#6b6459;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; overflow-x: hidden; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: var(--ink); height: 64px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .nav-brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .nav-logo { height: 28px; filter: brightness(0) invert(1); }
+    .nav-logo-text { color: #fff; font-size: 14px; font-weight: 700; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 12px; font-weight: 500; letter-spacing: 0.3px; transition: color 0.2s; }
+    .nav-links a:hover { color: #fff; }
+    .nav-links .dropdown { position: relative; }
+    .nav-links .dropdown > a::after { content: ' ▾'; font-size: 10px; }
+    .dropdown-menu { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: var(--ink); border: 1px solid rgba(255,255,255,0.1); padding: 8px 0; min-width: 140px; margin-top: 8px; }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .dropdown-menu a { display: block; padding: 9px 18px; font-size: 12px; color: rgba(255,255,255,0.6); white-space: nowrap; }
+    .dropdown-menu a:hover { color: #fff; background: rgba(255,255,255,0.04); }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .nav-exchange { font-size: 11px; color: rgba(255,255,255,0.35); font-weight: 500; letter-spacing: 0.4px; }
+    .nav-exchange span { color: rgba(255,255,255,0.6); }
+    .nav-cta { background: var(--gold); color: var(--ink); font-weight: 700; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 9px 22px; text-decoration: none; transition: background 0.2s; }
+    .nav-cta:hover { background: var(--gold-lt); }
+
+    /* ARTICLE HEADER */
+    .article-header { background: var(--ink); padding: 120px 48px 80px; }
+    .article-header-inner { max-width: 740px; margin: 0 auto; }
+    .article-back { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,0.4); text-decoration: none; margin-bottom: 32px; transition: color 0.2s; }
+    .article-back:hover { color: var(--gold); }
+    .article-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
+    .article-header h1 { font-size: clamp(1.8rem, 3.5vw, 3rem); font-weight: 700; color: #fff; line-height: 1.15; letter-spacing: -0.8px; margin-bottom: 24px; }
+    .article-meta { display: flex; align-items: center; gap: 20px; font-size: 12px; color: rgba(255,255,255,0.35); font-weight: 500; }
+    .article-meta-sep { color: rgba(255,255,255,0.15); }
+
+    /* ARTICLE BODY */
+    .article-layout { max-width: 740px; margin: 0 auto; padding: 64px 48px; }
+    .article-lede { font-size: 1.1rem; font-weight: 300; color: var(--stone); line-height: 1.85; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--rule); font-style: italic; }
+    .article-body h2 { font-size: 1.25rem; font-weight: 700; color: var(--ink); margin: 40px 0 16px; letter-spacing: -0.3px; }
+    .article-body p { font-size: 14px; font-weight: 300; color: #3a3530; line-height: 1.9; margin-bottom: 20px; }
+    .article-body strong { font-weight: 600; color: var(--ink); }
+    .article-pullquote { border-left: 3px solid var(--gold); padding: 20px 24px; margin: 36px 0; background: var(--paper-d); }
+    .article-pullquote p { font-size: 15px; font-weight: 600; color: var(--ink); line-height: 1.6; margin: 0; font-style: italic; }
+    .article-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 40px 0; padding: 32px; background: var(--ink); }
+    .article-stat-val { font-size: 2rem; font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: 8px; }
+    .article-stat-label { font-size: 11px; font-weight: 500; color: rgba(255,255,255,0.45); letter-spacing: 0.3px; line-height: 1.5; }
+
+    /* RELATED */
+    .related-section { background: var(--paper-d); padding: 64px 48px; border-top: 1px solid var(--rule); }
+    .related-inner { max-width: 1200px; margin: 0 auto; }
+    .related-label { font-size: 10px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 32px; }
+    .related-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .related-card { background: #fff; padding: 24px; border: 1px solid var(--rule); text-decoration: none; display: block; transition: box-shadow 0.2s; }
+    .related-card:hover { box-shadow: 0 4px 24px rgba(12,24,37,0.08); }
+    .related-card-meta { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--stone); margin-bottom: 10px; }
+    .related-card-title { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.4; margin-bottom: 12px; }
+    .related-card:hover .related-card-title { color: var(--gold); }
+    .related-card-link { font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: var(--gold); }
+
+    /* FOOTER */
+    footer { background: #070e16; padding: 64px 48px 32px; border-top: 1px solid rgba(255,255,255,0.05); }
+    .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 280px 1fr 1fr 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+    .footer-logo { height: 26px; filter: brightness(0) invert(1); opacity: 0.7; margin-bottom: 16px; }
+    .footer-tagline { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 1.7; margin-bottom: 20px; }
+    .footer-social { display: flex; gap: 12px; }
+    .footer-social a { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; text-decoration: none; color: rgba(255,255,255,0.4); font-size: 13px; transition: border-color 0.2s, color 0.2s; }
+    .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-col h5 { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: rgba(255,255,255,0.8); }
+    .footer-bottom { max-width: 1200px; margin: 32px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,0.2); }
+    .footer-legal { font-size: 10px; color: rgba(255,255,255,0.15); line-height: 1.7; max-width: 680px; }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      .article-header { padding: 100px 24px 60px; }
+      .article-layout { padding: 48px 24px; }
+      .article-stats { grid-template-columns: 1fr; }
+      .related-section { padding: 48px 24px; }
+      .related-grid { grid-template-columns: 1fr; }
+      footer { padding: 48px 24px 24px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-brand">
+    <img src="https://www.firstmoverfund.com/hubfs/FMF%20Horizontal%20Logo-1.png" alt="First Mover Fund" class="nav-logo" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'" />
+    <span class="nav-logo-text" style="display:none">First Mover Fund</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#offer">What we offer</a></li>
+    <li><a href="/#how">How it works</a></li>
+    <li><a href="/about/">About us</a></li>
+    <li class="dropdown">
+      <a href="#">Learn more</a>
+      <div class="dropdown-menu">
+        <a href="/blog/">Blog</a>
+        <a href="/faq/">FAQs</a>
+        <a href="/ebooks/">eBooks</a>
+      </div>
+    </li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-exchange">EARTH · <span>Euronext Amsterdam</span></span>
+    <a href="/#contact" class="nav-cta">Invest today</a>
+  </div>
+</nav>
+
+<!-- ARTICLE HEADER -->
+<div class="article-header">
+  <div class="article-header-inner">
+    <a href="/blog/" class="article-back">← Back to blog</a>
+    <div class="article-eyebrow">Analysis</div>
+    <h1>The Yield Gap in Modern Agriculture</h1>
+    <div class="article-meta">
+      <span>Jun 1, 2026</span>
+      <span class="article-meta-sep">·</span>
+      <span>9 min read</span>
+      <span class="article-meta-sep">·</span>
+      <span>First Mover Fund</span>
+    </div>
+  </div>
+</div>
+
+<!-- ARTICLE BODY -->
+<div class="article-layout">
+  <p class="article-lede">The world is not running out of land. It is running out of productive land, and that distinction is worth billions.</p>
+
+  <div class="article-body">
+    <h2>What is the Yield Gap?</h2>
+    <p>Agricultural scientists define the yield gap as the difference between what a piece of land actually produces and what it is theoretically capable of producing under optimal management conditions. In practical terms, actual farm yields across the world represent only 50 to 80 percent of what that same land could sustainably produce.</p>
+    <p>The numbers are most striking in developing regions. In sub-Saharan Africa, many crops yield less than 20 percent of their theoretical capacity — meaning that more than four-fifths of the land's productive potential goes unrealised. This is not a natural limitation of the soil. It is a management gap, and management gaps can be closed.</p>
+
+    <div class="article-stats">
+      <div>
+        <div class="article-stat-val">50–80%</div>
+        <div class="article-stat-label">Actual yield as a share of potential on most global farmland</div>
+      </div>
+      <div>
+        <div class="article-stat-val">70%</div>
+        <div class="article-stat-label">Rise in global food demand expected by 2050 (UN projection)</div>
+      </div>
+      <div>
+        <div class="article-stat-val">16%</div>
+        <div class="article-stat-label">Annual growth rate of regenerative agriculture market</div>
+      </div>
+    </div>
+
+    <h2>Why Farmland Productivity Matters Now</h2>
+    <p>The UN projects that global food demand will rise by 70 percent by 2050. The population feeding that demand cannot simply clear new land — environmental constraints, regulatory frameworks, and the slow degradation of frontier ecosystems mean that the solution must come from improving existing land, not expanding into new territory.</p>
+    <p>At the same time, the regenerative agriculture sector is expanding at approximately 16 percent annually, and $1 trillion in investable farmland exists globally. U.S. farmland has averaged approximately 10 percent annual returns over the past several decades, combining income from crop yields with long-term land appreciation. The opportunity is well-established. The question is where the next generation of returns will come from.</p>
+
+    <h2>What Causes the Yield Gap?</h2>
+    <p>Four factors account for the majority of the global yield gap. <strong>Soil degradation</strong> tops the list: researchers estimate that 90 percent of Earth's land surface could face degradation by 2050 under business-as-usual agricultural practices. Degraded soil holds less water, supports fewer microorganisms, and releases rather than sequesters carbon.</p>
+    <p><strong>Outdated techniques</strong> persist because change is expensive and risky for individual farmers operating on thin margins. <strong>Poor water management</strong> compounds the problem — inconsistent irrigation either under-waters or over-waters crops, both reducing yields and accelerating soil erosion. Finally, <strong>weak market access</strong> means that even when yields improve, farmers in remote regions cannot consistently convert that improvement into income.</p>
+
+    <div class="article-pullquote">
+      <p>"The yield gap is not a natural feature of the land. It is a management gap — and management gaps can be closed by the right team with the right capital."</p>
+    </div>
+
+    <h2>How Regenerative Farming Closes the Gap</h2>
+    <p>Regenerative agriculture encompasses a set of practices that work with natural systems rather than against them. No-till farming preserves soil structure and moisture retention. Cover cropping adds organic matter and prevents erosion between growing seasons. Precision agriculture uses sensor data and mapping to apply water and nutrients exactly where they are needed. Integrating livestock into crop rotations accelerates soil regeneration through natural fertilisation cycles.</p>
+    <p>The financial results are documented. A 2018 study found that corn produced via regenerative methods generated profits 78 percent higher than conventional approaches — primarily because improved soil health reduced input costs and increased yields simultaneously. The profitability case for regenerative transition is no longer theoretical.</p>
+
+    <h2>The Investment Opportunity</h2>
+    <p>The investment thesis follows from the agronomic facts. Identify underperforming land. Apply superior management at scale. Capture value through increased revenues from improved crop yields and enhanced land restoration value — plus, where applicable, certified CO2 capture sold to corporate buyers.</p>
+    <p>Investors who position themselves in undervalued, underperforming land before institutional capital arrives capture the majority of the rerating that follows as productivity improvements are validated and certified. This is the first-mover advantage in its most literal sense: the improvement is real, the demand is structural, and the timing window is finite.</p>
+
+    <h2>First Mover Fund's Approach</h2>
+    <p>First Mover Fund identifies quality land with substantial productivity gaps, partners with experienced local farmers who understand the soil and the regional markets, and applies proven regenerative methods at a scale that individual landowners cannot achieve independently.</p>
+    <p>The result is a dual revenue stream: income from improved crop yields, and income from certified CO2 capture sold to corporations meeting their emission reduction commitments. Both revenue streams are anchored in real productive assets — which is precisely the foundation that distinguishes this asset class from speculative alternatives.</p>
+  </div>
+</div>
+
+<!-- RELATED ARTICLES -->
+<div class="related-section">
+  <div class="related-inner">
+    <div class="related-label">Related articles</div>
+    <div class="related-grid">
+      <a href="/blog/seeking-asymmetric-upside/" class="related-card">
+        <div class="related-card-meta">May 5, 2026 &nbsp;·&nbsp; 10 min</div>
+        <div class="related-card-title">Seeking the Asymmetric Upside in Overlooked Asset Classes</div>
+        <div class="related-card-link">Read →</div>
+      </a>
+      <a href="/blog/60-40-portfolio/" class="related-card">
+        <div class="related-card-meta">Mar 26, 2026 &nbsp;·&nbsp; 7 min</div>
+        <div class="related-card-title">Why the Traditional 60/40 Portfolio is Failing Today's Investor</div>
+        <div class="related-card-link">Read →</div>
+      </a>
+      <a href="/blog/how-to-evaluate-investment-opportunities/" class="related-card">
+        <div class="related-card-meta">Mar 13, 2026 &nbsp;·&nbsp; 7 min</div>
+        <div class="related-card-title">How to Evaluate Investment Opportunities</div>
+        <div class="related-card-link">Read →</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://www.firstmoverfund.com/hubfs/FMF%20Horizontal%20Logo-1.png" alt="First Mover Fund" class="footer-logo" onerror="this.style.display='none'" />
+      <p class="footer-tagline">An initiative of Green Earth Group N.V., listed on Euronext Amsterdam (EARTH). Connecting private investors with land restoration opportunities generating real income from real assets.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/firstmoverfund" aria-label="LinkedIn">in</a>
+        <a href="https://www.facebook.com/firstmoverfund" aria-label="Facebook">f</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>About</h5>
+      <ul>
+        <li><a href="/#offer">What we offer</a></li>
+        <li><a href="/#how">How it works</a></li>
+        <li><a href="/about/">About us</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Learn More</h5>
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/faq/">FAQs</a></li>
+        <li><a href="/ebooks/">eBooks</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <ul>
+        <li><a href="/corporate-governance/">Corporate governance</a></li>
+        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2026 First Mover Fund · All Rights Reserved · An initiative of Green Earth Group N.V.</p>
+    <p class="footer-legal">This website does not constitute an offer to sell or solicitation of an offer to buy any security. Securities are offered only to accredited investors under Reg D, Rule 506(c). Projected returns are not guaranteed. Investing involves risk, including possible loss of principal. Past performance is not indicative of future results. Green Earth Group N.V. is listed on Euronext Amsterdam (ticker: EARTH).</p>
+  </div>
+</footer>
+
+</body>
+</html>
